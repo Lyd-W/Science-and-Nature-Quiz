@@ -121,9 +121,26 @@ The font family that has been chosen for the Science and Nature Quiz is [Red Hat
 
 ### Colour Scheme
 
+For the website background, I created some science and nature styled icons using [ChatGPT](https://chatgpt.com/ "ChatGPT Homepage") and placed them over a neutral background using [Adobe Photoshop](https://www.adobe.com/uk/products/photoshop.html "Adobe | Photoshop") which created some of the the base colours for the website. I then included greens to help create a calm atmosphere while linking to science and nature. I used [Coolors Scheme](https://coolors.co/ "Coolors Scheme Homepage") to finalise the chosen colours and visualise them next to each other.
+
+![Coolors Scheme](docs/coolors.png)
+
+I then used [Contrast Grid](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23A09A8A%0D%0A%23D0E5C8%0D%0A%23899F7F%0D%0A%23000000%0D%0A%23FFFFFF&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp "Contrast Grid") to determine the best colour combinations to ensure the website will be visually appealing whilst remaining easy for the user to read the quiz questions and answers.
 
 |CSS Name               |HEX          |Use
 |-----------------------|-------------|------------------------------------------------|
+| --khaki | #A09A8A | Background colour
+| --black | #000000 | Text colour |
+| --light-green | #D0E5C8 | Button background colour |
+| --dark-green | #899F7F | Button borders |
+| --white | #FFFFFF |  Highlighting, button hover |
+
+Other required colours:
+
+|CSS Name               |HEX          |Use
+|-----------------------|-------------|------------------------------------------------|
+| --red | #FF0000 | Incorrect answers |
+| --green | #6BC841 | Correct answers |
 
 ### Images
 
@@ -251,10 +268,14 @@ The font family that has been chosen for the Science and Nature Quiz is [Red Hat
 
 #### Images:
 
+- [Adobe Photoshop](https://www.adobe.com/uk/products/photoshop.html "Adobe | Photoshop")
 - [ChatGPT](https://chatgpt.com/ "ChatGPT")
+- [Favicon.io](https://favicon.io "Favicon.io")
 
 #### Visual Content:
 
+- [Contrast Grid](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23A09A8A%0D%0A%23D0E5C8%0D%0A%23899F7F%0D%0A%23000000%0D%0A%23FFFFFF&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp "Contrast Grid")
+- [Coolors Scheme](https://coolors.co/ "Coolors Scheme Homepage")
 
 [Back to contents](#contents)
 
