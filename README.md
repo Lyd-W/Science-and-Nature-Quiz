@@ -250,6 +250,7 @@ The wireframes were designed using templates from [Balsamiq](https://balsamiq.co
 
 #### Images:
 
+- [ChatGPT](https://chatgpt.com/ "ChatGPT")
 
 #### Visual Content:
 
