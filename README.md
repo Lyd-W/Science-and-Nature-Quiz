@@ -103,7 +103,13 @@ The Science and Nature Quiz is a great way for science and nature enthusiasts to
 
 ## Wireframes
 
+The wireframes were designed using templates from [Balsamiq](https://balsamiq.com/ "Balsamiq Homepage"). I started with the mobile version, then tablet and finished with the desktop display. 
 
+[Mobile Wireframes](docs/mobile-wireframes.pdf "Mobile Wireframes")
+
+[Tablet Wireframes](docs/tablet-wireframes.pdf "Tablet Wireframes")
+
+[Desktop Wireframes](docs/desktop-wireframes.pdf "Laptop Wireframes")
 
 [Back to contents](#contents)
 
