@@ -127,6 +127,8 @@ For the website background, I created some science and nature styled icons using
 
 I then used [Contrast Grid](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23A09A8A%0D%0A%23D0E5C8%0D%0A%23899F7F%0D%0A%23000000%0D%0A%23FFFFFF&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp "Contrast Grid") to determine the best colour combinations to ensure the website will be visually appealing whilst remaining easy for the user to read the quiz questions and answers.
 
+![Contrast Grid](docs/contrast-grid.png)
+
 |CSS Name               |HEX          |Use
 |-----------------------|-------------|------------------------------------------------|
 | --khaki | #A09A8A | Background colour
@@ -199,6 +201,7 @@ Other required colours:
 
 ## Tools and Programmes
 
+- [Adobe Photoshop](https://www.adobe.com/uk/products/photoshop.html "Adobe | Photoshop")
 - [Balsamiq](https://balsamiq.com/ "Balsamiq Homepage")
 - [GitHub](https://github.com "GitHub Homepage")
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode "Prettier - Code Formatter")
@@ -264,6 +267,9 @@ Other required colours:
 #### Learning Resources and Guidance
 
 - [Code Institute](https://codeinstitute.net/ "Code Institute")
+- [Slack](https://slack.com/intl/en-gb/ "Slack")
+- [Stack Overflow](https://stackoverflow.com/ "Stack Overflow")
+- [W3 Schools](https://www.w3schools.com/ "W3 Schools")
 
 #### Information References
 
