@@ -16,3 +16,23 @@ body {
     background-image: url('/assets/images/background.jpg');
     background-size: cover;
 }
+
+/* Footer */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.footer-column {
+    background-color: #A09A8A;
+    flex: 1; 
+    padding: 15px; 
+    width: 33.33%; 
+    text-align: center;
+  }
+
+  .footer-column i {
+    font-size: xx-large;
+    color: #000000;
+  }
