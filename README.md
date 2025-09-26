@@ -192,7 +192,9 @@ Other required colours:
 
 ## Libraries and Frameworks
 
+- [Bootstrap v5.3](https://getbootstrap.com/ "Bootstrap v5.3 Homepage")
 - [Favicon](https://favicon.io/ "Favicon Homepage")
+- [Font Awesome](https://fontawesome.com/search?q=menu&o=r&ic=free "Font Awesome Homepage")
 - [Google Fonts](https://fonts.google.com/ "Google Fonts Homepage")
 
 ## Tools and Programmes
