@@ -3,5 +3,16 @@
 
 /* CSS Variables */ 
 :root {
-    --primary-font: "Red Hat Display"
+    --khaki: "#A09A8A",
+    --black: "#000000",
+    --light-green: "#D0E5C8",
+    --dark-green: "#899F7F",
+    --white: "#FFFFFF",
+}
+
+/* Global styles */
+body {
+    background-color: #A09A8A;
+    background-image: url('/assets/images/background.jpg');
+    background-size: cover;
 }
