@@ -13,7 +13,7 @@
 /* Global styles */
 body {
     background-color: #BCB7A4;
-    background-image: url('./assets/images/background.jpg');
+    background-image: url('../assets/images/background.jpg');
     background-size: cover;
 }
 
@@ -39,6 +39,11 @@ body {
     border-color: #76896E;
     border-width: 2px;
     --bs-dropdown-link-hover-bg: none;
+}
+
+.dropdown-item {
+    max-width: 80vw;
+    text-wrap: wrap;
 }
 
 .custom-button-outline {
@@ -101,11 +106,48 @@ body {
     .navbar-nav {
         flex-direction: row;
    }
+
+    #instructions-paragraph,
+    #contact-paragraph {
+        font-size: small;
+   }
+
+   #contact-paragraph {
+    text-align: center !important;
+   }
+
+    #contact-dropdown {
+        position:absolute!important;
+        left: 50% !important;
+        right: auto !important;
+        transform: translate(-72%, 0) !important;
+   }
+
+   #instructions-dropdown {
+       position:absolute!important;
+       left: 50% !important;
+       right: auto !important;
+       transform: translate(-33%, 0) !important;
+  }
+
+   .form-label,
+   .form-select,
+   #send-button {
+    font-size: small;
+   }
+
+   .p-4 {
+       padding-bottom: .5rem!important;
+       padding-top: 1rem!important;
+   }
 }
   
   /* Medium devices (tablets, 768px and up) */
   @media screen and (min-width: 768px) {
-    
+    .p-4 {
+        padding-bottom: .5rem!important;
+        padding-top: 1rem!important;
+    }
   }
   
   /* Large devices (laptops, 992px and up) */

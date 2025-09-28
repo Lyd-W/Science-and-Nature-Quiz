@@ -62,19 +62,20 @@
               >
                 Instructions
               </button>
-              <ul class="dropdown-menu dropdown-menu-end">
+              <ul class="dropdown-menu dropdown-menu-end" id="instructions-dropdown">
                 <li>
                   <a class="dropdown-item" href="#"
-                    >1. You will be presented with one question and four
+                    ><p id="instructions-paragraph">
+                    <b>1.</b> You will be presented with one question and four
                     possible answers.<br />
-                    2. Select only one answer — once you click on an option, it
+                    <b>2.</b> Select only one answer — once you click on an option, it
                     will be locked in and automatically submitted.<br />
-                    3. You have 30 seconds to answer the question. If you do not
+                    <b>3.</b> You have 30 seconds to answer the question. If you do not
                     select an option within 30 seconds, the question will be
                     marked as unanswered.<br />
-                    4. After submission, your choice will be recorded and you’ll
+                    <b>4.</b> After submission, your choice will be recorded and you’ll
                     move onto the next question.<br />
-                    5. At the end of the quiz you will see your final score.</a
+                    <b>5.</b> At the end of the quiz you will see your final score.</a
                   >
                 </li>
               </ul>
@@ -90,9 +91,9 @@
               >
                 Contact
               </button>
-              <form class="dropdown-menu dropdown-menu-end p-4">
+              <form class="dropdown-menu dropdown-menu-end p-4" id="contact-dropdown">
                 <div class="mb-3">
-                  <p>
+                  <p id="contact-paragraph">
                     If you would like to contact us, please use the form below.
                   </p>
                   <label for="name" class="form-label">Full name</label>
@@ -133,14 +134,14 @@
                   <label for="message" class="form-label">Message</label>
                   <textarea
                     class="form-control"
-                    rows="3"
+                    rows="2"
                     id="message"
                     name="message"
                     required
                   ></textarea>
                 </div>
                 <div class="container-fluid text-center">
-                  <button type="submit" class="btn custom-button-outline mb-3">
+                  <button type="submit" class="btn custom-button-outline mb-3" id="send-button">
                     Send
                   </button>
                 </div>
