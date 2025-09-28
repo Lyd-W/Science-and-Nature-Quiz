@@ -18,8 +18,13 @@ body {
 }
 
 /* Navbar */
+nav {
+    border-bottom: 2px solid #76896E!important;
+}
+
 #navbar {
     background-color: #BCB7A4;
+    border: 10px black;
 }
 
 #navbar .logo {
@@ -72,6 +77,7 @@ body {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    border-top: 2px solid #76896E!important;
 }
 
 .footer-column {
