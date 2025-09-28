@@ -13,7 +13,7 @@
 /* Global styles */
 body {
     background-color: #BCB7A4;
-    background-image: url('/assets/images/background.jpg');
+    background-image: url('./assets/images/background.jpg');
     background-size: cover;
 }
 

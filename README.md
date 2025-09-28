@@ -255,6 +255,17 @@ Other required colours:
 
 # Deployment
 
+The Science and Nature Quiz website was deployed on GitHub early on in the development process to highlight any possible issues that could occur. The steps used to deploy the website were as follows:
+
+- Open up the repository on GitHub.
+- Select **'Settings'** from the top menu.
+- Select **'Pages'** from the menu down the left-hand side.
+- Change the **'None'** dropdown menu to **'Main'**.
+- Click the **'Save'** button.
+- Wait while the website is deployed.
+- The website is then live and accessible at: **https://lyd-w.github.io/Science-and-Nature-Quiz/**
+
+Changes can still be made to the website through VS Code, they become live once they have been added, committed and pushed to GitHub. GitHub then lists the different commits that have taken place to show what changes were made and when.
 
 [Back to contents](#contents)
 
