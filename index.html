@@ -39,42 +39,151 @@
     <!-- Custom css -->
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-  <body class="d-flex flex-column min-vh-100" data-bs-spy="scroll">
-    <h1>Science and Nature Quiz</h1>
+  <body class="d-flex flex-column min-vh-100" data-bs-target="#navbar">
+    <!-- Navigation imported from Bootstrap v5.3 -->
+    <nav id="navbar" class="navbar navbar-expand-sm fixed-top">
+      <div class="container-fluid justify-content-center">
+        <a class="navbar-brand">
+          <img
+            src="assets/images/logo.png"
+            alt="Science and Nature Logo"
+            class="logo"
+          />
+          Science and Nature Quiz</a
+        >
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <div class="dropdown">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Instructions
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                  <a class="dropdown-item" href="#"
+                    >1. You will be presented with one question and four
+                    possible answers.<br />
+                    2. Select only one answer — once you click on an option, it
+                    will be locked in and automatically submitted.<br />
+                    3. You have 30 seconds to answer the question. If you do not
+                    select an option within 30 seconds, the question will be
+                    marked as unanswered.<br />
+                    4. After submission, your choice will be recorded and you’ll
+                    move onto the next question.<br />
+                    5. At the end of the quiz you will see your final score.</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <div class="dropdown">
+              <button
+                type="button"
+                class="btn btn-secondary dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Contact
+              </button>
+              <form class="dropdown-menu dropdown-menu-end p-4">
+                <div class="mb-3">
+                  <p>
+                    If you would like to contact us, please use the form below.
+                  </p>
+                  <label for="name" class="form-label">Full name</label>
+                  <input
+                    class="form-control"
+                    id="name"
+                    name="name"
+                    type="text"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="enquiry" class="form-label">Enquiry</label>
+                  <select
+                    aria-label="Select your enquiry"
+                    id="enquiry"
+                    class="form-select"
+                    name="enquiry"
+                    required
+                  >
+                    <option value="" selected>Select your enquiry</option>
+                    <option value="early-prospectus">Feedback</option>
+                    <option value="lower-prospectus">Report an issue</option>
+                    <option value="upper-prospectus">General enquiry</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="message" class="form-label">Message</label>
+                  <textarea
+                    class="form-control"
+                    rows="3"
+                    id="message"
+                    name="message"
+                    required
+                  ></textarea>
+                </div>
+                <div class="container-fluid text-center">
+                  <button type="submit" class="btn custom-button-outline mb-3">
+                    Send
+                  </button>
+                </div>
+              </form>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
     <!-- Footer with social media links -->
     <footer class="footer-container mt-auto">
-        <div class="footer-column">
-          <a
-                href="https://www.github.com/"
-                target="_blank"
-                rel="noopener"
-                aria-label="Visit our GitHub page (opens in a new tab)"
-              >
-                <i class="fa-brands fa-github"></i
-              ></a>
-        </div>
-        <div class="footer-column">
-          <a
-                href="https://uk.linkedin.com/"
-                target="_blank"
-                rel="noopener"
-                aria-label="Visit our LinkedIn page (opens in a new tab)"
-              >
-                <i class="fa-brands fa-linkedin"></i
-              ></a>
-        </div>
-        <div class="footer-column">
-          <a
-                href="https://www.x.com/"
-                target="_blank"
-                rel="noopener"
-                aria-label="Visit our X page (opens in a new tab)"
-              >
-                <i class="fa-brands fa-x-twitter"></i
-              ></a>
-        </div>
-      </footer>
+      <div class="footer-column">
+        <a
+          href="https://www.github.com/"
+          target="_blank"
+          rel="noopener"
+          aria-label="Visit our GitHub page (opens in a new tab)"
+        >
+          <i class="fa-brands fa-github"></i
+        ></a>
+      </div>
+      <div class="footer-column">
+        <a
+          href="https://uk.linkedin.com/"
+          target="_blank"
+          rel="noopener"
+          aria-label="Visit our LinkedIn page (opens in a new tab)"
+        >
+          <i class="fa-brands fa-linkedin"></i
+        ></a>
+      </div>
+      <div class="footer-column">
+        <a
+          href="https://www.x.com/"
+          target="_blank"
+          rel="noopener"
+          aria-label="Visit our X page (opens in a new tab)"
+        >
+          <i class="fa-brands fa-x-twitter"></i
+        ></a>
+      </div>
+    </footer>
 
     <!-- Bootstrap 5.3 script -->
     <script

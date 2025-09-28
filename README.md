@@ -131,10 +131,10 @@ I then used [Contrast Grid](https://contrast-grid.eightshapes.com/?version=1.1.0
 
 |CSS Name               |HEX          |Use
 |-----------------------|-------------|------------------------------------------------|
-| --khaki | #A09A8A | Background colour
+| --khaki | #BCB7A4 | Background colour
+| --light-green | #BEC7BC | Button background colour |
+| --dark-green | #79896E | Button borders |
 | --black | #000000 | Text colour |
-| --light-green | #D0E5C8 | Button background colour |
-| --dark-green | #899F7F | Button borders |
 | --white | #FFFFFF |  Highlighting, button hover |
 
 Other required colours:

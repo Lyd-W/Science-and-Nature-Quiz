@@ -3,18 +3,63 @@
 
 /* CSS Variables */ 
 :root {
-    --khaki: "#A09A8A",
+    --khaki: "#BCB7A4",
+    --light-green: "#BEC7BC",
+    --dark-green: "#76896E",
     --black: "#000000",
-    --light-green: "#D0E5C8",
-    --dark-green: "#899F7F",
     --white: "#FFFFFF",
 }
 
 /* Global styles */
 body {
-    background-color: #A09A8A;
+    background-color: #BCB7A4;
     background-image: url('/assets/images/background.jpg');
     background-size: cover;
+}
+
+/* Navbar */
+#navbar {
+    background-color: #BCB7A4;
+}
+
+#navbar .logo {
+    width: 30px;
+}
+
+.navbar-brand {
+    color: #000000;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.dropdown-menu {
+    min-width: 300px;
+    background-color: #BEC7BC;
+    color: #000000;
+    border-color: #76896E;
+    border-width: 2px;
+    --bs-dropdown-link-hover-bg: none;
+}
+
+.custom-button-outline {
+    border-color: #76896E;
+    border-width: 2px;
+    background-color: #BCB7A4;
+}
+
+.custom-button-outline:hover {
+    background-color: #76896E;
+    border-color: #BCB7A4;
+    border-width: 2px;
+    color:#FFFFFF;
+}
+
+.btn-secondary {
+    --bs-btn-bg: #BEC7BC;
+    color:#000000;
+    --bs-btn-hover-bg: #76896E;
+    --bs-btn-active-bg: #76896E;
+    border-width: 2px;
 }
 
 /* Footer */
@@ -25,7 +70,7 @@ body {
 }
 
 .footer-column {
-    background-color: #A09A8A;
+    background-color: #BCB7A4;
     flex: 1; 
     padding: 15px; 
     width: 33.33%; 
@@ -35,4 +80,40 @@ body {
   .footer-column i {
     font-size: xx-large;
     color: #000000;
+  }
+
+  /* Media queries */
+
+/* Small devices (mobiles, up to 576px) */
+@media screen and (max-width: 576px) {
+    .navbar-brand {
+        font-size: 24px;
+  }
+
+   .ms-auto {
+    margin-left: 0!important;
+   }
+
+   .logo {
+    margin-left: 5px;
+   }
+
+    .navbar-nav {
+        flex-direction: row;
+   }
+}
+  
+  /* Medium devices (tablets, 768px and up) */
+  @media screen and (min-width: 768px) {
+    
+  }
+  
+  /* Large devices (laptops, 992px and up) */
+  @media screen and (min-width: 992px) {
+    
+  }
+  
+  /* XL devices (xl screens, 1200px and up) */
+  @media screen and (min-width: 1200px) {
+    
   }
