@@ -109,7 +109,7 @@ body {
 
     #instructions-paragraph,
     #contact-paragraph {
-        font-size: small;
+        font-size: medium;
    }
 
    #contact-paragraph {
@@ -133,7 +133,7 @@ body {
    .form-label,
    .form-select,
    #send-button {
-    font-size: small;
+    font-size: medium;
    }
 
    .p-4 {
