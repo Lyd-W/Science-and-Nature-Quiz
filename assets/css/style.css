@@ -107,11 +107,6 @@ body {
         flex-direction: row;
    }
 
-    #instructions-paragraph,
-    #contact-paragraph {
-        font-size: medium;
-   }
-
    #contact-paragraph {
     text-align: center !important;
    }
@@ -129,12 +124,6 @@ body {
        right: auto !important;
        transform: translate(-33%, 0) !important;
   }
-
-   .form-label,
-   .form-select,
-   #send-button {
-    font-size: medium;
-   }
 
    .p-4 {
        padding-bottom: .5rem!important;
