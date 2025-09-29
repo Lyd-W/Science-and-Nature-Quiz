@@ -152,6 +152,29 @@
       </div>
     </nav>
 
+    <!-- Quiz setup section -->
+    <main>
+        <div class="quiz-container text-center">
+            <div id="player-setup">
+                <h2 class="text-center">Enter your username and select a difficulty to begin!</h2>
+                <form id="player-info">
+                    <label for="username" id="username">Username:</label>
+                    <input type="text" name="username" id="username" class="btn" placeholder="David Attenborough" required>
+                    <p class="text-center" id="select-difficulty">Select a difficulty:</p>
+                    <div id="difficutly">
+                        <!-- Button imported from Bootstrap-->
+                        <button data-difficulty="easy" class="btn btn-outline-secondary">Easy</button>
+                        <button data-difficulty="medium" class="btn btn-outline-secondary">Medium</button>
+                        <button data-difficulty="hard" class="btn btn-outline-secondary">Hard</button>
+                    </div>
+                    <div class="start-button">
+                        <button type="submit" data-type="start" class="btn btn-outline-secondary">Start</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
     <!-- Footer with social media links -->
     <footer class="footer-container mt-auto">
       <div class="footer-column">
