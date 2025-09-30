@@ -222,6 +222,10 @@ h2 {
         padding-bottom: .5rem!important;
         padding-top: 1rem!important;
     }
+    .submission-container  {
+        height: 255px;
+    } 
+
   }
   
   /* Large devices (laptops, 992px and up) */
@@ -229,6 +233,9 @@ h2 {
     h2 {
         font-size: x-large;
     }
+    .submission-container  {
+        height: 240px;
+    } 
 
     #success-paragraph {
         margin: 0 5px 15px 5px;
@@ -237,5 +244,7 @@ h2 {
   
   /* XL devices (xl screens, 1200px and up) */
   @media screen and (min-width: 1200px) {
-    
+    .submission-container  {
+        height: 220px;
+    } 
   }
