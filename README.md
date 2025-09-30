@@ -278,6 +278,7 @@ Changes can still be made to the website through VS Code, they become live once 
 #### Learning Resources and Guidance
 
 - [Code Institute](https://codeinstitute.net/ "Code Institute")
+- [Conductor](https://www.conductor.com/academy/ "Conductor | Academy")
 - [Slack](https://slack.com/intl/en-gb/ "Slack")
 - [Stack Overflow](https://stackoverflow.com/ "Stack Overflow")
 - [W3 Schools](https://www.w3schools.com/ "W3 Schools")
