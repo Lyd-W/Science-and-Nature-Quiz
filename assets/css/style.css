@@ -90,6 +90,14 @@ nav {
     border-width: 2px;
 }
 
+#instructions-button {
+    margin-right: 1px;
+}
+
+#contact-button {
+    margin-left: 1px;
+}
+
 /* Quiz setup */
 .quiz-container {
     border: 2px solid #76896E!important;
