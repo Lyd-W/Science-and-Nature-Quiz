@@ -31,6 +31,10 @@ nav {
     width: 30px;
 }
 
+.logo {
+    margin: -5px -5px 0px 6px;
+   }
+
 .navbar-brand {
     color: #000000;
     font-size: xx-large;
@@ -160,13 +164,9 @@ h2 {
     margin-left: 0!important;
    }
 
-   .logo {
-    margin-left: 5px;
-   }
-
    #success-logo {
-    margin-left: -12px;
-    margin-right: 0px;
+    margin-left: -9px;
+    margin-right: -5px;
    }
 
     .navbar-nav {
@@ -218,10 +218,12 @@ h2 {
   
   /* Medium devices (tablets, 768px and up) */
   @media screen and (min-width: 768px) {
+
     .p-4 {
         padding-bottom: .5rem!important;
         padding-top: 1rem!important;
     }
+
     .submission-container  {
         height: 255px;
     } 
