@@ -58,8 +58,6 @@ nav {
 /* Buttons */
 .custom-button-outline,
 .btn-outline-secondary,
-#instructions-button,
-#contact-button,
 #home-button {
     border-color: #76896E;
     border-width: 2px;
@@ -76,6 +74,14 @@ nav {
     border-color: #BCB7A4;
     border-width: 2px;
     color:#FFFFFF;
+}
+
+#instructions-button,
+#contact-button {
+    border-color: #76896E;
+    border-width: 2px;
+    background-color: #BEC7BC;
+    color: #000000;
 }
 
 .btn-outline-secondary {
@@ -115,6 +121,7 @@ nav {
     margin: 10px 0 10px 0;
 }
 
+#player-name,
 #username,
 #select-difficulty,
 #success-paragraph {
