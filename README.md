@@ -142,7 +142,7 @@ Other required colours:
 |CSS Name               |HEX          |Use
 |-----------------------|-------------|------------------------------------------------|
 | --red | #FF0000 | Incorrect answers |
-| --green | #6BC841 | Correct answers |
+| --green | #2E6F40 | Correct answers |
 
 ### Images
 

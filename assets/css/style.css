@@ -58,7 +58,11 @@ nav {
 /* Buttons */
 .custom-button-outline,
 .btn-outline-secondary,
-#home-button {
+#home-button,
+#answer1,
+#answer2,
+#answer3,
+#answer4 {
     border-color: #76896E;
     border-width: 2px;
     background-color: #BCB7A4;
@@ -69,7 +73,11 @@ nav {
 .btn-outline-secondary:hover,
 #instructions-button:hover,
 #contact-button:hover,
-#home-button:hover {
+#home-button:hover,
+#answer1:hover,
+#answer2:hover,
+#answer3:hover,
+#answer4:hover {
     background-color: #76896E;
     border-color: #BCB7A4;
     border-width: 2px;
@@ -102,6 +110,19 @@ nav {
 
 #contact-button {
     margin-left: 1px;
+}
+
+#answer-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 150px);
+    justify-content: center;
+}
+
+#answer1,
+#answer2,
+#answer3,
+#answer4 {
+    margin: 3px 3px 3px 3px;
 }
 
 /* Quiz setup */
@@ -137,7 +158,31 @@ h2 {
     margin-top: 5px;
 }
 
-/* Submission Page */
+/* Question section */
+#question-section {
+    border: 2px solid #76896E!important;
+    background-color: #BEC7BC;
+    border-radius: 30px;
+    margin: 20vh 20vw ;
+    height: 300px;
+}
+
+#question-number {
+    margin-top: 20px;
+    font-size: large;
+}
+
+.fa-solid.fa-check {
+    color: #2E6F40;
+    font-size: large;
+}
+
+.fa-solid.fa-xmark {
+    color: #FF0000;
+    font-size: large;
+}
+
+/* Submission page */
 .submission-container {
     border: 2px solid #76896E!important;
     background-color: #BEC7BC;
@@ -212,7 +257,8 @@ h2 {
    }
 
    .quiz-container,
-   .submission-container  {
+   .submission-container,
+   #question-section  {
        margin: 22vh 5vw;
        height: auto;
    }
@@ -229,6 +275,14 @@ h2 {
    #home-button {
     margin: 0 5px 15px 5px;
    }
+
+   #answer-buttons {
+       display: grid;
+       grid-template-columns: repeat(1, 250px);
+       justify-content: center;
+       margin-top: 20px;
+       margin-bottom: 20px;
+   }
 }
   
   /* Medium devices (tablets, 768px and up) */
@@ -242,6 +296,13 @@ h2 {
     .submission-container  {
         height: 255px;
     } 
+
+    #answer-buttons {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 215px);
+    }
 
   }
   
