@@ -27,10 +27,9 @@ const hideSection = (section) => section.classList.add("hide");
 const showSection = (section) => section.classList.remove("hide");
 
 /** Fetching API data */
-startButton.addEventListener("click", function () {
-  const selectedDifficulty = difficulty.value;
-  fetchQuestions(selectedDifficulty);
-
+startButton
+  .addEventListener("click", function () {
+    const selectedDifficulty = difficulty.value;
     fetch(
       `https://opentdb.com/api.php?amount=10&category=17&difficulty=${selectedDifficulty}&type=multiple`
     )
@@ -42,30 +41,34 @@ startButton.addEventListener("click", function () {
         showSection(questionSection);
         return response.json();
       })
-      .then((apiData) => rearrangeAnswers(apiData.results))
-      const rearranged = rearrangeAnswers(apiData.results);
-      console.log("Rearranged answers:", rearranged);
-    })
-      
-      .catch((error) => {
-        errorHandling(error);
-        console.error(error);
-      });
-      
-      /** Rearrange answer order to random */
-      function rearrangeAnswers(results) {
-        return results.map((apiQuestion) => {
-            const answers = [...apiQuestion.incorrect_answers, apiQuestion.correct_answer];
-            answers.sort(() => Math.random() - 0.5);
-            
-        console.log(results);
-            return {
-                difficulty: apiQuestion.difficulty,
-                question: apiQuestion.question,
-                answers: answers,
-            }
-        })
-    }
+      .then((apiData) => {
+    const rearranged = rearrangeAnswers(apiData.results);
+    console.log("Rearranged answers:", rearranged);
+  })
+
+  .catch((error) => {
+    errorHandling(error);
+    console.error(error);
+  });
+});
+
+/** Rearrange answer order to random */
+function rearrangeAnswers(results) {
+  return results.map((apiQuestion) => {
+    const answers = [
+      ...apiQuestion.incorrect_answers,
+      apiQuestion.correct_answer,
+    ];
+    answers.sort(() => Math.random() - 0.5);
+
+    console.log(results);
+    return {
+      difficulty: apiQuestion.difficulty,
+      question: apiQuestion.question,
+      answers: answers,
+    };
+  });
+}
 
 /** Error handling for API */
 function errorHandling() {
