@@ -277,6 +277,7 @@ Changes can still be made to the website through VS Code, they become live once 
 
 #### Learning Resources and Guidance
 
+- [Bro Code](https://www.youtube.com/@BroCodez "Bro Code | YouTube")
 - [Code Institute](https://codeinstitute.net/ "Code Institute")
 - [Conductor](https://www.conductor.com/academy/ "Conductor | Academy")
 - [Slack](https://slack.com/intl/en-gb/ "Slack")

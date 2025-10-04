@@ -40,6 +40,7 @@
     <!-- Custom css -->
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
+
   <body class="d-flex flex-column min-vh-100" data-bs-target="#navbar">
     <!-- Navigation imported from Bootstrap v5.3 -->
     <nav id="navbar" class="navbar navbar-expand-sm fixed-top">
@@ -171,10 +172,9 @@
     </nav>
 
     <!-- Quiz setup section -->
-    <!--
     <main>
       <div class="quiz-container text-center">
-        <div id="player-setup">
+        <div id="setup-section">
           <h2 class="text-center">
             Enter your username and select a difficulty to begin!
           </h2>
@@ -191,9 +191,8 @@
             <p class="text-center" id="select-difficulty">
               Select a difficulty:
             </p>
-            <div id="difficutly"> -->
+            <div id="difficutly">
     <!-- Button imported from Bootstrap-->
-    <!--
               <button
                 id="easy-btn"
                 data-difficulty="easy"
@@ -227,7 +226,7 @@
             </div>
           </form>
         </div>
-      </div> -->
+      </div>
     <!-- End of quiz setup section -->
 
     <!-- Question section -->
@@ -254,11 +253,11 @@
           </div>
         </div>
       </div>
-    </main> 
+    </main>
     <!-- End of question section -->
 
     <!-- Results section -->
-    <div id="end-game" class="hide text-center">
+    <div id="results-section" class="hide text-center">
       <p id="final-result">Your final score was:</p>
       <h1 id="correct-answers">0</h1>
       <button id="new-game-button" class="btn hover">New Game</button>

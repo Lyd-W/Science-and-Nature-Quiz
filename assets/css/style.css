@@ -20,6 +20,10 @@ body {
     background-size: cover;
 }
 
+.hide {
+    display: none;
+}
+
 /* Navbar */
 nav {
     border-bottom: 2px solid #76896E!important;
@@ -171,7 +175,7 @@ h2 {
 
 /* Question section */
 #question-section,
-#end-game {
+#results-section {
     border: 2px solid #76896E!important;
     background-color: #BEC7BC;
     border-radius: 30px;
