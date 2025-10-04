@@ -1,13 +1,16 @@
 /* Google font import */
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
 
-/* CSS Variables */ 
+/* CSS variables */ 
 :root {
-    --khaki: "#BCB7A4",
-    --light-green: "#BEC7BC",
-    --dark-green: "#76896E",
-    --black: "#000000",
-    --white: "#FFFFFF",
+    --khaki: "#BCB7A4";
+    --light-green: "#BEC7BC";
+    --dark-green: "#76896E";
+    --black: "#000000";
+    --white: "#FFFFFF";
+
+    --green: "#2E6F40"; /* for correct answers */
+    --red: "#c20303"; /* for incorrect answers */
 }
 
 /* Global styles */
@@ -187,7 +190,7 @@ h2 {
 }
 
 .fa-solid.fa-xmark {
-    color: #FF0000;
+    color: #c20303;
     font-size: large;
 }
 
