@@ -65,6 +65,7 @@ nav {
 /* Buttons */
 .custom-button-outline,
 .btn-outline-secondary,
+.btn-difficulty,
 #home-button,
 #answer1,
 #answer2,
@@ -79,6 +80,7 @@ nav {
 
 .custom-button-outline:hover,
 .btn-outline-secondary:hover,
+.btn-difficulty:hover,
 #instructions-button:hover,
 #contact-button:hover,
 #home-button:hover,
@@ -101,7 +103,8 @@ nav {
     color: #000000;
 }
 
-.btn-outline-secondary {
+.btn-outline-secondary,
+.btn-difficulty {
     margin: 0 5px 10px 5px;
 }
 
@@ -138,6 +141,13 @@ nav {
 
 #new-game-button {
     margin-top: 10px;
+}
+
+.btn-difficulty.active {
+    background-color: #76896E;
+    border-color: #BCB7A4;
+    border-width: 2px;
+    color:#FFFFFF;
 }
 
 /* Quiz setup */
@@ -294,6 +304,7 @@ h2 {
    }
 
    .btn-outline-secondary,
+   .btn-difficulty,
    #home-button {
     margin: 0 5px 15px 5px;
    }
