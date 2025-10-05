@@ -2,6 +2,7 @@ const playerSection = document.querySelector("#setup-section");
 const quizContainer = document.querySelector(".quiz-container");
 const username = document.querySelector("#player-name");
 const difficulty = document.querySelector("[data-difficulty]");
+const difficultyButton = document.querySelector(".btn-difficulty");
 const easyButton = document.querySelector("#easy-btn");
 const mediumButton = document.querySelector("#medium-btn");
 const hardButton = document.querySelector("#hard-btn");
@@ -26,10 +27,16 @@ const newGame = document.querySelector("#new-game-button");
 const hideSection = (section) => section.classList.add("hide");
 const showSection = (section) => section.classList.remove("hide");
 
+/** Set question difficulty */
+difficultyButton
+    .addEventListener("click", function() {
+        let selectedDifficulty = difficulty.dataset;
+        console.log(selectedDifficulty)
+})
+
 /** Fetching API data */
 startButton
   .addEventListener("click", function () {
-    const selectedDifficulty = difficulty.value;
     fetch(
       `https://opentdb.com/api.php?amount=10&category=17&difficulty=${selectedDifficulty}&type=multiple`
     )
