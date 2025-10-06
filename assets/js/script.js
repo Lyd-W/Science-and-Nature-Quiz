@@ -1,41 +1,41 @@
-const playerSection = document.querySelector("#setup-section");
-const quizContainer = document.querySelector(".quiz-container");
-const username = document.querySelector("#player-name");
-const difficulty = document.querySelector("[data-difficulty]");
-const difficultyButton = document.querySelector(".btn-difficulty");
-const easyButton = document.querySelector("#easy-btn");
-const mediumButton = document.querySelector("#medium-btn");
-const hardButton = document.querySelector("#hard-btn");
-const startButton = document.querySelector(".start-button");
+const playerSectionRef = document.querySelector("#setup-section");
+const quizContainerRef = document.querySelector(".quiz-container"); /** not yet used */
+const usernameRef = document.querySelector("#player-name"); /** not yet used */
+const difficultyRef = document.querySelector("[data-difficulty]");
+const difficultyButtonRef = document.querySelectorAll(".btn-difficulty");
+const easyButtonRef = document.querySelector("#easy-btn"); /** not yet used */
+const mediumButtonRef = document.querySelector("#medium-btn"); /** not yet used */
+const hardButtonRef = document.querySelector("#hard-btn"); /** not yet used */
+const startButtonRef = document.querySelector(".start-button");
 const loading = document.querySelector("loading"); /** to be added */
-const questionSection = document.querySelector("#question-section");
-const questionNumber = document.querySelector("#question-number");
-const scoreboard = document.querySelector("#scoreboard");
-const scoreSection = document.querySelector("#score-section");
-const timer = document.querySelector("#timer");
-const seconds = document.querySelector("#seconds");
-const question = document.querySelector("#question");
-const answerButtons = document.querySelector("#answer-buttons");
-const correctAnswers = document.querySelector("#correct-answers");
-const incorrectAnswers = document.querySelector("#incorrect-answers");
-const result = document.querySelector("#results");
-const finalResult = document.querySelector("#final-result");
-const resultsSection = document.querySelector("#results-section");
-const newGame = document.querySelector("#new-game-button");
+const questionSectionRef = document.querySelector("#question-section");
+const questionNumberRef = document.querySelector("#question-number"); /** not yet used */
+const scoreboardRef = document.querySelector("#scoreboard"); /** not yet used */
+const scoreSection = document.querySelector("#score-section"); /** not yet in html or js */
+const timerRef = document.querySelector("#timer"); /** not yet used */
+const secondsRef = document.querySelector("#seconds"); /** not yet used */
+const questionRef = document.querySelector("#question"); /** not yet used */
+const answerButtonsRef = document.querySelector("#answer-buttons"); /** not yet used */
+const correctAnswersRef = document.querySelector("#correct-answers"); /** not yet used */
+const incorrectAnswersRef = document.querySelector("#incorrect-answers"); /** not yet used */
+const result = document.querySelector("#results"); /** not yet in html or js */
+const finalResultRef = document.querySelector("#final-result"); /** not yet used */
+const resultsSectionRef = document.querySelector("#results-section"); /** not yet used */
+const newGameRef = document.querySelector("#new-game-button"); /** not yet used */
 
 /** Hide/Show sections */
 const hideSection = (section) => section.classList.add("hide");
 const showSection = (section) => section.classList.remove("hide");
 
 /** Set question difficulty */
-difficultyButton
+difficultyButtonRef
     .addEventListener("click", function() {
-        let selectedDifficulty = difficulty.dataset;
+        let selectedDifficulty = difficultyRef.dataset;
         console.log(selectedDifficulty)
 })
 
 /** Fetching API data */
-startButton
+startButtonRef
   .addEventListener("click", function () {
     fetch(
       `https://opentdb.com/api.php?amount=10&category=17&difficulty=${selectedDifficulty}&type=multiple`
@@ -44,8 +44,8 @@ startButton
         if (!response.ok) {
           throw new Error("Questions could not be loaded at this time");
         }
-        hideSection(playerSection);
-        showSection(questionSection);
+        hideSection(playerSectionRef);
+        showSection(questionSectionRef);
         return response.json();
       })
       .then((apiData) => {
@@ -70,7 +70,7 @@ function rearrangeAnswers(results) {
 
     console.log(results);
     return {
-      difficulty: apiQuestion.difficulty,
+      difficultyRef: apiQuestion.difficultyRef,
       question: apiQuestion.question,
       answers: answers,
     };
