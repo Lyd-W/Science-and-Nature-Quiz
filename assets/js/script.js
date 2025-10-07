@@ -1,6 +1,6 @@
 const playerSectionRef = document.querySelector("#setup-section");
-const quizContainerRef = document.querySelector(".quiz-container"); /** not yet used */
-const usernameRef = document.querySelector("#username"); /** not yet used */
+const quizContainerRef = document.querySelector(".quiz-container");
+const usernameRef = document.querySelector("#username");
 const difficultyButtonRef = Array.from(document.querySelectorAll(".btn-difficulty"));
 const startButtonRef = document.querySelector(".start-button");
 const loading = document.querySelector("loading"); /** to be added */
@@ -75,6 +75,9 @@ function getQuestions() {
     .then((apiData) => {
       const rearranged = rearrangeAnswers(apiData.results);
       console.log("Rearranged answers:", rearranged);
+
+      const firstQuestion = rearranged[0];
+      document.getElementById ("question").innerText = firstQuestion.question;
     })
 
     .catch((error) => {
