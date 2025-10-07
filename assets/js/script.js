@@ -1,33 +1,23 @@
 const playerSectionRef = document.querySelector("#setup-section");
-const quizContainerRef =
-  document.querySelector(".quiz-container"); /** not yet used */
+const quizContainerRef = document.querySelector(".quiz-container"); /** not yet used */
 const usernameRef = document.querySelector("#username"); /** not yet used */
-const difficultyButtonRef = Array.from(
-  document.querySelectorAll(".btn-difficulty"));
+const difficultyButtonRef = Array.from(document.querySelectorAll(".btn-difficulty"));
 const startButtonRef = document.querySelector(".start-button");
 const loading = document.querySelector("loading"); /** to be added */
 const questionSectionRef = document.querySelector("#question-section");
-const questionNumberRef =
-  document.querySelector("#question-number"); /** not yet used */
+const questionNumberRef = document.querySelector("#question-number"); /** not yet used */
 const scoreboardRef = document.querySelector("#scoreboard"); /** not yet used */
-const scoreSection =
-  document.querySelector("#score-section"); /** not yet in html or js */
+const scoreSection = document.querySelector("#score-section"); /** not yet in html or js */
 const timerRef = document.querySelector("#timer"); /** not yet used */
 const secondsRef = document.querySelector("#seconds"); /** not yet used */
 const questionRef = document.querySelector("#question"); /** not yet used */
-const answerButtonsRef =
-  document.querySelector("#answer-buttons"); /** not yet used */
-const correctAnswersRef =
-  document.querySelector("#correct-answers"); /** not yet used */
-const incorrectAnswersRef =
-  document.querySelector("#incorrect-answers"); /** not yet used */
+const answerButtonsRef = document.querySelector("#answer-buttons"); /** not yet used */
+const correctAnswersRef = document.querySelector("#correct-answers"); /** not yet used */
+const incorrectAnswersRef = document.querySelector("#incorrect-answers"); /** not yet used */
 const result = document.querySelector("#results"); /** not yet in html or js */
-const finalResultRef =
-  document.querySelector("#final-result"); /** not yet used */
-const resultsSectionRef =
-  document.querySelector("#results-section"); /** not yet used */
-const newGameRef =
-  document.querySelector("#new-game-button"); /** not yet used */
+const finalResultRef = document.querySelector("#final-result"); /** not yet used */
+const resultsSectionRef = document.querySelector("#results-section"); /** not yet used */
+const newGameRef = document.querySelector("#new-game-button"); /** not yet used */
 let selectedDifficulty = null;
 
 /** Hide/Show sections */
@@ -78,6 +68,7 @@ function getQuestions() {
         throw new Error("Questions could not be loaded at this time");
       }
       hideSection(playerSectionRef);
+      hideSection(quizContainerRef);
       showSection(questionSectionRef);
       return response.json();
     })
