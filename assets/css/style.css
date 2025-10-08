@@ -143,11 +143,17 @@ nav {
   margin-top: 10px;
 }
 
-.btn-difficulty.active {
-  background-color: #76896e;
-  border-color: #bcb7a4;
+.btn-difficulty.active,
+.btn.selectedAnswer {
+  background-color: #76896e!important;
+  border-color: #bcb7a4!important;
+  border-width: 2px!important;
+  color: #ffffff!important;
+}
+
+.incorrect {
+  border-color: #c20303;
   border-width: 2px;
-  color: #ffffff;
 }
 
 /* Quiz setup */

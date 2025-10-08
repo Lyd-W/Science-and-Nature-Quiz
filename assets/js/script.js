@@ -11,7 +11,7 @@ const scoreSection = document.querySelector("#score-section"); /** not yet in ht
 const timerRef = document.querySelector("#timer"); /** not yet used */
 const secondsRef = document.querySelector("#seconds"); /** not yet used */
 const questionRef = document.querySelector("#question"); /** not yet used */
-const answerButtonsRef = document.querySelector("#answer-buttons"); /** not yet used */
+const answerButtonsRef = Array.from(document.querySelectorAll(".btn-a"));
 const correctAnswersRef = document.querySelector("#correct-answers"); /** not yet used */
 const incorrectAnswersRef = document.querySelector("#incorrect-answers"); /** not yet used */
 const result = document.querySelector("#results"); /** not yet in html or js */
@@ -47,6 +47,7 @@ function rearrangeAnswers(results) {
       difficultyRef: apiQuestion.difficultyRef,
       question: apiQuestion.question,
       answers: answers,
+      correct_answer: apiQuestion.correct_answer,
     };
   });
 }
@@ -79,17 +80,37 @@ function getQuestions() {
       document.getElementById ("answer2").innerText = firstQuestion.answers[1];
       document.getElementById ("answer3").innerText = firstQuestion.answers[2];
       document.getElementById ("answer4").innerText = firstQuestion.answers[3];
-    })
 
+      answerButtonsRef.forEach((button) => {
+        button.addEventListener("click", (event) => {
+          event.preventDefault();
+          let selectedAnswer = button.innerText;
+          const correctAnswer = rearranged[0].correct_answer;
+          const correctButton = answerButtonsRef.find(
+                    (button) => button.innerText === correctAnswer
+                );
+
+/** Highlight correct/incorrect answers */
+            if (selectedAnswer === correctAnswer) {
+                button.style.backgroundColor = "green";
+            } else {
+                button.style.backgroundColor = "red";
+                
+                if (correctButton) correctButton.style.backgroundColor = "green";
+            }
+                });
+            });
+        })
+    
     .catch((error) => {
       errorHandling(error);
       console.error(error);
     });
-}
 
 function errorHandling(message) {
   alert(
     "Questions could not be loaded at this time, please try again later.",
     message
-  );
-}
+)};
+};
+
