@@ -74,12 +74,18 @@ function getQuestions() {
     })
     .then((apiData) => {
       const rearranged = rearrangeAnswers(apiData.results);
-      const firstQuestion = rearranged[0];
-      document.getElementById ("question").innerText = firstQuestion.question;
-      document.getElementById ("answer1").innerText = firstQuestion.answers[0];
-      document.getElementById ("answer2").innerText = firstQuestion.answers[1];
-      document.getElementById ("answer3").innerText = firstQuestion.answers[2];
-      document.getElementById ("answer4").innerText = firstQuestion.answers[3];
+      let currentQuestionNumber = 0;
+
+      /** Display question and randomised answers */
+      function showQuestion(currentQuestion){
+      document.getElementById ("question").innerText = currentQuestion.question;
+      document.getElementById ("answer1").innerText = currentQuestion.answers[0];
+      document.getElementById ("answer2").innerText = currentQuestion.answers[1];
+      document.getElementById ("answer3").innerText = currentQuestion.answers[2];
+      document.getElementById ("answer4").innerText = currentQuestion.answers[3];
+      }
+
+      showQuestion(rearranged[currentQuestionNumber])
 
       answerButtonsRef.forEach((button) => {
         button.addEventListener("click", (event) => {
@@ -98,6 +104,10 @@ function getQuestions() {
                 
                 if (correctButton) correctButton.style.backgroundColor = "green";
             }
+
+/** Increase Question Number by 1, display next question */
+currentQuestionNumber++;
+showQuestion(rearranged[currentQuestionNumber]);
                 });
             });
         })
