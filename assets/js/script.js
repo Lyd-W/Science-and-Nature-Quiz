@@ -42,8 +42,7 @@ function rearrangeAnswers(results) {
       apiQuestion.correct_answer,
     ];
     answers.sort(() => Math.random() - 0.5);
-
-    console.log(results);
+    
     return {
       difficultyRef: apiQuestion.difficultyRef,
       question: apiQuestion.question,
@@ -63,7 +62,7 @@ function getQuestions() {
   fetch(
     `https://opentdb.com/api.php?amount=10&category=17&difficulty=${selectedDifficulty}&type=multiple`
   )
-    .then((response) => {
+   .then((response) => {
       if (!response.ok) {
         throw new Error("Questions could not be loaded at this time");
       }
@@ -74,10 +73,12 @@ function getQuestions() {
     })
     .then((apiData) => {
       const rearranged = rearrangeAnswers(apiData.results);
-      console.log("Rearranged answers:", rearranged);
-
       const firstQuestion = rearranged[0];
       document.getElementById ("question").innerText = firstQuestion.question;
+      document.getElementById ("answer1").innerText = firstQuestion.answers[0];
+      document.getElementById ("answer2").innerText = firstQuestion.answers[1];
+      document.getElementById ("answer3").innerText = firstQuestion.answers[2];
+      document.getElementById ("answer4").innerText = firstQuestion.answers[3];
     })
 
     .catch((error) => {
