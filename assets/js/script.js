@@ -110,9 +110,13 @@ function getQuestions() {
 
 /** Increase Question Number by 1, display next question after 1 second delay */
 setTimeout(() => {
-    currentQuestionNumber++,
+    currentQuestionNumber++;
+    if(currentQuestionNumber > 9) {
+   hideSection(questionSectionRef);
+   showSection(resultsSectionRef);
+} else {
     showQuestion(rearranged[currentQuestionNumber]);
-}, 1000);
+}}, 1000);
                 });
             });
         })
@@ -128,4 +132,3 @@ function errorHandling(message) {
     message
 )};
 };
-
