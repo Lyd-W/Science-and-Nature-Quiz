@@ -5,22 +5,22 @@ const difficultyButtonRef = Array.from(document.querySelectorAll(".btn-difficult
 const startButtonRef = document.querySelector(".start-button");
 const loading = document.querySelector("loading"); /** to be added */
 const questionSectionRef = document.querySelector("#question-section");
-const questionNumberRef = document.querySelector("#question-number"); /** not yet used */
 const scoreboardRef = document.querySelector("#scoreboard"); /** not yet used */
-const scoreSection = document.querySelector("#score-section"); /** not yet in html or js */
+const scoreSection =document.querySelector("#score-section"); /** not yet in html or js */
 const timerRef = document.querySelector("#timer"); /** not yet used */
 const secondsRef = document.querySelector("#seconds"); /** not yet used */
-const questionRef = document.querySelector("#question"); /** not yet used */
 const answerButtonsRef = Array.from(document.querySelectorAll(".btn-a"));
-const correctAnswersRef = document.querySelector("#correct-answers"); /** not yet used */
-const incorrectAnswersRef = document.querySelector("#incorrect-answers"); /** not yet used */
 const result = document.querySelector("#results"); /** not yet in html or js */
-const finalResultRef = document.querySelector("#final-result"); /** not yet used */
-const resultsSectionRef = document.querySelector("#results-section"); /** not yet used */
-const newGameRef = document.querySelector("#new-game-button"); /** not yet used */
-let selectedDifficulty = null;
+const finalResultRef =document.querySelector("#final-result"); /** not yet used */
+const resultsSectionRef = document.querySelector("#results-section");
+const newGameRef =document.querySelector("#new-game-button"); /** not yet used */
 
-/** Hide/Show sections */
+let selectedDifficulty = null;
+let rearranged = [];
+let currentQuestionNumber = 0;
+let questionNumberDisplay = 0;
+
+/** Hide/show sections */
 const hideSection = (section) => section.classList.add("hide");
 const showSection = (section) => section.classList.remove("hide");
 
@@ -42,7 +42,7 @@ function rearrangeAnswers(results) {
       apiQuestion.correct_answer,
     ];
     answers.sort(() => Math.random() - 0.5);
-    
+
     return {
       difficultyRef: apiQuestion.difficultyRef,
       question: apiQuestion.question,
@@ -52,83 +52,101 @@ function rearrangeAnswers(results) {
   });
 }
 
-/** Quiz setup section */
-startButtonRef.addEventListener("click", (event) => {
-  event.preventDefault();
-  if (usernameRef.value !== ("") && selectedDifficulty !== null) getQuestions();
-});
-
-/** Fetching API data and error handling for API */
+/** Fetch API data */
 function getQuestions() {
-  fetch(
+  return fetch(
     `https://opentdb.com/api.php?amount=10&category=17&difficulty=${selectedDifficulty}&type=multiple`
-  )
-   .then((response) => {
-      if (!response.ok) {
-        throw new Error("Questions could not be loaded at this time");
-      }
-      hideSection(playerSectionRef);
-      hideSection(quizContainerRef);
-      showSection(questionSectionRef);
-      return response.json();
-    })
-    .then((apiData) => {
-      const rearranged = rearrangeAnswers(apiData.results);
-      let currentQuestionNumber = 0;
-      let questionNumberDisplay = 0;
+  ).then((response) => {
+    if (!response.ok) {
+      throw new Error("Questions could not be loaded at this time");
+    }
+    return response.json();
+  });
+}
 
-      /** Display question and randomised answers */
-      function showQuestion(currentQuestion){
-      answerButtonsRef.forEach(button => button.style.backgroundColor = "");
-      document.getElementById ("question-number").innerText = "Question " + (++questionNumberDisplay);
-      document.getElementById ("question").innerText = currentQuestion.question;
-      document.getElementById ("answer1").innerText = currentQuestion.answers[0];
-      document.getElementById ("answer2").innerText = currentQuestion.answers[1];
-      document.getElementById ("answer3").innerText = currentQuestion.answers[2];
-      document.getElementById ("answer4").innerText = currentQuestion.answers[3];
-      }
+/** Display Quiz Area */
+function setQuizArea() {
+  hideSection(playerSectionRef);
+  hideSection(quizContainerRef);
+  showSection(questionSectionRef);
+}
 
-      showQuestion(rearranged[currentQuestionNumber])
+/** Display question and randomised answers */
+function showQuestion(currentQuestion) {
+  answerButtonsRef.forEach((button) => (button.style.backgroundColor = ""));
+  document.getElementById("question-number").innerText =
+    "Question " + ++questionNumberDisplay;
+  document.getElementById("question").innerText = currentQuestion.question;
+  document.getElementById("answer1").innerText = currentQuestion.answers[0];
+  document.getElementById("answer2").innerText = currentQuestion.answers[1];
+  document.getElementById("answer3").innerText = currentQuestion.answers[2];
+  document.getElementById("answer4").innerText = currentQuestion.answers[3];
+}
 
-      answerButtonsRef.forEach((button) => {
-        button.addEventListener("click", (event) => {
-          event.preventDefault();
-          let selectedAnswer = button.innerText;
-          const correctAnswer = rearranged[currentQuestionNumber].correct_answer;
-          const correctButton = answerButtonsRef.find(
-                    (button) => button.innerText === correctAnswer
-                );
+/** Handle clicking of answers */
+/** Set selected and correct answer */
+function answerClickHandling(event) {
+  let selectedAnswer = event.target.innerText;
+  const correctAnswer = rearranged[currentQuestionNumber].correct_answer;
+  const correctButton = answerButtonsRef.find(
+    (button) => button.innerText === correctAnswer
+  );
 
-/** Highlight correct/incorrect answers */
-            if (selectedAnswer === correctAnswer) {
-                button.style.backgroundColor = "green";
-            } else {
-                button.style.backgroundColor = "red";
-                
-                if (correctButton) correctButton.style.backgroundColor = "green";
-            }
+  /** Highlight correct/incorrect answers */
+  if (selectedAnswer === correctAnswer) {
+    event.target.style.backgroundColor = "green";
+  } else {
+    event.target.style.backgroundColor = "red";
 
-/** Increase Question Number by 1, display next question after 1 second delay */
-setTimeout(() => {
+    if (correctButton) correctButton.style.backgroundColor = "green";
+  }
+
+  /** Increase Question Number by 1, display next question after 1 second delay. End quiz after 10 questions*/
+  setTimeout(() => {
     currentQuestionNumber++;
-    if(currentQuestionNumber > 9) {
-   hideSection(questionSectionRef);
-   showSection(resultsSectionRef);
-} else {
-    showQuestion(rearranged[currentQuestionNumber]);
-}}, 1000);
-                });
-            });
-        })
-    
-    .catch((error) => {
-      errorHandling(error);
-      console.error(error);
-    });
+    if (currentQuestionNumber > 9) {
+      endQuiz();
+    } else {
+      showQuestion(rearranged[currentQuestionNumber]);
+    }
+  }, 1000);
+}
 
+/** Error Handling */
 function errorHandling(message) {
   alert(
-    "Questions could not be loaded at this time, please try again later.",
+    "Questions could not be loaded at this time. Please try again later.",
     message
-)};
-};
+  );
+}
+
+/** Display Results Section */
+function endQuiz() {
+  hideSection(questionSectionRef);
+  showSection(resultsSectionRef);
+}
+
+/** Flow to manage quiz section */
+function startQuiz() {
+  try {
+    setQuizArea();
+    getQuestions().then((apiData) => {
+      rearranged = rearrangeAnswers(apiData.results);
+      showQuestion(rearranged[currentQuestionNumber]);
+      answerButtonsRef.forEach((button) => {
+        button.removeEventListener("click", answerClickHandling);
+        button.addEventListener("click", answerClickHandling);
+      });
+    });
+  } catch (error) {
+    errorHandling(error.message);
+  }
+}
+
+/** Run quiz when start button is clicked */
+startButtonRef.addEventListener("click", (event) => {
+  event.preventDefault();
+  if (usernameRef.value !== "" && selectedDifficulty !== null) {
+    startQuiz();
+  }
+});
