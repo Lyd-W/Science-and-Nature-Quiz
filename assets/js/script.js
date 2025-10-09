@@ -75,10 +75,12 @@ function getQuestions() {
     .then((apiData) => {
       const rearranged = rearrangeAnswers(apiData.results);
       let currentQuestionNumber = 0;
+      let questionNumberDisplay = 0;
 
       /** Display question and randomised answers */
       function showQuestion(currentQuestion){
       answerButtonsRef.forEach(button => button.style.backgroundColor = "");
+      document.getElementById ("question-number").innerText = "Question " + (++questionNumberDisplay);
       document.getElementById ("question").innerText = currentQuestion.question;
       document.getElementById ("answer1").innerText = currentQuestion.answers[0];
       document.getElementById ("answer2").innerText = currentQuestion.answers[1];
