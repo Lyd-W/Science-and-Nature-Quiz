@@ -106,8 +106,13 @@ function getQuestions() {
             }
 
 /** Increase Question Number by 1, display next question */
-currentQuestionNumber++;
-showQuestion(rearranged[currentQuestionNumber]);
+setTimeout(() => {
+    currentQuestionNumber++,
+    showQuestion(rearranged[currentQuestionNumber]);
+}, 1000);
+
+
+
                 });
             });
         })
