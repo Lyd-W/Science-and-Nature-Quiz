@@ -6,14 +6,14 @@ const startButtonRef = document.querySelector(".start-button");
 const loading = document.querySelector("loading"); /** to be added */
 const questionSectionRef = document.querySelector("#question-section");
 const scoreboardRef = document.querySelector("#scoreboard"); /** not yet used */
-const scoreSection =document.querySelector("#score-section"); /** not yet in html or js */
+const scoreSection = document.querySelector("#score-section"); /** not yet in html or js */
 const timerRef = document.querySelector("#timer"); /** not yet used */
 const secondsRef = document.querySelector("#seconds"); /** not yet used */
 const answerButtonsRef = Array.from(document.querySelectorAll(".btn-a"));
 const result = document.querySelector("#results"); /** not yet in html or js */
-const finalResultRef =document.querySelector("#final-result"); /** not yet used */
+const finalResultRef = document.querySelector("#final-result"); /** not yet used */
 const resultsSectionRef = document.querySelector("#results-section");
-const newGameRef =document.querySelector("#new-game-button"); /** not yet used */
+const newGameRef = document.querySelector("#new-game-button"); /** not yet used */
 
 let selectedDifficulty = null;
 let rearranged = [];
@@ -109,7 +109,7 @@ function answerClickHandling(event) {
     } else {
       showQuestion(rearranged[currentQuestionNumber]);
     }
-  }, 1000);
+  }, 1250);
 }
 
 /** Error Handling */
