@@ -126,10 +126,9 @@ nav {
 
 #answer-buttons {
   display: grid;
-  grid-template-columns: repeat(1, 250px);
+  grid-template-columns: repeat(1, 1fr);
   justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px;
 }
 
 #answer1,
@@ -149,11 +148,6 @@ nav {
   border-color: var(--khaki)!important;
   border-width: 2px!important;
   color: var(--white) !important;
-}
-
-.incorrect {
-  border-color: var(--red);
-  border-width: 2px;
 }
 
 /* Quiz setup */
@@ -224,11 +218,12 @@ h2 {
 /* Question section */
 #question-section,
 #results-section {
-  border: 2px solid var(--dark-green) !important;
-  background-color: var(--light-green);
-  border-radius: 30px;
-  margin: 20vh 20vw;
-  height: 300px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--dark-green) !important;
+    background-color: var(--light-green);
+    border-radius: 30px;
+    margin: 20vh 20vw;
 }
 
 #question-number {
@@ -244,6 +239,16 @@ h2 {
 .fa-solid.fa-xmark {
   color: var(--red);
   font-size: large;
+  margin-left: 5px;
+}
+
+#correct-answers {
+    margin-right: 5px;
+}
+
+#question,
+#timer {
+    margin-top: 10px;
 }
 
 /* Results section */
@@ -360,7 +365,7 @@ h2 {
   }
 
   #answer-buttons {
-    grid-template-columns: repeat(2, 215px);
+    grid-template-columns: repeat(2, 210px);
   }
 }
 
@@ -379,6 +384,7 @@ h2 {
 
   #answer-buttons {
     grid-template-columns: repeat(2, 275px);
+    margin-bottom: 30px;
   }
 }
 

@@ -19,6 +19,8 @@ let selectedDifficulty = null;
 let rearranged = [];
 let currentQuestionNumber = 0;
 let questionNumberDisplay = 0;
+let correctScore = 0;
+let incorrectScore = 0;
 
 /** Hide/show sections */
 const hideSection = (section) => section.classList.add("hide");
@@ -66,18 +68,18 @@ function getQuestions() {
 
 /** Loader */
 function loader() {
-    hideSection(playerSectionRef);
-    hideSection(quizContainerRef);
-    showSection(loaderRef);
+  hideSection(playerSectionRef);
+  hideSection(quizContainerRef);
+  showSection(loaderRef);
 }
 
 /** Display Quiz Area */
 function setQuizArea() {
-    setTimeout(() => {
+  setTimeout(() => {
     hideSection(loaderRef);
     showSection(questionSectionRef);
-    }, 100
-)}
+  }, 100);
+}
 
 /** Display question and randomised answers */
 function showQuestion(currentQuestion) {
@@ -94,7 +96,7 @@ function showQuestion(currentQuestion) {
 /** Handle clicking of answers */
 /** Set selected and correct answer */
 function answerClickHandling(event) {
-    answerButtonsRef.forEach((button) => (button.disabled = true));
+  answerButtonsRef.forEach((button) => (button.disabled = true));
   let selectedAnswer = event.target.innerText;
   const correctAnswer = rearranged[currentQuestionNumber].correct_answer;
   const correctButton = answerButtonsRef.find(
@@ -104,8 +106,12 @@ function answerClickHandling(event) {
   /** Highlight correct/incorrect answers */
   if (selectedAnswer === correctAnswer) {
     event.target.style.backgroundColor = "green";
+    correctScore ++;
+    document.getElementById("correct-answers").innerText = correctScore;
   } else {
     event.target.style.backgroundColor = "red";
+    incorrectScore ++;
+    document.getElementById("incorrect-answers").innerText = incorrectScore;
 
     if (correctButton) correctButton.style.backgroundColor = "green";
   }
@@ -116,7 +122,7 @@ function answerClickHandling(event) {
     if (currentQuestionNumber > 9) {
       endQuiz();
     } else {
-        answerButtonsRef.forEach((button) => (button.disabled = false));
+      answerButtonsRef.forEach((button) => (button.disabled = false));
       showQuestion(rearranged[currentQuestionNumber]);
     }
   }, 1250);
@@ -142,7 +148,7 @@ function startQuiz() {
     loader();
     getQuestions().then((apiData) => {
       rearranged = rearrangeAnswers(apiData.results);
-    setQuizArea();
+      setQuizArea();
       showQuestion(rearranged[currentQuestionNumber]);
       answerButtonsRef.forEach((button) => {
         button.removeEventListener("click", answerClickHandling);
