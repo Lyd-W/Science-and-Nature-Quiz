@@ -94,6 +94,7 @@ function showQuestion(currentQuestion) {
 /** Handle clicking of answers */
 /** Set selected and correct answer */
 function answerClickHandling(event) {
+    answerButtonsRef.forEach((button) => (button.disabled = true));
   let selectedAnswer = event.target.innerText;
   const correctAnswer = rearranged[currentQuestionNumber].correct_answer;
   const correctButton = answerButtonsRef.find(
@@ -115,6 +116,7 @@ function answerClickHandling(event) {
     if (currentQuestionNumber > 9) {
       endQuiz();
     } else {
+        answerButtonsRef.forEach((button) => (button.disabled = false));
       showQuestion(rearranged[currentQuestionNumber]);
     }
   }, 1250);
