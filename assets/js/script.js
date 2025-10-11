@@ -3,7 +3,7 @@ const quizContainerRef = document.querySelector(".quiz-container");
 const usernameRef = document.querySelector("#username");
 const difficultyButtonRef = Array.from(document.querySelectorAll(".btn-difficulty"));
 const startButtonRef = document.querySelector(".start-button");
-const loading = document.querySelector("loading"); /** to be added */
+const loaderRef = document.querySelector("#loader");
 const questionSectionRef = document.querySelector("#question-section");
 const scoreboardRef = document.querySelector("#scoreboard"); /** not yet used */
 const scoreSection = document.querySelector("#score-section"); /** not yet in html or js */
@@ -64,12 +64,20 @@ function getQuestions() {
   });
 }
 
+/** Loader */
+function loader() {
+    hideSection(playerSectionRef);
+    hideSection(quizContainerRef);
+    showSection(loaderRef);
+}
+
 /** Display Quiz Area */
 function setQuizArea() {
-  hideSection(playerSectionRef);
-  hideSection(quizContainerRef);
-  showSection(questionSectionRef);
-}
+    setTimeout(() => {
+    hideSection(loaderRef);
+    showSection(questionSectionRef);
+    }, 100
+)}
 
 /** Display question and randomised answers */
 function showQuestion(currentQuestion) {
@@ -129,9 +137,10 @@ function endQuiz() {
 /** Flow to manage quiz section */
 function startQuiz() {
   try {
-    setQuizArea();
+    loader();
     getQuestions().then((apiData) => {
       rearranged = rearrangeAnswers(apiData.results);
+    setQuizArea();
       showQuestion(rearranged[currentQuestionNumber]);
       answerButtonsRef.forEach((button) => {
         button.removeEventListener("click", answerClickHandling);

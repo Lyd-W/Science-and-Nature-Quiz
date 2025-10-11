@@ -189,6 +189,38 @@ h2 {
   margin-top: 5px;
 }
 
+/* Loader */
+#loader {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #76896e !important;
+    background-color: #bec7bc;
+    border-radius: 30px;
+    margin: 20vh 20vw;
+    height: 300px;
+    font-size: large;
+}
+
+#loader-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 20px solid #76896E;
+    border-top: 20px solid #BCB7A4;
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 /* Question section */
 #question-section,
 #results-section {
