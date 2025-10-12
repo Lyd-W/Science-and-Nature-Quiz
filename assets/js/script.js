@@ -9,7 +9,7 @@ const timerRef = document.querySelector("#timer"); /** not yet used */
 const secondsRef = document.querySelector("#seconds"); /** not yet used */
 const answerButtonsRef = Array.from(document.querySelectorAll(".btn-a"));
 const resultsSectionRef = document.querySelector("#results-section");
-const newGameRef = document.querySelector("#new-game-button"); /** not yet used */
+const newGameRef = document.querySelector("#new-game-button");
 
 let selectedDifficulty = null;
 let rearranged = [];
@@ -138,6 +138,17 @@ function endQuiz() {
   showSection(resultsSectionRef);
   document.getElementById("final-score").innerText = correctScore;
 }
+
+/** New game */
+function startNewGame() {
+        hideSection(resultsSectionRef);
+        showSection(playerSectionRef);
+        showSection(quizContainerRef);
+}
+
+newGameRef.addEventListener("click", (event) => {
+    startNewGame();
+})
 
 /** Flow to manage quiz section */
 function startQuiz() {
