@@ -140,6 +140,7 @@ function errorHandling(message) {
 function endQuiz() {
   hideSection(questionSectionRef);
   showSection(resultsSectionRef);
+  document.getElementById("final-score").innerText = correctScore;
 }
 
 /** Flow to manage quiz section */

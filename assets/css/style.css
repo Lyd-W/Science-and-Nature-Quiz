@@ -139,7 +139,9 @@ nav {
 }
 
 #new-game-button {
-  margin-top: 10px;
+    display: inline-block;
+    margin: 20px auto;
+    width: auto;
 }
 
 .btn-difficulty.active,
