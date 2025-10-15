@@ -1,6 +1,6 @@
 # Science and Nature Quiz
 
-[Science and Nature Quiz](*website link to be added* "Science and Nature Quiz Homepage")
+[Science and Nature Quiz](https://lyd-w.github.io/Science-and-Nature-Quiz/ "Science and Nature Quiz Homepage")
 
 The Science and Nature Quiz is a great way for science and nature enthusiasts to test their knowledge in a fun way, it has three difficulty levels so it's also suited for students, parents, educators and the general public to challenge themselves, as well as offering the potential to learn something new. The website includes instructions on how to take part in the quiz and gives users the opportunity to contact the website to leave feedback, identify issues or with general enquires. The website has been designed to offer a smooth and responsive experience, focusing on providing an enjoyable user experience across multiple devices.
 
