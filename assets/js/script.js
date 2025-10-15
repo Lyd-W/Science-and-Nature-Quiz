@@ -141,9 +141,35 @@ function endQuiz() {
 
 /** New game */
 function startNewGame() {
+    /** Return to Player Set Up Section */
         hideSection(resultsSectionRef);
         showSection(playerSectionRef);
         showSection(quizContainerRef);
+        document.getElementById("username").value = "";
+
+        /** Reset difficulty button state */
+        difficultyButtonRef.forEach((button) => button.classList.remove("active"));
+
+        /** Reset Answer button state */
+        answerButtonsRef.forEach((button) => {
+            button.disabled = false;
+            button.style.backgroundColor = "";
+            button.innerText = "";
+        })
+
+        /** Reset Variables */
+        currentQuestionNumber = 0;
+        correctScore = 0;
+        incorrectScore = 0;
+        selectedDifficulty = null;
+        rearranged = [];
+        questionNumberDisplay = 0;
+
+        /** Reset display of variables */
+        document.getElementById("correct-answers").innerText = 0;
+        document.getElementById("incorrect-answers").innerText = 0;
+        document.getElementById("question-number").innerText = "";
+        document.getElementById("question").innerText = "";
 }
 
 newGameRef.addEventListener("click", (event) => {
