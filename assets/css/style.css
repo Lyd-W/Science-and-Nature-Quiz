@@ -3,19 +3,19 @@
 
 /* CSS variables */
 :root {
-  --khaki: #BCB7A4;
-  --light-green: #BEC7BC;
-  --dark-green: #76896E;
-  --black: #000000;
-  --white: #FFFFFF;
+  --primary: #BCB7A4;
+  --secondary: #BEC7BC;
+  --highlight: #76896E;
+  --text-dark: #000000;
+  --text-light: #FFFFFF;
 
-  --green: #2E6F40; /* for correct answers */
-  --red: #C20303; /* for incorrect answers */
+  --correct: #2E6F40;
+  --incorrect: #C20303;
 }
 
 /* Global styles */
 body {
-  background-color: var(--khaki);
+  background-color: var(--primary);
   background-image: url("../images/background.jpg");
   background-size: cover;
 }
@@ -26,11 +26,11 @@ body {
 
 /* Navbar */
 nav {
-  border-bottom: 2px solid var(--dark-green) !important;
+  border-bottom: 2px solid var(--highlight) !important;
 }
 
 #navbar {
-  background-color: var(--khaki);
+  background-color: var(--primary);
   border: 10px black;
 }
 
@@ -43,16 +43,16 @@ nav {
 }
 
 .navbar-brand {
-  color: var(--black);
+  color: var(--text-dark);
   font-size: xx-large;
   font-weight: bold;
 }
 
 .dropdown-menu {
   min-width: 300px;
-  background-color: var(--light-green);
-  color: var(--black);
-  border-color: var(--dark-green);
+  background-color: var(--secondary);
+  color: var(--text-dark);
+  border-color: var(--highlight);
   border-width: 2px;
   --bs-dropdown-link-hover-bg: none;
 }
@@ -72,10 +72,10 @@ nav {
 #answer3,
 #answer4,
 #new-game-button {
-  border-color: var(--dark-green);
+  border-color: var(--highlight);
   border-width: 2px;
-  background-color: var(--khaki);
-  color: var(--black);
+  background-color: var(--primary);
+  color: var(--text-dark);
 }
 
 .custom-button-outline:hover,
@@ -89,18 +89,18 @@ nav {
 #answer3:hover,
 #answer4:hover,
 #new-game-button:hover {
-  background-color: var(--dark-green);
-  border-color: var(--khaki);
+  background-color: var(--highlight);
+  border-color: var(--primary);
   border-width: 2px;
-  color: var(--white);
+  color: var(--text-light);
 }
 
 #instructions-button,
 #contact-button {
-  border-color: var(--dark-green);
+  border-color: var(--highlight);
   border-width: 2px;
-  background-color: var(--light-green);
-  color: var(--black);
+  background-color: var(--secondary);
+  color: var(--text-dark);
 }
 
 .btn-outline-secondary,
@@ -109,10 +109,10 @@ nav {
 }
 
 .btn-secondary {
-  --bs-btn-bg: var(--light-green);
-  color: var(--black);
-  --bs-btn-hover-bg: var(--dark-green);
-  --bs-btn-active-bg: var(--dark-green);
+  --bs-btn-bg: var(--secondary);
+  color: var(--text-dark);
+  --bs-btn-hover-bg: var(--highlight);
+  --bs-btn-active-bg: var(--highlight);
   border-width: 2px;
 }
 
@@ -146,25 +146,25 @@ nav {
 
 .btn-difficulty.active,
 .btn.selectedAnswer {
-  background-color: var(--dark-green) !important;
-  border-color: var(--khaki)!important;
+  background-color: var(--highlight) !important;
+  border-color: var(--primary)!important;
   border-width: 2px!important;
-  color: var(--white) !important;
+  color: var(--text-light) !important;
 }
 
 /* Quiz setup */
 .quiz-container {
-  border: 2px solid var(--dark-green) !important;
+  border: 2px solid var(--highlight) !important;
   display: flex;
   flex-direction: column;
-  background-color: var(--light-green);
+  background-color: var(--secondary);
   border-radius: 30px;
   margin: 20vh 20vw;
   height: 300px;
 }
 
 #username {
-  border-color: var(--dark-green);
+  border-color: var(--highlight);
   border-width: 2px;
   margin: 10px 0 10px 0;
 }
@@ -191,8 +191,8 @@ h2 {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    border: 2px solid var(--dark-green) !important;
-    background-color: var(--light-green);
+    border: 2px solid var(--highlight) !important;
+    background-color: var(--secondary);
     border-radius: 30px;
     margin: 20vh 20vw;
     height: 300px;
@@ -203,8 +203,8 @@ h2 {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    border: 20px solid var(--dark-green);
-    border-top: 20px solid var(--khaki);
+    border: 20px solid var(--highlight);
+    border-top: 20px solid var(--primary);
     animation: spin 3s linear infinite;
 }
 
@@ -222,8 +222,8 @@ h2 {
 #results-section {
     display: flex;
     flex-direction: column;
-    border: 2px solid var(--dark-green) !important;
-    background-color: var(--light-green);
+    border: 2px solid var(--highlight) !important;
+    background-color: var(--secondary);
     border-radius: 30px;
     margin: 20vh 20vw;
 }
@@ -234,12 +234,12 @@ h2 {
 }
 
 .fa-solid.fa-check {
-  color: var(--green);
+  color: var(--correct);
   font-size: large;
 }
 
 .fa-solid.fa-xmark {
-  color: var(--red);
+  color: var(--incorrect);
   font-size: large;
   margin-left: 5px;
 }
@@ -261,8 +261,8 @@ h2 {
 
 /* Submission page */
 .submission-container {
-  border: 2px solid var(--dark-green) !important;
-  background-color: var(--light-green);
+  border: 2px solid var(--highlight) !important;
+  background-color: var(--secondary);
   border-radius: 30px;
   margin: 20vh 20vw;
   height: 200px;
@@ -273,11 +273,11 @@ h2 {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  border-top: 2px solid var(--dark-green) !important;
+  border-top: 2px solid var(--highlight) !important;
 }
 
 .footer-column {
-  background-color: var(--khaki);
+  background-color: var(--primary);
   flex: 1;
   padding: 15px;
   width: 33.33%;
@@ -286,7 +286,7 @@ h2 {
 
 .footer-column i {
   font-size: xx-large;
-  color: var(--black);
+  color: var(--text-dark);
 }
 
 /* Media queries */

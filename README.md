@@ -131,18 +131,18 @@ I then used [Contrast Grid](https://contrast-grid.eightshapes.com/?version=1.1.0
 
 |CSS Name               |HEX          |Use
 |-----------------------|-------------|------------------------------------------------|
-| --khaki | #BCB7A4 | Background colour
-| --light-green | #BEC7BC | Button background colour |
-| --dark-green | #79896E | Button borders |
-| --black | #000000 | Text colour |
-| --white | #FFFFFF |  Highlighting, button hover |
+| --primary | #BCB7A4 | Website background colour and buttons |
+| --secondary | #BEC7BC | Section background colour for instructions, contact and quiz  |
+| --highlight | #79896E | Button hover and borders |
+| --text-dark | #000000 | Primary text colour |
+| --text-light | #FFFFFF | Secondary text colour |
 
 Other required colours:
 
 |CSS Name               |HEX          |Use
 |-----------------------|-------------|------------------------------------------------|
-| --red | #FF0000 | Incorrect answers |
-| --green | #2E6F40 | Correct answers |
+| --incorrect | #FF0000 | Incorrect answers |
+| --correct | #2E6F40 | Correct answers |
 
 ### Images
 
