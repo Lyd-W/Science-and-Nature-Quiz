@@ -18,11 +18,15 @@ let questionNumberDisplay = 0;
 let correctScore = 0;
 let incorrectScore = 0;
 
-/** Hide/show sections */
+/** 
+ * Hides/shows sections 
+ */
 const hideSection = (section) => section.classList.add("hide");
 const showSection = (section) => section.classList.remove("hide");
 
-/** Set question difficulty */
+/** 
+ * Sets question difficulty 
+ */
 difficultyButtonRef.forEach((button) => {
   button.addEventListener("click", (event) => {
     event.preventDefault();
@@ -32,7 +36,9 @@ difficultyButtonRef.forEach((button) => {
   });
 });
 
-/** Rearrange answer order to random */
+/** 
+ * Randomises answer order
+ */
 function rearrangeAnswers(results) {
   return results.map((apiQuestion) => {
     const answers = [
@@ -50,7 +56,10 @@ function rearrangeAnswers(results) {
   });
 }
 
-/** Fetch API data */
+/** 
+ * Fetches data from OpenTDB 
+ * @returns questions from API
+ */
 function getQuestions() {
   return fetch(
     `https://opentdb.com/api.php?amount=10&category=17&difficulty=${selectedDifficulty}&type=multiple`
@@ -62,14 +71,18 @@ function getQuestions() {
   });
 }
 
-/** Loader */
+/**
+ * Shows a loading animation
+*/
 function loader() {
   hideSection(playerSectionRef);
   hideSection(quizContainerRef);
   showSection(loaderRef);
 }
 
-/** Display Quiz Area */
+/** 
+ * Displays quiz area 
+ */
 function setQuizArea() {
   setTimeout(() => {
     hideSection(loaderRef);
@@ -77,7 +90,9 @@ function setQuizArea() {
   }, 100);
 }
 
-/** Display question and randomised answers */
+/** 
+ * Displays question with randomised answers 
+ */
 function showQuestion(currentQuestion) {
   answerButtonsRef.forEach((button) => (button.style.backgroundColor = ""));
   document.getElementById("question-number").innerText =
@@ -90,7 +105,9 @@ function showQuestion(currentQuestion) {
 }
 
 /** Handle clicking of answers */
-/** Set selected and correct answer */
+/** 
+ * Identifies selected and correct answer
+ */
 function answerClickHandling(event) {
   answerButtonsRef.forEach((button) => (button.disabled = true));
   let selectedAnswer = event.target.innerText;
@@ -99,7 +116,10 @@ function answerClickHandling(event) {
     (button) => button.innerText === correctAnswer
   );
 
-  /** Highlight correct/incorrect answers */
+  /** 
+   * Green highlight for correct answers
+   * Red highlight for incorrect answers
+   */
   if (selectedAnswer === correctAnswer) {
     event.target.style.backgroundColor = "green";
     correctScore ++;
@@ -112,7 +132,11 @@ function answerClickHandling(event) {
     if (correctButton) correctButton.style.backgroundColor = "green";
   }
 
-  /** Increase Question Number by 1, display next question after 1 second delay. End quiz after 10 questions*/
+  /** 
+   * Increases question number by 1 
+   * Displays next question after a 1.25 second delay 
+   * Ends the quiz after question 10
+   */
   setTimeout(() => {
     currentQuestionNumber++;
     if (currentQuestionNumber > 9) {
@@ -124,7 +148,9 @@ function answerClickHandling(event) {
   }, 1250);
 }
 
-/** Error Handling */
+/** 
+ * Error handling message
+ */
 function errorHandling(message) {
   alert(
     "Questions could not be loaded at this time. Please try again later.",
@@ -132,32 +158,32 @@ function errorHandling(message) {
   );
 }
 
-/** Display Results Section */
+/** 
+ * Displays the final results section 
+ */
 function endQuiz() {
   hideSection(questionSectionRef);
   showSection(resultsSectionRef);
   document.getElementById("final-score").innerText = correctScore;
 }
 
-/** New game */
+/** 
+ * Starts new game process 
+ */
 function startNewGame() {
-    /** Return to Player Set Up Section */
         hideSection(resultsSectionRef);
         showSection(playerSectionRef);
         showSection(quizContainerRef);
         document.getElementById("username").value = "";
 
-        /** Reset difficulty button state */
         difficultyButtonRef.forEach((button) => button.classList.remove("active"));
 
-        /** Reset Answer button state */
         answerButtonsRef.forEach((button) => {
             button.disabled = false;
             button.style.backgroundColor = "";
             button.innerText = "";
         })
 
-        /** Reset Variables */
         currentQuestionNumber = 0;
         correctScore = 0;
         incorrectScore = 0;
@@ -165,7 +191,6 @@ function startNewGame() {
         rearranged = [];
         questionNumberDisplay = 0;
 
-        /** Reset display of variables */
         document.getElementById("correct-answers").innerText = 0;
         document.getElementById("incorrect-answers").innerText = 0;
         document.getElementById("question-number").innerText = "";
@@ -176,7 +201,9 @@ newGameRef.addEventListener("click", (event) => {
     startNewGame();
 })
 
-/** Flow to manage quiz section */
+/** 
+ * Orders quiz functions 
+ */
 function startQuiz() {
   try {
     loader();
@@ -194,7 +221,9 @@ function startQuiz() {
   }
 }
 
-/** Run quiz when start button is clicked */
+/** 
+ * Runs quiz when start button is clicked 
+ */
 startButtonRef.addEventListener("click", (event) => {
   event.preventDefault();
   if (usernameRef.value !== "" && selectedDifficulty !== null) {
