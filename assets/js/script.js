@@ -5,8 +5,13 @@ const difficultyButtonRef = Array.from(document.querySelectorAll(".btn-difficult
 const startButtonRef = document.querySelector(".start-button");
 const loaderRef = document.querySelector("#loader");
 const questionSectionRef = document.querySelector("#question-section");
+const questionRef = document.querySelector ("#question");
+const questionNumberRef = document.querySelector ("#question-number");
 const answerButtonsRef = Array.from(document.querySelectorAll(".btn-a"));
+const correctAnswersRef = document.querySelector ("#correct-answers")
+const incorrectAnswersRef = document.querySelector("#incorrect-answers")
 const resultsSectionRef = document.querySelector("#results-section");
+const finalScoreRef = document.querySelector("#final-score");
 const newGameRef = document.querySelector("#new-game-button");
 
 let selectedDifficulty = null;
@@ -92,14 +97,11 @@ function setQuizArea() {
  * Displays question with randomised answers 
  */
 function showQuestion(currentQuestion) {
-  answerButtonsRef.forEach((button) => (button.style.backgroundColor = ""));
-  document.getElementById("question-number").innerText =
-    "Question " + ++questionNumberDisplay;
-  document.getElementById("question").innerText = currentQuestion.question;
-  document.getElementById("answer1").innerText = currentQuestion.answers[0];
-  document.getElementById("answer2").innerText = currentQuestion.answers[1];
-  document.getElementById("answer3").innerText = currentQuestion.answers[2];
-  document.getElementById("answer4").innerText = currentQuestion.answers[3];
+  questionNumberRef.innerText = `Question ${++questionNumberDisplay}`;
+  questionRef.innerText = currentQuestion.question;
+  answerButtonsRef.forEach((button, index) => {button.style.backgroundColor = "";
+  button.innerText = currentQuestion.answers[index];
+  });
 }
 
 /** Handle clicking of answers */
@@ -121,13 +123,12 @@ function answerClickHandling(event) {
   if (selectedAnswer === correctAnswer) {
     event.target.style.backgroundColor = "green";
     correctScore ++;
-    document.getElementById("correct-answers").innerText = correctScore;
+    correctAnswersRef.innerText = correctScore;
   } else {
     event.target.style.backgroundColor = "red";
     incorrectScore ++;
-    document.getElementById("incorrect-answers").innerText = incorrectScore;
-
-    if (correctButton) correctButton.style.backgroundColor = "green";
+   incorrectAnswersRef.innerText = incorrectScore;
+   correctButton.style.backgroundColor = "green";
   }
 
   /** 
@@ -162,7 +163,7 @@ function errorHandling(message) {
 function endQuiz() {
   hideSection(questionSectionRef);
   showSection(resultsSectionRef);
-  document.getElementById("final-score").innerText = correctScore;
+  finalScoreRef.innerText = correctScore;
 }
 
 /** 
@@ -172,7 +173,7 @@ function startNewGame() {
         hideSection(resultsSectionRef);
         showSection(playerSectionRef);
         showSection(quizContainerRef);
-        document.getElementById("username").value = "";
+        usernameRef.value = "";
 
         difficultyButtonRef.forEach((button) => button.classList.remove("active"));
 
@@ -189,10 +190,10 @@ function startNewGame() {
         rearranged = [];
         questionNumberDisplay = 0;
 
-        document.getElementById("correct-answers").innerText = 0;
-        document.getElementById("incorrect-answers").innerText = 0;
-        document.getElementById("question-number").innerText = "";
-        document.getElementById("question").innerText = "";
+        correctAnswersRef.innerText = 0;
+        incorrectAnswersRef.innerText = 0;
+        questionNumberRef.innerText = "";
+        questionRef.innerText = "";
 }
 
 newGameRef.addEventListener("click", (event) => {
