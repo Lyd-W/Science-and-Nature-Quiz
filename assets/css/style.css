@@ -1,4 +1,3 @@
-/* Google font import */
 @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
 
 /* CSS variables */
@@ -20,15 +19,20 @@ body {
   background-size: cover;
 }
 
+h2 {
+  margin-top: 20px;
+  font-size: large;
+}
+
+nav {
+    border-bottom: 2px solid var(--highlight) !important;
+  }
+
 .hide {
   display: none !important;
 }
 
 /* Navbar */
-nav {
-  border-bottom: 2px solid var(--highlight) !important;
-}
-
 #navbar {
   background-color: var(--primary);
   border: 10px black;
@@ -173,11 +177,6 @@ nav {
 #username,
 #select-difficulty,
 #success-paragraph {
-  font-size: large;
-}
-
-h2 {
-  margin-top: 20px;
   font-size: large;
 }
 
