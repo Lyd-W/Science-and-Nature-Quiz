@@ -112,7 +112,7 @@ function showQuestion(currentQuestion) {
  * Starts 30s second timer
  */
 function startTimer() {
-    setTimeout(noAnswer, 5000)   
+    setTimeout(noAnswer, 30000)   
    }
 
 /** Handle clicking of answers */
@@ -162,9 +162,10 @@ function answerClickHandling(event) {
  * Handles no answer selected
  */
 function noAnswer() {
-    const correctAnswer = rearranged[currentQuestionNumber].correct_answer;
+  answerButtonsRef.forEach((button) => (button.disabled = true));
+  const correctAnswer = rearranged[currentQuestionNumber].correct_answer;
   const correctButton = answerButtonsRef.find(
-    (button) => button.innerText === correctAnswer
+  (button) => button.innerText === correctAnswer
   );
   correctButton.style.backgroundColor = "green"; 
   incorrectScore ++;
