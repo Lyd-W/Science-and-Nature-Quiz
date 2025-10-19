@@ -99,32 +99,26 @@ function setQuizArea() {
  */
 function showQuestion(currentQuestion) {
   clearTimeout(timer);
+  resetListeners();
   questionNumberRef.innerText = `Question ${++questionNumberDisplay}`;
   questionRef.innerText = currentQuestion.question;
   answerButtonsRef.forEach((button, index) => {button.style.backgroundColor = "";
   button.innerText = currentQuestion.answers[index];
   });
-  timer = setTimeout(() => 
-  startTimer()
-)}
-
-/**
- * Starts 30s second timer
- */
-function startTimer() {
-    setTimeout(noAnswer, 30000)   
-   }
+  timer = setTimeout(noAnswer, 30000);
+}
 
 /** Handle clicking of answers */
 /** 
  * Identifies selected and correct answer
  */
 function answerClickHandling(event) {
+  clearTimeout(timer);
   answerButtonsRef.forEach((button) => (button.disabled = true));
   let selectedAnswer = event.target.innerText;
   const correctAnswer = rearranged[currentQuestionNumber].correct_answer;
   const correctButton = answerButtonsRef.find(
-    (button) => button.innerText === correctAnswer
+  (button) => button.innerText === correctAnswer
   );
 
   /** 
@@ -162,6 +156,7 @@ function answerClickHandling(event) {
  * Handles no answer selected
  */
 function noAnswer() {
+  clearTimeout(timer);
   answerButtonsRef.forEach((button) => (button.disabled = true));
   const correctAnswer = rearranged[currentQuestionNumber].correct_answer;
   const correctButton = answerButtonsRef.find(
@@ -180,6 +175,16 @@ function noAnswer() {
       showQuestion(rearranged[currentQuestionNumber]);
     }
   }, 1250);
+}
+
+/**
+ * Reset event listeners
+ */
+function resetListeners() {
+answerButtonsRef.forEach((button) => {
+        button.removeEventListener("click", answerClickHandling);
+        button.addEventListener("click", answerClickHandling);
+});
 }
 
 /** 
@@ -245,12 +250,9 @@ function startQuiz() {
       rearranged = rearrangeAnswers(apiData.results);
       setQuizArea();
       showQuestion(rearranged[currentQuestionNumber]);
-      answerButtonsRef.forEach((button) => {
-        button.removeEventListener("click", answerClickHandling);
-        button.addEventListener("click", answerClickHandling);
       });
-    });
-  } catch (error) {
+    }
+   catch (error) {
     errorHandling(error.message);
   }
 }
