@@ -20,6 +20,7 @@ let currentQuestionNumber = 0;
 let questionNumberDisplay = 0;
 let correctScore = 0;
 let incorrectScore = 0;
+let timer;
 
 /** 
  * Hides/shows sections 
@@ -97,12 +98,22 @@ function setQuizArea() {
  * Displays question with randomised answers 
  */
 function showQuestion(currentQuestion) {
+  clearTimeout(timer);
   questionNumberRef.innerText = `Question ${++questionNumberDisplay}`;
   questionRef.innerText = currentQuestion.question;
   answerButtonsRef.forEach((button, index) => {button.style.backgroundColor = "";
   button.innerText = currentQuestion.answers[index];
   });
-}
+  timer = setTimeout(() => 
+  startTimer()
+)}
+
+/**
+ * Starts 30s second timer
+ */
+function startTimer() {
+    setTimeout(noAnswer, 5000)   
+   }
 
 /** Handle clicking of answers */
 /** 
@@ -127,8 +138,8 @@ function answerClickHandling(event) {
   } else {
     event.target.style.backgroundColor = "red";
     incorrectScore ++;
-   incorrectAnswersRef.innerText = incorrectScore;
-   correctButton.style.backgroundColor = "green";
+    incorrectAnswersRef.innerText = incorrectScore;
+    correctButton.style.backgroundColor = "green"; 
   }
 
   /** 
@@ -136,6 +147,29 @@ function answerClickHandling(event) {
    * Displays next question after a 1.25 second delay 
    * Ends the quiz after question 10
    */
+  setTimeout(() => {
+    currentQuestionNumber++;
+    if (currentQuestionNumber > 9) {
+      endQuiz();
+    } else {
+      answerButtonsRef.forEach((button) => (button.disabled = false));
+      showQuestion(rearranged[currentQuestionNumber]);
+    }
+  }, 1250);
+}
+
+/**
+ * Handles no answer selected
+ */
+function noAnswer() {
+    const correctAnswer = rearranged[currentQuestionNumber].correct_answer;
+  const correctButton = answerButtonsRef.find(
+    (button) => button.innerText === correctAnswer
+  );
+  correctButton.style.backgroundColor = "green"; 
+  incorrectScore ++;
+  incorrectAnswersRef.innerText = incorrectScore;
+
   setTimeout(() => {
     currentQuestionNumber++;
     if (currentQuestionNumber > 9) {
