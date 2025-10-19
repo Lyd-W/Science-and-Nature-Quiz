@@ -1,8 +1,8 @@
 const playerSectionRef = document.querySelector("#setup-section");
 const quizContainerRef = document.querySelector(".quiz-container");
+const playerFormRef = document.querySelector("#player-info")
 const usernameRef = document.querySelector("#username");
 const difficultyButtonRef = Array.from(document.querySelectorAll(".btn-difficulty"));
-const startButtonRef = document.querySelector(".start-button");
 const loaderRef = document.querySelector("#loader");
 const questionSectionRef = document.querySelector("#question-section");
 const questionRef = document.querySelector ("#question");
@@ -275,7 +275,7 @@ function startQuiz() {
 /** 
  * Runs quiz when start button is clicked 
  */
-startButtonRef.addEventListener("click", (event) => {
+playerFormRef.addEventListener("submit", (event) => {
   event.preventDefault();
   if (usernameRef.value !== "" && selectedDifficulty !== null) {
     startQuiz();
