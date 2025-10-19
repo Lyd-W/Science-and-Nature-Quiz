@@ -25,7 +25,7 @@ let questionNumberDisplay = 0;
 let correctScore = 0;
 let incorrectScore = 0;
 let timer;
-let timeRemaining = 30;
+let timeRemaining = 20;
 
 /**
  * Prevents contact form default behaviour to allow missing fields to be indicated
@@ -123,7 +123,7 @@ function setQuizArea() {
 function showQuestion(currentQuestion) {
   clearInterval(timer)
   resetListeners();
-  timeRemaining = 30;
+  timeRemaining = 20;
   secondsRef.innerText = timeRemaining;
   questionNumberRef.innerText = `Question ${++questionNumberDisplay}`;
   questionRef.innerText = currentQuestion.question;
@@ -254,7 +254,7 @@ function resetDisplay() {
     incorrectScore = 0;
     rearranged = [];
     questionNumberDisplay = 0;
-    timeRemaining = 30;
+    timeRemaining = 20;
 
     correctAnswersRef.innerText = 0;
     incorrectAnswersRef.innerText = 0;
