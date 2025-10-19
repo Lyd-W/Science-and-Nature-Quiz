@@ -293,7 +293,14 @@ function startQuiz() {
  */
 playerFormRef.addEventListener("submit", (event) => {
   event.preventDefault();
-  if (usernameRef.value !== "" && selectedDifficulty !== null) {
+  if (!selectedDifficulty) {
+    alert("Please select a difficulty level.");
+    return
+  }
+  if (!playerFormRef.checkValidity()) {
+    playerFormRef.reportValidity();
+    return;
+  }
     startQuiz();
   }
-});
+);
