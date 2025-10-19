@@ -1,6 +1,8 @@
 const playerSectionRef = document.querySelector("#setup-section");
+const contactFormRef = document.querySelector("#contact-dropdown");
+const sendButtonRef = document.querySelector("#send-button");
 const quizContainerRef = document.querySelector(".quiz-container");
-const playerFormRef = document.querySelector("#player-info")
+const playerFormRef = document.querySelector("#player-info");
 const usernameRef = document.querySelector("#username");
 const difficultyButtonRef = Array.from(document.querySelectorAll(".btn-difficulty"));
 const loaderRef = document.querySelector("#loader");
@@ -23,6 +25,20 @@ let correctScore = 0;
 let incorrectScore = 0;
 let timer;
 let timeRemaining = 30;
+
+/**
+ * Prevents contact form default behaviour to allow missing fields to be indicated
+ */
+sendButtonRef.addEventListener("click", (event) => {
+    event.stopPropagation();
+})
+contactFormRef.addEventListener("submit", (event) => {
+    if (!contactFormRef.checkValidity()) {
+        event.preventDefault();
+        contactFormRef.reportValidity();
+        return;
+    }
+});
 
 /** 
  * Hides/shows sections 
