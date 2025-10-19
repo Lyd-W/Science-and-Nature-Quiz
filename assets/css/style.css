@@ -75,7 +75,8 @@ nav {
 #answer2,
 #answer3,
 #answer4,
-#new-game-button {
+#new-game-button,
+#retry-button {
   border-color: var(--highlight);
   border-width: 2px;
   background-color: var(--primary);
@@ -92,7 +93,8 @@ nav {
 #answer2:hover,
 #answer3:hover,
 #answer4:hover,
-#new-game-button:hover {
+#new-game-button:hover,
+#retry-button:hover {
   background-color: var(--highlight);
   border-color: var(--primary);
   border-width: 2px;
@@ -142,9 +144,10 @@ nav {
   margin: 3px 3px 3px 3px;
 }
 
-#new-game-button {
+#new-game-button,
+#retry-button {
     display: inline-block;
-    margin: 20px auto;
+    margin: 10px auto 10px auto;
     width: auto;
 }
 

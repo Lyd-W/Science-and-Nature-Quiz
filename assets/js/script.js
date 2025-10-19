@@ -16,6 +16,7 @@ const secondsRef = document.querySelector("#seconds");
 const resultsSectionRef = document.querySelector("#results-section");
 const finalScoreRef = document.querySelector("#final-score");
 const newGameRef = document.querySelector("#new-game-button");
+const retryRef = document.querySelector("#retry-button")
 
 let selectedDifficulty = null;
 let rearranged = [];
@@ -38,6 +39,10 @@ contactFormRef.addEventListener("submit", (event) => {
         contactFormRef.reportValidity();
         return;
     }
+});
+
+contactFormRef.addEventListener("click", (event) => {
+event.stopPropagation()
 });
 
 /** 
@@ -228,9 +233,35 @@ function errorHandling(message) {
  * Displays the final results section 
  */
 function endQuiz() {
+    clearInterval(timer)
   hideSection(questionSectionRef);
   showSection(resultsSectionRef);
   finalScoreRef.innerText = correctScore;
+}
+
+/**
+ * Resets quiz parameters
+ */
+function resetDisplay() {
+    answerButtonsRef.forEach((button) => {
+        button.disabled = false;
+        button.style.backgroundColor = "";
+        button.innerText = "";
+    })
+
+    currentQuestionNumber = 0;
+    correctScore = 0;
+    incorrectScore = 0;
+    rearranged = [];
+    questionNumberDisplay = 0;
+    timeRemaining = 30;
+
+    correctAnswersRef.innerText = 0;
+    incorrectAnswersRef.innerText = 0;
+    questionNumberRef.innerText = "";
+    questionRef.innerText = "";
+    secondsRef.innerText = "";
+    clearInterval(timer);
 }
 
 /** 
@@ -241,34 +272,21 @@ function startNewGame() {
         showSection(playerSectionRef);
         showSection(quizContainerRef);
         usernameRef.value = "";
-
-        difficultyButtonRef.forEach((button) => button.classList.remove("active"));
-
-        answerButtonsRef.forEach((button) => {
-            button.disabled = false;
-            button.style.backgroundColor = "";
-            button.innerText = "";
-        })
-
-        currentQuestionNumber = 0;
-        correctScore = 0;
-        incorrectScore = 0;
         selectedDifficulty = null;
-        rearranged = [];
-        questionNumberDisplay = 0;
-        timeRemaining = 30;
-
-        correctAnswersRef.innerText = 0;
-        incorrectAnswersRef.innerText = 0;
-        questionNumberRef.innerText = "";
-        questionRef.innerText = "";
-        secondsRef.innerText = "";
-        clearInterval(timer);
-
+        difficultyButtonRef.forEach((button) => button.classList.remove("active"));
+        resetDisplay
 }
 
 newGameRef.addEventListener("click", (event) => {
     startNewGame();
+})
+
+/**
+ * Users can retry using their existing details
+ */
+retryRef.addEventListener("click", (event) => {
+    resetDisplay();
+    startQuiz();
 })
 
 /** 
@@ -303,4 +321,4 @@ playerFormRef.addEventListener("submit", (event) => {
   }
     startQuiz();
   }
-);
+)
