@@ -10,6 +10,7 @@ const questionNumberRef = document.querySelector ("#question-number");
 const answerButtonsRef = Array.from(document.querySelectorAll(".btn-a"));
 const correctAnswersRef = document.querySelector ("#correct-answers")
 const incorrectAnswersRef = document.querySelector("#incorrect-answers")
+const secondsRef = document.querySelector("#seconds");
 const resultsSectionRef = document.querySelector("#results-section");
 const finalScoreRef = document.querySelector("#final-score");
 const newGameRef = document.querySelector("#new-game-button");
@@ -21,6 +22,7 @@ let questionNumberDisplay = 0;
 let correctScore = 0;
 let incorrectScore = 0;
 let timer;
+let timeRemaining = 30;
 
 /** 
  * Hides/shows sections 
@@ -98,22 +100,39 @@ function setQuizArea() {
  * Displays question with randomised answers 
  */
 function showQuestion(currentQuestion) {
-  clearTimeout(timer);
+  clearInterval(timer)
   resetListeners();
+  timeRemaining = 30;
+  secondsRef.innerText = timeRemaining;
   questionNumberRef.innerText = `Question ${++questionNumberDisplay}`;
   questionRef.innerText = currentQuestion.question;
   answerButtonsRef.forEach((button, index) => {button.style.backgroundColor = "";
   button.innerText = currentQuestion.answers[index];
   });
-  timer = setTimeout(noAnswer, 30000);
+  startTimer();
 }
 
-/** Handle clicking of answers */
+/**
+ * Starts a countdown timer and updates remaining time
+ */
+function startTimer() {
+    clearInterval(timer);
+    timer = setInterval(() => {
+    secondsRef.innerText = timeRemaining;
+    timeRemaining--;
+    if (timeRemaining < 0){
+        clearInterval(timer);
+        noAnswer();
+      }
+    }, 1000)
+}
+    
+/** Handles clicking of answers */
 /** 
  * Identifies selected and correct answer
  */
 function answerClickHandling(event) {
-  clearTimeout(timer);
+  clearInterval(timer);
   answerButtonsRef.forEach((button) => (button.disabled = true));
   let selectedAnswer = event.target.innerText;
   const correctAnswer = rearranged[currentQuestionNumber].correct_answer;
@@ -135,28 +154,14 @@ function answerClickHandling(event) {
     incorrectAnswersRef.innerText = incorrectScore;
     correctButton.style.backgroundColor = "green"; 
   }
-
-  /** 
-   * Increases question number by 1 
-   * Displays next question after a 1.25 second delay 
-   * Ends the quiz after question 10
-   */
-  setTimeout(() => {
-    currentQuestionNumber++;
-    if (currentQuestionNumber > 9) {
-      endQuiz();
-    } else {
-      answerButtonsRef.forEach((button) => (button.disabled = false));
-      showQuestion(rearranged[currentQuestionNumber]);
-    }
-  }, 1250);
+setTimeout(nextQuestion, 1250);
 }
 
 /**
  * Handles no answer selected
  */
 function noAnswer() {
-  clearTimeout(timer);
+  clearInterval(timer);
   answerButtonsRef.forEach((button) => (button.disabled = true));
   const correctAnswer = rearranged[currentQuestionNumber].correct_answer;
   const correctButton = answerButtonsRef.find(
@@ -165,8 +170,15 @@ function noAnswer() {
   correctButton.style.backgroundColor = "green"; 
   incorrectScore ++;
   incorrectAnswersRef.innerText = incorrectScore;
+  setTimeout(nextQuestion, 1250);
+}
 
-  setTimeout(() => {
+/** 
+   * Increases question number by 1 
+   * Displays next question after a 1.25 second delay 
+   * Ends the quiz after question 10
+   */
+function nextQuestion() {
     currentQuestionNumber++;
     if (currentQuestionNumber > 9) {
       endQuiz();
@@ -174,11 +186,10 @@ function noAnswer() {
       answerButtonsRef.forEach((button) => (button.disabled = false));
       showQuestion(rearranged[currentQuestionNumber]);
     }
-  }, 1250);
 }
 
 /**
- * Reset event listeners
+ * Resets event listeners
  */
 function resetListeners() {
 answerButtonsRef.forEach((button) => {
@@ -229,11 +240,15 @@ function startNewGame() {
         selectedDifficulty = null;
         rearranged = [];
         questionNumberDisplay = 0;
+        timeRemaining = 30;
 
         correctAnswersRef.innerText = 0;
         incorrectAnswersRef.innerText = 0;
         questionNumberRef.innerText = "";
         questionRef.innerText = "";
+        secondsRef.innerText = "";
+        clearInterval(timer);
+
 }
 
 newGameRef.addEventListener("click", (event) => {
