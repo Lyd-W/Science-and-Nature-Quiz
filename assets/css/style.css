@@ -22,6 +22,7 @@ body {
 h2 {
   margin-top: 20px;
   font-size: large;
+  padding: 5px;
 }
 
 nav {
@@ -48,8 +49,16 @@ nav {
 
 .navbar-brand {
   color: var(--text-dark);
-  font-size: xx-large;
+  font-size: 24px;
   font-weight: bold;
+}  
+
+.navbar-nav {
+    flex-direction: row;
+  }
+
+.ms-auto {
+  margin-left: 0 !important;
 }
 
 .dropdown-menu {
@@ -112,8 +121,9 @@ nav {
 }
 
 .btn-outline-secondary,
-.btn-difficulty {
-  margin: 0 5px 10px 5px;
+.btn-difficulty,
+#home-button {
+    margin: 0 5px 15px 5px;
 }
 
 .btn-secondary {
@@ -162,6 +172,37 @@ nav {
   color: var(--text-light) !important;
 }
 
+/* Instructions section */
+#instructions-dropdown {
+    position: absolute !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translate(-33%, 0) !important;
+  }
+
+/* Contact section */
+  #contact-paragraph {
+    text-align: center !important;
+  }
+  
+  #contact-dropdown {
+    position: absolute !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translate(-72%, 0) !important;
+  }
+  
+  .p-4 {
+    padding-bottom: 0.5rem !important;
+    padding-top: 1rem !important;
+  }
+
+/* Success page */
+#success-logo {
+    margin-left: -9px;
+    margin-right: -5px;
+  }
+
 /* Quiz setup */
 .quiz-container {
   border: 2px solid var(--highlight) !important;
@@ -169,14 +210,14 @@ nav {
   flex-direction: column;
   background-color: var(--secondary);
   border-radius: 30px;
-  margin: 20vh 20vw;
-  height: 300px;
+  margin: 22vh 5vw;
+  height: auto;
 }
 
 #username {
   border-color: var(--highlight);
   border-width: 2px;
-  margin: 10px 0 10px 0;
+  margin: 0 0 10px 0;
 }
 
 #player-name,
@@ -230,7 +271,8 @@ nav {
     border: 2px solid var(--highlight) !important;
     background-color: var(--secondary);
     border-radius: 30px;
-    margin: 20vh 20vw;
+    margin: 22vh 5vw;
+    height: auto;
 }
 
 #question-number {
@@ -285,8 +327,8 @@ nav {
   border: 2px solid var(--highlight) !important;
   background-color: var(--secondary);
   border-radius: 30px;
-  margin: 20vh 20vw;
-  height: 200px;
+  margin: 22vh 5vw;
+  height: auto;
 }
 
 /* Footer */
@@ -312,112 +354,31 @@ nav {
 
 /* Media queries */
 
-/* Small devices (mobiles, up to 576px) */
-@media screen and (max-width: 576px) {
-  .navbar-brand {
-    font-size: 24px;
-  }
-
-  .ms-auto {
-    margin-left: 0 !important;
-  }
-
-  #success-logo {
-    margin-left: -9px;
-    margin-right: -5px;
-  }
-
-  .navbar-nav {
-    flex-direction: row;
-  }
-
-  #contact-paragraph {
-    text-align: center !important;
-  }
-
-  #contact-dropdown {
-    position: absolute !important;
-    left: 50% !important;
-    right: auto !important;
-    transform: translate(-72%, 0) !important;
-  }
-
-  #instructions-dropdown {
-    position: absolute !important;
-    left: 50% !important;
-    right: auto !important;
-    transform: translate(-33%, 0) !important;
-  }
-
-  .p-4 {
-    padding-bottom: 0.5rem !important;
-    padding-top: 1rem !important;
-  }
-
-  .quiz-container,
-  .submission-container,
-  #question-section {
-    margin: 22vh 5vw;
-    height: auto;
-  }
-
-  h2 {
-    padding: 5px;
-  }
-
-  #username {
-    margin: 0 0 10px 0;
-  }
-
-  .btn-outline-secondary,
-  .btn-difficulty,
-  #home-button {
-    margin: 0 5px 15px 5px;
-  }
-}
-
 /* Medium devices (tablets, 768px and up) */
 @media screen and (min-width: 768px) {
-  .p-4 {
-    padding-bottom: 0.5rem !important;
-    padding-top: 1rem !important;
-  }
+    #success-logo {
+        margin-left: 6px
+    }
 
-  .submission-container {
-    height: 255px;
-  }
+    .ms-auto {
+      margin-left: auto !important;
+    }
 
-  #answer-buttons {
-    grid-template-columns: repeat(2, 210px);
-  }
-}
+    #instructions-dropdown {
+        left: 25% !important;
+    }
 
-/* Large devices (laptops, 992px and up) */
-@media screen and (min-width: 992px) {
-  h2 {
-    font-size: x-large;
-  }
-  .submission-container {
-    height: 240px;
-  }
+    #contact-dropdown {
+        left: 17% !important;
+    }
 
-  #success-paragraph {
-    margin: 0 5px 15px 5px;
+    .quiz-container,
+    .submission-container,
+    #question-section {
+        margin: 20vh 20vw;
+    } 
+    
+    #answer-buttons {
+        grid-template-columns: repeat(2, 210px);
+    }
   }
-
-  #answer-buttons {
-    grid-template-columns: repeat(2, 275px);
-    margin-bottom: 30px;
-  }
-}
-
-/* XL devices (xl screens, 1200px and up) */
-@media screen and (min-width: 1200px) {
-  .submission-container {
-    height: 220px;
-  }
-
-  #answer-buttons {
-    grid-template-columns: repeat(2, 350px);
-  }
-}
