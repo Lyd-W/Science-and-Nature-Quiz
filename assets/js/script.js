@@ -256,12 +256,7 @@ function manageHighScores() {
   highScores.sort((a, b) => b.score - a.score);
   highScores.splice(5);
   localStorage.setItem("highScoreList", JSON.stringify(highScores));
-  highScoresRef.addEventListener("click",() => {
-  showHighScores();
-  highScoresListRef.classList.toggle("hide");
-  highScoresIconRef.classList.toggle("fa-chevron-down");
-  highScoresIconRef.classList.toggle("fa-chevron-up");
-  });
+  highScoresRef.addEventListener("click", toggleHighScores)
 }
  
 /**
@@ -275,6 +270,17 @@ function manageHighScores() {
     highScoresListRef.appendChild(highScoreList);
     });
   };
+
+/**
+ * Manages high score button toggling
+ */
+function toggleHighScores() {
+    showHighScores();
+    highScoresListRef.classList.toggle("hide");
+    highScoresIconRef.classList.toggle("fa-chevron-down");
+    highScoresIconRef.classList.toggle("fa-chevron-up");
+    };
+
 
 /**
  * Resets quiz parameters
@@ -311,8 +317,8 @@ function startNewGame() {
         usernameRef.value = "";
         selectedDifficulty = null;
         difficultyButtonRef.forEach((button) => button.classList.remove("active"));
-        highScoresRef.removeEventListener("click");
-        resetDisplay
+        highScoresRef.removeEventListener("click", toggleHighScores);
+        resetDisplay()
 }
 
 newGameRef.addEventListener("click", (event) => {
@@ -323,7 +329,7 @@ newGameRef.addEventListener("click", (event) => {
  * Users can retry using their existing details
  */
 retryRef.addEventListener("click", (event) => {
-    highScoresRef.removeEventListener("click");
+    highScoresRef.removeEventListener("click", toggleHighScores);
     resetDisplay();
     startQuiz();
 });
