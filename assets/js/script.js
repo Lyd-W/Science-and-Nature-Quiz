@@ -17,6 +17,7 @@ const resultsSectionRef = document.querySelector("#results-section");
 const finalScoreRef = document.querySelector("#final-score");
 const highScoresRef = document.querySelector("#highscores-button");
 const highScoresListRef = document.querySelector("#highscores-list");
+const highScoresIconRef = document.querySelector("#highscores-icon")
 const newGameRef = document.querySelector("#new-game-button");
 const retryRef = document.querySelector("#retry-button")
 
@@ -257,7 +258,9 @@ function manageHighScores() {
   localStorage.setItem("highScoreList", JSON.stringify(highScores));
   highScoresRef.addEventListener("click",() => {
   showHighScores();
-  highScoresListRef.classList.toggle("hide")
+  highScoresListRef.classList.toggle("hide");
+  highScoresIconRef.classList.toggle("fa-chevron-down");
+  highScoresIconRef.classList.toggle("fa-chevron-up");
   });
 }
  

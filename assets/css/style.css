@@ -264,6 +264,22 @@ nav {
   margin-top: 25px;
 }
 
+#highscores-list {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--primary);
+    border: 2px solid var(--highlight) !important;
+    border-radius: 30px;
+    margin: 10px 10vw 20px;
+    padding-top: 10px;
+    transition: all 0.3s ease;
+}
+
+#highscores-icon {
+    transition: transform 0.3s ease;
+}
+
 /* Submission page */
 .submission-container {
   border: 2px solid var(--highlight) !important;
