@@ -15,6 +15,8 @@ const incorrectAnswersRef = document.querySelector("#incorrect-answers")
 const secondsRef = document.querySelector("#seconds");
 const resultsSectionRef = document.querySelector("#results-section");
 const finalScoreRef = document.querySelector("#final-score");
+const highScoresRef = document.querySelector("#highscores-button");
+const highScoresListRef = document.querySelector("#highscores-list");
 const newGameRef = document.querySelector("#new-game-button");
 const retryRef = document.querySelector("#retry-button")
 
@@ -26,6 +28,7 @@ let correctScore = 0;
 let incorrectScore = 0;
 let timer;
 let timeRemaining = 20;
+let highScores = JSON.parse(localStorage.getItem("highScoreList"))  || [];
 
 /**
  * Prevents contact form default behaviour to allow missing fields to be indicated
@@ -236,8 +239,39 @@ function endQuiz() {
     clearInterval(timer)
   hideSection(questionSectionRef);
   showSection(resultsSectionRef);
-  finalScoreRef.innerText = correctScore;
+  manageHighScores();
 }
+
+/**
+ * Collects and stores highscore data
+ */
+function manageHighScores() {
+  finalScoreRef.innerText = correctScore;
+  const playerScore = {
+    username: usernameRef.value,
+    score: correctScore,
+  };
+  highScores.unshift(playerScore);
+  highScores.sort((a, b) => b.score - a.score);
+  highScores.splice(5);
+  localStorage.setItem("highScoreList", JSON.stringify(highScores));
+  highScoresRef.addEventListener("click",() => {
+  showHighScores();
+  highScoresListRef.classList.toggle("hide")
+  });
+}
+ 
+/**
+ * Shows high score data
+ */
+ function showHighScores() {
+    highScoresListRef.innerHTML = "";
+    highScores.forEach((score, index) => {
+    const highScoreList = document.createElement("p");
+    highScoreList.textContent = `${index + 1}. ${score.username}: ${score.score}`;
+    highScoresListRef.appendChild(highScoreList);
+    });
+  };
 
 /**
  * Resets quiz parameters
@@ -274,6 +308,7 @@ function startNewGame() {
         usernameRef.value = "";
         selectedDifficulty = null;
         difficultyButtonRef.forEach((button) => button.classList.remove("active"));
+        highScoresRef.removeEventListener("click");
         resetDisplay
 }
 
@@ -285,9 +320,10 @@ newGameRef.addEventListener("click", (event) => {
  * Users can retry using their existing details
  */
 retryRef.addEventListener("click", (event) => {
+    highScoresRef.removeEventListener("click");
     resetDisplay();
     startQuiz();
-})
+});
 
 /** 
  * Orders quiz functions 

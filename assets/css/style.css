@@ -76,7 +76,8 @@ nav {
 #answer3,
 #answer4,
 #new-game-button,
-#retry-button {
+#retry-button,
+#highscores-button {
   border-color: var(--highlight);
   border-width: 2px;
   background-color: var(--primary);
@@ -94,7 +95,8 @@ nav {
 #answer3:hover,
 #answer4:hover,
 #new-game-button:hover,
-#retry-button:hover {
+#retry-button:hover,
+#highscores-button:hover {
   background-color: var(--highlight);
   border-color: var(--primary);
   border-width: 2px;
@@ -145,7 +147,8 @@ nav {
 }
 
 #new-game-button,
-#retry-button {
+#retry-button,
+#highscores-button {
     display: inline-block;
     margin: 10px auto 10px auto;
     width: auto;
