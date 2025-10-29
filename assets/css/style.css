@@ -340,8 +340,9 @@ nav {
     transition: transform 0.3s ease;
 }
 
-/* Submission page */
-.submission-container {
+/* Submission and Error page */
+.submission-container,
+.error-container {
   border: 2px solid var(--highlight) !important;
   background-color: var(--secondary);
   border-radius: 1.9rem;
