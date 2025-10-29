@@ -117,6 +117,7 @@ function loader() {
 function setQuizArea() {
   setTimeout(() => {
     hideSection(loaderRef);
+    hideSection(resultsSectionRef);
     showSection(questionSectionRef);
   }, 100);
 }
@@ -129,7 +130,7 @@ function showQuestion(currentQuestion) {
   resetListeners();
   timeRemaining = 20;
   secondsRef.innerText = timeRemaining;
-  questionNumberRef.innerText = `Question ${++questionNumberDisplay}`;
+  questionNumberRef.innerText = `Question ${++questionNumberDisplay} of 10`;
   questionRef.innerText = currentQuestion.question;
   answerButtonsRef.forEach((button, index) => {button.style.backgroundColor = "";
   button.innerText = currentQuestion.answers[index];
