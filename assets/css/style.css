@@ -393,6 +393,7 @@ nav {
 
     .quiz-container,
     .submission-container,
+    .error-container,
     #question-section,
     #results-section {
         margin: 20vh 20vw;
