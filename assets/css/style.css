@@ -94,18 +94,31 @@ nav {
 }
 
 .custom-button-outline:hover,
+.custom-button-outline:focus,
 .btn-outline-secondary:hover,
+.btn-outline-secondary:focus,
+.btn-difficulty:focus,
 .btn-difficulty:hover,
 #instructions-button:hover,
+#instructions-button:focus,
 #contact-button:hover,
+#contact-button:focus,
 #home-button:hover,
+#home-button:focus,
 #answer1:hover,
+#answer1:focus,
 #answer2:hover,
+#answer2:focus,
 #answer3:hover,
+#answer3:focus,
 #answer4:hover,
+#answer4:focus,
 #new-game-button:hover,
+#new-game-button:focus,
 #retry-button:hover,
-#highscores-button:hover {
+#retry-button:focus,
+#highscores-button:hover,
+#highscores-button:focus {
   background-color: var(--highlight);
   border-color: var(--primary);
   border-width: 2px;
