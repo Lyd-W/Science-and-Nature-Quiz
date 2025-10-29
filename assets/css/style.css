@@ -20,9 +20,9 @@ body {
 }
 
 h2 {
-  margin-top: 20px;
+  margin-top: 1.3rem;
   font-size: large;
-  padding: 5px;
+  padding: 0.3rem;
 }
 
 nav {
@@ -36,20 +36,20 @@ nav {
 /* Navbar */
 #navbar {
   background-color: var(--primary);
-  border: 10px black;
+  border: 0.6rem black;
 }
 
 #navbar .logo {
-  width: 30px;
+  width: 1.9rem;
 }
 
 .logo {
-  margin: -5px -5px 0px 6px;
+  margin: -0.3rem -0.3rem 0 0.4rem;
 }
 
 .navbar-brand {
   color: var(--text-dark);
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: bold;
 }  
 
@@ -62,7 +62,7 @@ nav {
 }
 
 .dropdown-menu {
-  min-width: 300px;
+  min-width: 18.75rem;
   background-color: var(--secondary);
   color: var(--text-dark);
   border-color: var(--highlight);
@@ -136,7 +136,7 @@ nav {
 .btn-outline-secondary,
 .btn-difficulty,
 #home-button {
-    margin: 0 5px 15px 5px;
+    margin: 0 0.3rem 0.9rem 0.3rem;
 }
 
 .btn-secondary {
@@ -159,7 +159,7 @@ nav {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   justify-content: center;
-  margin: 20px;
+  margin: 1.3rem;
 }
 
 #answer1,
@@ -173,7 +173,7 @@ nav {
 #retry-button,
 #highscores-button {
     display: inline-block;
-    margin: 10px auto 10px auto;
+    margin: 0.6rem auto 0.6rem auto;
     width: auto;
 }
 
@@ -212,8 +212,8 @@ nav {
 
 /* Success page */
 #success-logo {
-    margin-left: -9px;
-    margin-right: -5px;
+    margin-left: -0.56rem;
+    margin-right: -0.3rem;
   }
 
 /* Quiz setup */
@@ -222,7 +222,7 @@ nav {
   display: flex;
   flex-direction: column;
   background-color: var(--secondary);
-  border-radius: 30px;
+  border-radius: 1.9rem;
   margin: 22vh 5vw;
   height: auto;
 }
@@ -230,7 +230,7 @@ nav {
 #username {
   border-color: var(--highlight);
   border-width: 2px;
-  margin: 0 0 10px 0;
+  margin: 0 0 0.6rem 0;
 }
 
 #player-name,
@@ -241,7 +241,7 @@ nav {
 }
 
 #select-difficulty {
-  margin-top: 5px;
+  margin-top: 0.3rem;
 }
 
 /* Loader */
@@ -252,18 +252,18 @@ nav {
     align-items: center;
     border: 2px solid var(--highlight) !important;
     background-color: var(--secondary);
-    border-radius: 30px;
+    border-radius: 1.9rem;
     margin: 20vh 20vw;
-    height: 300px;
+    height: 18.75rem;
     font-size: large;
 }
 
 #loader-circle {
-    width: 120px;
-    height: 120px;
+    width: 7.5rem;
+    height: 7.5rem;
     border-radius: 50%;
-    border: 20px solid var(--highlight);
-    border-top: 20px solid var(--primary);
+    border: 1.25rem solid var(--highlight);
+    border-top: 1.25rem solid var(--primary);
     animation: spin 3s linear infinite;
 }
 
@@ -283,13 +283,13 @@ nav {
     flex-direction: column;
     border: 2px solid var(--highlight) !important;
     background-color: var(--secondary);
-    border-radius: 30px;
+    border-radius: 1.9rem;
     margin: 22vh 5vw;
     height: auto;
 }
 
 #question-number {
-  margin-top: 20px;
+  margin-top: 1.25rem;
   font-size: large;
 }
 
@@ -301,22 +301,22 @@ nav {
 .fa-solid.fa-xmark {
   color: var(--incorrect);
   font-size: large;
-  margin-left: 5px;
+  margin-left: 0.3rem;
 }
 
 #correct-answers {
-    margin-right: 5px;
+    margin-right: 0.3rem;
 }
 
 #question,
 #timer {
-    margin-top: 10px;
+    margin-top: 0.6rem;
 }
 
 /* Results section */
 #final-result {
   font-size: large;
-  margin-top: 25px;
+  margin-top: 1.6rem;
 }
 
 #highscores-list {
@@ -325,9 +325,9 @@ nav {
     flex-direction: column;
     background-color: var(--primary);
     border: 2px solid var(--highlight) !important;
-    border-radius: 30px;
-    margin: 10px 10vw 20px;
-    padding-top: 10px;
+    border-radius: 1.9rem;
+    margin: 0.6rem 10vw 1.25rem;
+    padding-top: 0.6rem;
     transition: all 0.3s ease;
 }
 
@@ -339,7 +339,7 @@ nav {
 .submission-container {
   border: 2px solid var(--highlight) !important;
   background-color: var(--secondary);
-  border-radius: 30px;
+  border-radius: 1.9rem;
   margin: 22vh 5vw;
   height: auto;
 }
@@ -355,7 +355,7 @@ nav {
 .footer-column {
   background-color: var(--primary);
   flex: 1;
-  padding: 15px;
+  padding: 0.9rem;
   width: 33.33%;
   text-align: center;
 }
@@ -370,7 +370,7 @@ nav {
 /* Medium devices (tablets, 768px and up) */
 @media screen and (min-width: 768px) {
     #success-logo {
-        margin-left: 6px
+        margin-left: 0.4rem;
     }
 
     .ms-auto {
@@ -392,6 +392,6 @@ nav {
     } 
     
     #answer-buttons {
-        grid-template-columns: repeat(2, 210px);
+        grid-template-columns: repeat(2, 13rem);
     }
   }
