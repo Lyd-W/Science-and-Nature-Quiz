@@ -4,7 +4,7 @@
 
 The Science and Nature Quiz is a great way for science and nature enthusiasts to test their knowledge in a fun way, it has three difficulty levels so it's also suited for students, parents, educators and the general public to challenge themselves, as well as offering the potential to learn something new. The website includes instructions on how to take part in the quiz and gives users the opportunity to contact the website to leave feedback, identify issues or with general enquires. The website has been designed to offer a smooth and responsive experience, focusing on providing an enjoyable user experience across multiple devices.
 
-![Science and Nature Quiz](image of home screen)
+![Science and Nature Quiz](docs/science-and-nature-quiz-responsive-display.png)
 
 ### [Contents](#contents)
 * [User Goals](#user-goals)
@@ -20,14 +20,14 @@ The Science and Nature Quiz is a great way for science and nature enthusiasts to
     + [Responsiveness](#responsiveness)
 * [Features](#features)
     * [Existing Features](#existing-features)
-        + [Navigation](#navigation)
         + [Header](#header)
         + [Home Section](#home-section)
-        + [Welcome Section](#welcome-section)
-        + [Admissions Section](#admissions-section)
-        + [Parent Information Section](#parent-information-section)
+        + [Instructions Section](#instructions-section)
         + [Contact Section](#contact-section)
         + [Success Page](#success-page)
+        + [Quiz Section](#quiz-section)
+        + [Results Section](#results-section)
+        + [404 Error Page](#404-error-page)
         + [Footer](#footer)
     * [Future Enhancements](#future-enhancements)
 * [Technologies Used](#technologies-used)
@@ -157,9 +157,6 @@ Other required colours:
 
 ## Existing Features
 
-### Navigation
-
-
 ### Header
 
 
@@ -173,6 +170,15 @@ Other required colours:
 
 
 ### Success Page
+
+
+### Quiz Section
+
+
+### Results Section
+
+
+### 404 Error Section
 
 
 ### Footer
@@ -225,6 +231,9 @@ Other required colours:
 
 ### HTML
 
+I have used [W3C HTML Validation Service](https://validator.w3.org/#validate_by_input "W3C HTML Validation Service") to validate the HTML used for the website, no errors were returned.
+
+![HTML Validation Results](docs/html-validation.png "HTML Validation Results")
 
 ### CSS
 
