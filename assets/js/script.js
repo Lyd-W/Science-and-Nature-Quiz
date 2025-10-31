@@ -134,6 +134,7 @@ function showQuestion(currentQuestion) {
   answerButtonsRef.forEach((button, index) => {
     button.style.backgroundColor = "";
     button.innerText = currentQuestion.answers[index];
+    button.blur();
   });
   startTimer();
 }
@@ -221,6 +222,7 @@ function resetListeners() {
   answerButtonsRef.forEach((button) => {
     button.removeEventListener("click", answerClickHandling);
     button.addEventListener("click", answerClickHandling);
+    button.blur();
   });
 }
 

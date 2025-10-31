@@ -93,31 +93,18 @@ nav {
   color: var(--text-dark);
 }
 
-.custom-button-outline:hover,
 .custom-button-outline:focus,
-.btn-outline-secondary:hover,
 .btn-outline-secondary:focus,
 .btn-difficulty:focus,
-.btn-difficulty:hover,
-#instructions-button:hover,
 #instructions-button:focus,
-#contact-button:hover,
 #contact-button:focus,
-#home-button:hover,
 #home-button:focus,
-#answer1:hover,
 #answer1:focus,
-#answer2:hover,
 #answer2:focus,
-#answer3:hover,
 #answer3:focus,
-#answer4:hover,
 #answer4:focus,
-#new-game-button:hover,
 #new-game-button:focus,
-#retry-button:hover,
 #retry-button:focus,
-#highscores-button:hover,
 #highscores-button:focus {
   background-color: var(--highlight);
   border-color: var(--primary);
@@ -403,3 +390,24 @@ nav {
     grid-template-columns: repeat(2, 13rem);
   }
 }
+  
+  @media (hover: hover) and (pointer: fine) {
+  .custom-button-outline:hover,
+  .btn-outline-secondary:hover,
+  .btn-difficulty:hover,
+  #instructions-button:hover,
+  #contact-button:hover,
+  #home-button:hover,
+  #answer1:hover,
+  #answer2:hover,
+  #answer3:hover,
+  #answer4:hover,
+  #new-game-button:hover,
+  #retry-button:hover,
+  #highscores-button:hover {
+    background-color: var(--highlight);
+    border-color: var(--primary);
+    border-width: 2px;
+    color: var(--text-light);
+  }
+  }
