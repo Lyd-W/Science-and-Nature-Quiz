@@ -70,8 +70,8 @@
                 id="instructions-dropdown"
               >
                 <li>
-                  <div class="p-3"
-                    ><p id="instructions-paragraph">
+                  <div class="p-3"></div>
+                    <p id="instructions-paragraph">
                       <b>1.</b> You will be presented with one question and four
                       possible answers.<br />
                       <b>2.</b> Select only one answer — once you select an
@@ -233,8 +233,7 @@
       <!-- Loader -->
       <div id="loader" class="hide text-center">
         <p id="loader-paragraph">Loading questions...</p>
-        <div id="loader-circle">
-        </div>
+        <div id="loader-circle"></div>
       </div>
 
       <!-- Question section -->
@@ -242,7 +241,7 @@
         <div id="scoreboard">
           <h2 id="question-number"></h2>
           <div id="current-score">
-            <i class="fa-solid fa-check"></i>: 
+            <i class="fa-solid fa-check"></i>:
             <span id="correct-answers">0</span>
             <i class="fa-solid fa-xmark"></i>:
             <span id="incorrect-answers">0</span>
@@ -252,23 +251,14 @@
             <span id="seconds"></span>
           </div>
         </div>
-        <div id="question">
+        <div id="question"></div>
+        <div id="answer-buttons">
+          <button id="answer1" type="button" class="btn btn-a">Answer 1</button>
+          <button id="answer2" type="button" class="btn btn-a">Answer 2</button>
+          <button id="answer3" type="button" class="btn btn-a">Answer 3</button>
+          <button id="answer4" type="button" class="btn btn-a">Answer 4</button>
         </div>
-          <div id="answer-buttons">
-            <button id="answer1" type="button" class="btn btn-a">
-              Answer 1
-            </button>
-            <button id="answer2" type="button" class="btn btn-a">
-              Answer 2
-            </button>
-            <button id="answer3" type="button" class="btn btn-a">
-              Answer 3
-            </button>
-            <button id="answer4" type="button" class="btn btn-a">
-              Answer 4
-            </button>
-          </div>
-        </div>
+      </div>
     </main>
     <!-- End of question section -->
 
@@ -278,14 +268,11 @@
       <h1 id="final-score">0</h1>
       <button id="new-game-button" class="btn hover">New Game</button>
       <button id="retry-button" class="btn hover">Retry</button>
-      <button 
-      id="highscores-button" 
-      class="btn hover">
-      High scores
-      <i id="highscores-icon" class="fa-solid fa-chevron-down ms-2"></i>
-    </button>
-      <div id="highscores-list" class="hide">
-      </div>
+      <button id="highscores-button" class="btn hover">
+        High scores
+        <i id="highscores-icon" class="fa-solid fa-chevron-down ms-2"></i>
+      </button>
+      <div id="highscores-list" class="hide"></div>
     </div>
     <!-- End of results section -->
 

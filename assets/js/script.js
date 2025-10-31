@@ -4,22 +4,24 @@ const sendButtonRef = document.querySelector("#send-button");
 const quizContainerRef = document.querySelector(".quiz-container");
 const playerFormRef = document.querySelector("#player-info");
 const usernameRef = document.querySelector("#username");
-const difficultyButtonRef = Array.from(document.querySelectorAll(".btn-difficulty"));
+const difficultyButtonRef = Array.from(
+  document.querySelectorAll(".btn-difficulty")
+);
 const loaderRef = document.querySelector("#loader");
 const questionSectionRef = document.querySelector("#question-section");
-const questionRef = document.querySelector ("#question");
-const questionNumberRef = document.querySelector ("#question-number");
+const questionRef = document.querySelector("#question");
+const questionNumberRef = document.querySelector("#question-number");
 const answerButtonsRef = Array.from(document.querySelectorAll(".btn-a"));
-const correctAnswersRef = document.querySelector ("#correct-answers")
-const incorrectAnswersRef = document.querySelector("#incorrect-answers")
+const correctAnswersRef = document.querySelector("#correct-answers");
+const incorrectAnswersRef = document.querySelector("#incorrect-answers");
 const secondsRef = document.querySelector("#seconds");
 const resultsSectionRef = document.querySelector("#results-section");
 const finalScoreRef = document.querySelector("#final-score");
 const highScoresRef = document.querySelector("#highscores-button");
 const highScoresListRef = document.querySelector("#highscores-list");
-const highScoresIconRef = document.querySelector("#highscores-icon")
+const highScoresIconRef = document.querySelector("#highscores-icon");
 const newGameRef = document.querySelector("#new-game-button");
-const retryRef = document.querySelector("#retry-button")
+const retryRef = document.querySelector("#retry-button");
 
 let selectedDifficulty = null;
 let rearranged = [];
@@ -29,34 +31,31 @@ let correctScore = 0;
 let incorrectScore = 0;
 let timer;
 let timeRemaining = 20;
-let highScores = JSON.parse(localStorage.getItem("highScoreList"))  || [];
+let highScores = JSON.parse(localStorage.getItem("highScoreList")) || [];
 
 /**
  * Prevents contact form default behaviour to allow missing fields to be indicated
  */
 sendButtonRef.addEventListener("click", (event) => {
-    event.stopPropagation();
-})
+  event.stopPropagation();
+});
 contactFormRef.addEventListener("submit", (event) => {
-    if (!contactFormRef.checkValidity()) {
-        event.preventDefault();
-        contactFormRef.reportValidity();
-        return;
-    }
+  if (!contactFormRef.checkValidity()) {
+    event.preventDefault();
+    contactFormRef.reportValidity();
+    return;
+  }
 });
 
 contactFormRef.addEventListener("click", (event) => {
-event.stopPropagation()
+  event.stopPropagation();
 });
 
-/** 
- * Hides/shows sections 
- */
 const hideSection = (section) => section.classList.add("hide");
 const showSection = (section) => section.classList.remove("hide");
 
-/** 
- * Sets question difficulty 
+/**
+ * Sets question difficulty
  */
 difficultyButtonRef.forEach((button) => {
   button.addEventListener("click", (event) => {
@@ -67,7 +66,7 @@ difficultyButtonRef.forEach((button) => {
   });
 });
 
-/** 
+/**
  * Randomises answer order
  */
 function rearrangeAnswers(results) {
@@ -87,8 +86,8 @@ function rearrangeAnswers(results) {
   });
 }
 
-/** 
- * Fetches data from OpenTDB 
+/**
+ * Fetches data from OpenTDB
  * @returns questions from API
  */
 function getQuestions() {
@@ -104,15 +103,15 @@ function getQuestions() {
 
 /**
  * Shows a loading animation
-*/
+ */
 function loader() {
   hideSection(playerSectionRef);
   hideSection(quizContainerRef);
   showSection(loaderRef);
 }
 
-/** 
- * Displays quiz area 
+/**
+ * Displays quiz area
  */
 function setQuizArea() {
   setTimeout(() => {
@@ -122,18 +121,19 @@ function setQuizArea() {
   }, 100);
 }
 
-/** 
- * Displays question with randomised answers 
+/**
+ * Displays question with randomised answers
  */
 function showQuestion(currentQuestion) {
-  clearInterval(timer)
+  clearInterval(timer);
   resetListeners();
   timeRemaining = 20;
   secondsRef.innerText = timeRemaining;
   questionNumberRef.innerText = `Question ${++questionNumberDisplay} of 10`;
   questionRef.innerText = currentQuestion.question;
-  answerButtonsRef.forEach((button, index) => {button.style.backgroundColor = "";
-  button.innerText = currentQuestion.answers[index];
+  answerButtonsRef.forEach((button, index) => {
+    button.style.backgroundColor = "";
+    button.innerText = currentQuestion.answers[index];
   });
   startTimer();
 }
@@ -142,19 +142,20 @@ function showQuestion(currentQuestion) {
  * Starts a countdown timer and updates remaining time
  */
 function startTimer() {
-    clearInterval(timer);
-    timer = setInterval(() => {
+  clearInterval(timer);
+  timer = setInterval(() => {
     secondsRef.innerText = timeRemaining;
     timeRemaining--;
-    if (timeRemaining < 0){
-        clearInterval(timer);
-        noAnswer();
-      }
-    }, 1000)
+    if (timeRemaining < 0) {
+      clearInterval(timer);
+      noAnswer();
+    }
+  }, 1000);
 }
-    
+
 /** Handles clicking of answers */
-/** 
+
+/**
  * Identifies selected and correct answer
  */
 function answerClickHandling(event) {
@@ -163,24 +164,24 @@ function answerClickHandling(event) {
   let selectedAnswer = event.target.innerText;
   const correctAnswer = rearranged[currentQuestionNumber].correct_answer;
   const correctButton = answerButtonsRef.find(
-  (button) => button.innerText === correctAnswer
+    (button) => button.innerText === correctAnswer
   );
 
-  /** 
+  /**
    * Green highlight for correct answers
    * Red highlight for incorrect answers
    */
   if (selectedAnswer === correctAnswer) {
     event.target.style.backgroundColor = "green";
-    correctScore ++;
+    correctScore++;
     correctAnswersRef.innerText = correctScore;
   } else {
     event.target.style.backgroundColor = "red";
-    incorrectScore ++;
+    incorrectScore++;
     incorrectAnswersRef.innerText = incorrectScore;
-    correctButton.style.backgroundColor = "green"; 
+    correctButton.style.backgroundColor = "green";
   }
-setTimeout(nextQuestion, 1250);
+  setTimeout(nextQuestion, 1250);
 }
 
 /**
@@ -191,40 +192,39 @@ function noAnswer() {
   answerButtonsRef.forEach((button) => (button.disabled = true));
   const correctAnswer = rearranged[currentQuestionNumber].correct_answer;
   const correctButton = answerButtonsRef.find(
-  (button) => button.innerText === correctAnswer
+    (button) => button.innerText === correctAnswer
   );
-  correctButton.style.backgroundColor = "green"; 
-  incorrectScore ++;
+  correctButton.style.backgroundColor = "green";
+  incorrectScore++;
   incorrectAnswersRef.innerText = incorrectScore;
   setTimeout(nextQuestion, 1250);
 }
 
-/** 
-   * Increases question number by 1 
-   * Displays next question after a 1.25 second delay 
-   * Ends the quiz after question 10
-   */
+/**
+ * Increases question number by 1
+ * Ends the quiz after question 10
+ */
 function nextQuestion() {
-    currentQuestionNumber++;
-    if (currentQuestionNumber > 9) {
-      endQuiz();
-    } else {
-      answerButtonsRef.forEach((button) => (button.disabled = false));
-      showQuestion(rearranged[currentQuestionNumber]);
-    }
+  currentQuestionNumber++;
+  if (currentQuestionNumber > 9) {
+    endQuiz();
+  } else {
+    answerButtonsRef.forEach((button) => (button.disabled = false));
+    showQuestion(rearranged[currentQuestionNumber]);
+  }
 }
 
 /**
  * Resets event listeners
  */
 function resetListeners() {
-answerButtonsRef.forEach((button) => {
-        button.removeEventListener("click", answerClickHandling);
-        button.addEventListener("click", answerClickHandling);
-});
+  answerButtonsRef.forEach((button) => {
+    button.removeEventListener("click", answerClickHandling);
+    button.addEventListener("click", answerClickHandling);
+  });
 }
 
-/** 
+/**
  * Error handling message
  */
 function errorHandling(message) {
@@ -234,18 +234,18 @@ function errorHandling(message) {
   );
 }
 
-/** 
- * Displays the final results section 
+/**
+ * Displays the final results section
  */
 function endQuiz() {
-    clearInterval(timer)
+  clearInterval(timer);
   hideSection(questionSectionRef);
   showSection(resultsSectionRef);
   manageHighScores();
 }
 
 /**
- * Collects and stores highscore data
+ * Collects and stores high score data
  */
 function manageHighScores() {
   finalScoreRef.innerText = correctScore;
@@ -257,86 +257,87 @@ function manageHighScores() {
   highScores.sort((a, b) => b.score - a.score);
   highScores.splice(5);
   localStorage.setItem("highScoreList", JSON.stringify(highScores));
-  highScoresRef.addEventListener("click", toggleHighScores)
+  highScoresRef.addEventListener("click", toggleHighScores);
 }
- 
+
 /**
  * Shows high score data
  */
- function showHighScores() {
-    highScoresListRef.innerHTML = "";
-    highScores.forEach((score, index) => {
+function showHighScores() {
+  highScoresListRef.innerHTML = "";
+  highScores.forEach((score, index) => {
     const highScoreList = document.createElement("p");
-    highScoreList.textContent = `${index + 1}. ${score.username}: ${score.score}`;
+    highScoreList.textContent = `${index + 1}. ${score.username}: ${
+      score.score
+    }`;
     highScoresListRef.appendChild(highScoreList);
-    });
-  };
+  });
+}
 
 /**
  * Manages high score button toggling
  */
 function toggleHighScores() {
-    showHighScores();
-    highScoresListRef.classList.toggle("hide");
-    highScoresIconRef.classList.toggle("fa-chevron-down");
-    highScoresIconRef.classList.toggle("fa-chevron-up");
-    };
-
+  showHighScores();
+  highScoresListRef.classList.toggle("hide");
+  highScoresIconRef.classList.toggle("fa-chevron-down");
+  highScoresIconRef.classList.toggle("fa-chevron-up");
+}
 
 /**
  * Resets quiz parameters
  */
 function resetDisplay() {
-    answerButtonsRef.forEach((button) => {
-        button.disabled = false;
-        button.style.backgroundColor = "";
-        button.innerText = "";
-    })
+  answerButtonsRef.forEach((button) => {
+    button.disabled = false;
+    button.style.backgroundColor = "";
+    button.innerText = "";
+  });
 
-    currentQuestionNumber = 0;
-    correctScore = 0;
-    incorrectScore = 0;
-    rearranged = [];
-    questionNumberDisplay = 0;
-    timeRemaining = 20;
+  currentQuestionNumber = 0;
+  correctScore = 0;
+  incorrectScore = 0;
+  rearranged = [];
+  questionNumberDisplay = 0;
+  timeRemaining = 20;
 
-    correctAnswersRef.innerText = 0;
-    incorrectAnswersRef.innerText = 0;
-    questionNumberRef.innerText = "";
-    questionRef.innerText = "";
-    secondsRef.innerText = "";
-    clearInterval(timer);
+  correctAnswersRef.innerText = 0;
+  incorrectAnswersRef.innerText = 0;
+  questionNumberRef.innerText = "";
+  questionRef.innerText = "";
+  secondsRef.innerText = "";
+  clearInterval(timer);
 }
 
-/** 
- * Starts new game process 
+/**
+ * Starts new game process
  */
 function startNewGame() {
-        hideSection(resultsSectionRef);
-        showSection(playerSectionRef);
-        showSection(quizContainerRef);
-        usernameRef.value = "";
-        selectedDifficulty = null;
-        difficultyButtonRef.forEach((button) => button.classList.remove("active"));
-        highScoresRef.removeEventListener("click", toggleHighScores);
-        resetDisplay()
+  hideSection(resultsSectionRef);
+  showSection(playerSectionRef);
+  showSection(quizContainerRef);
+  usernameRef.value = "";
+  selectedDifficulty = null;
+  difficultyButtonRef.forEach((button) => button.classList.remove("active"));
+  highScoresRef.removeEventListener("click", toggleHighScores);
+  resetDisplay();
 }
 
 newGameRef.addEventListener("click", (event) => {
-    startNewGame();
-})
+  startNewGame();
+});
 
 /**
  * Users can retry using their existing details
  */
 retryRef.addEventListener("click", (event) => {
-    highScoresRef.removeEventListener("click", toggleHighScores);
-    resetDisplay();
-    startQuiz();
+  highScoresRef.removeEventListener("click", toggleHighScores);
+  resetDisplay();
+  startQuiz();
 });
 
-/** 
- * Orders quiz functions 
+/**
+ * Orders quiz functions
  */
 function startQuiz() {
   try {
@@ -345,26 +346,24 @@ function startQuiz() {
       rearranged = rearrangeAnswers(apiData.results);
       setQuizArea();
       showQuestion(rearranged[currentQuestionNumber]);
-      });
-    }
-   catch (error) {
+    });
+  } catch (error) {
     errorHandling(error.message);
   }
 }
 
-/** 
- * Runs quiz when start button is clicked 
+/**
+ * Runs quiz when start button is clicked
  */
 playerFormRef.addEventListener("submit", (event) => {
   event.preventDefault();
   if (!selectedDifficulty) {
     alert("Please select a difficulty level.");
-    return
+    return;
   }
   if (!playerFormRef.checkValidity()) {
     playerFormRef.reportValidity();
     return;
   }
-    startQuiz();
-  }
-)
+  startQuiz();
+});

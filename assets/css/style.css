@@ -2,14 +2,14 @@
 
 /* CSS variables */
 :root {
-  --primary: #BCB7A4;
-  --secondary: #BEC7BC;
-  --highlight: #76896E;
+  --primary: #bcb7a4;
+  --secondary: #bec7bc;
+  --highlight: #76896e;
   --text-dark: #000000;
-  --text-light: #FFFFFF;
+  --text-light: #ffffff;
 
-  --correct: #2E6F40;
-  --incorrect: #C20303;
+  --correct: #2e6f40;
+  --incorrect: #c20303;
 }
 
 /* Global styles */
@@ -26,8 +26,8 @@ h2 {
 }
 
 nav {
-    border-bottom: 2px solid var(--highlight) !important;
-  }
+  border-bottom: 2px solid var(--highlight) !important;
+}
 
 .hide {
   display: none !important;
@@ -51,11 +51,11 @@ nav {
   color: var(--text-dark);
   font-size: 1.5rem;
   font-weight: bold;
-}  
+}
 
 .navbar-nav {
-    flex-direction: row;
-  }
+  flex-direction: row;
+}
 
 .ms-auto {
   margin-left: 0 !important;
@@ -136,7 +136,7 @@ nav {
 .btn-outline-secondary,
 .btn-difficulty,
 #home-button {
-    margin: 0 0.3rem 0.9rem 0.3rem;
+  margin: 0 0.3rem 0.9rem 0.3rem;
 }
 
 .btn-secondary {
@@ -171,55 +171,55 @@ nav {
 
 #new-game-button,
 #retry-button {
-    display: inline-block;
-    margin: 0.6rem auto 0.6rem auto;
-    width: auto;
+  display: inline-block;
+  margin: 0.6rem auto 0.6rem auto;
+  width: auto;
 }
 
 #highscores-button {
-    display: inline-block;
-    margin: 0.6rem auto 1.2rem auto;
-    width: auto;
+  display: inline-block;
+  margin: 0.6rem auto 1.2rem auto;
+  width: auto;
 }
 
 .btn-difficulty.active,
 .btn.selectedAnswer {
   background-color: var(--highlight) !important;
-  border-color: var(--primary)!important;
-  border-width: 2px!important;
+  border-color: var(--primary) !important;
+  border-width: 2px !important;
   color: var(--text-light) !important;
 }
 
 /* Instructions section */
 #instructions-dropdown {
-    position: absolute !important;
-    left: 50% !important;
-    right: auto !important;
-    transform: translate(-33%, 0) !important;
-  }
+  position: absolute !important;
+  left: 50% !important;
+  right: auto !important;
+  transform: translate(-33%, 0) !important;
+}
 
 /* Contact section */
-  #contact-paragraph {
-    text-align: center !important;
-  }
-  
-  #contact-dropdown {
-    position: absolute !important;
-    left: 50% !important;
-    right: auto !important;
-    transform: translate(-72%, 0) !important;
-  }
-  
-  .p-4 {
-    padding-bottom: 0.5rem !important;
-    padding-top: 1rem !important;
-  }
+#contact-paragraph {
+  text-align: center !important;
+}
+
+#contact-dropdown {
+  position: absolute !important;
+  left: 50% !important;
+  right: auto !important;
+  transform: translate(-72%, 0) !important;
+}
+
+.p-4 {
+  padding-bottom: 0.5rem !important;
+  padding-top: 1rem !important;
+}
 
 /* Success page */
 #success-logo {
-    margin-left: -0.56rem;
-    margin-right: -0.3rem;
-  }
+  margin-left: -0.56rem;
+  margin-right: -0.3rem;
+}
 
 /* Quiz setup */
 .quiz-container {
@@ -251,46 +251,46 @@ nav {
 
 /* Loader */
 #loader {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    border: 2px solid var(--highlight) !important;
-    background-color: var(--secondary);
-    border-radius: 1.9rem;
-    margin: 20vh 20vw;
-    height: 18.75rem;
-    font-size: large;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid var(--highlight) !important;
+  background-color: var(--secondary);
+  border-radius: 1.9rem;
+  margin: 20vh 20vw;
+  height: 18.75rem;
+  font-size: large;
 }
 
 #loader-circle {
-    width: 7.5rem;
-    height: 7.5rem;
-    border-radius: 50%;
-    border: 1.25rem solid var(--highlight);
-    border-top: 1.25rem solid var(--primary);
-    animation: spin 3s linear infinite;
+  width: 7.5rem;
+  height: 7.5rem;
+  border-radius: 50%;
+  border: 1.25rem solid var(--highlight);
+  border-top: 1.25rem solid var(--primary);
+  animation: spin 3s linear infinite;
 }
 
 @keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Question section */
 #question-section,
 #results-section {
-    display: flex;
-    flex-direction: column;
-    border: 2px solid var(--highlight) !important;
-    background-color: var(--secondary);
-    border-radius: 1.9rem;
-    margin: 22vh 5vw;
-    height: auto;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--highlight) !important;
+  background-color: var(--secondary);
+  border-radius: 1.9rem;
+  margin: 22vh 5vw;
+  height: auto;
 }
 
 #question-number {
@@ -310,12 +310,12 @@ nav {
 }
 
 #correct-answers {
-    margin-right: 0.3rem;
+  margin-right: 0.3rem;
 }
 
 #question,
 #timer {
-    margin-top: 0.6rem;
+  margin-top: 0.6rem;
 }
 
 /* Results section */
@@ -325,19 +325,19 @@ nav {
 }
 
 #highscores-list {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    background-color: var(--primary);
-    border: 2px solid var(--highlight) !important;
-    border-radius: 1.9rem;
-    margin: 0 10vw 1.25rem;
-    padding-top: 0.6rem;
-    transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--primary);
+  border: 2px solid var(--highlight) !important;
+  border-radius: 1.9rem;
+  margin: 0 10vw 1.25rem;
+  padding-top: 0.6rem;
+  transition: all 0.3s ease;
 }
 
 #highscores-icon {
-    transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 /* Submission and Error page */
@@ -375,31 +375,31 @@ nav {
 
 /* Medium devices (tablets, 768px and up) */
 @media screen and (min-width: 768px) {
-    #success-logo {
-        margin-left: 0.4rem;
-    }
-
-    .ms-auto {
-      margin-left: auto !important;
-    }
-
-    #instructions-dropdown {
-        left: 25% !important;
-    }
-
-    #contact-dropdown {
-        left: 17% !important;
-    }
-
-    .quiz-container,
-    .submission-container,
-    .error-container,
-    #question-section,
-    #results-section {
-        margin: 20vh 20vw;
-    } 
-    
-    #answer-buttons {
-        grid-template-columns: repeat(2, 13rem);
-    }
+  #success-logo {
+    margin-left: 0.4rem;
   }
+
+  .ms-auto {
+    margin-left: auto !important;
+  }
+
+  #instructions-dropdown {
+    left: 25% !important;
+  }
+
+  #contact-dropdown {
+    left: 17% !important;
+  }
+
+  .quiz-container,
+  .submission-container,
+  .error-container,
+  #question-section,
+  #results-section {
+    margin: 20vh 20vw;
+  }
+
+  #answer-buttons {
+    grid-template-columns: repeat(2, 13rem);
+  }
+}
