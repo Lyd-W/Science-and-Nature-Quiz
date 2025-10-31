@@ -208,10 +208,16 @@ Other required colours:
 ## Tools and Programmes
 
 - [Adobe Photoshop](https://www.adobe.com/uk/products/photoshop.html "Adobe | Photoshop")
+- [Am I Responsive?](https://ui.dev/amiresponsive?url=https://lyd-w.github.io/beckminster-crest/index.html "Am I Responsive? | Beckminster Crest")
 - [Balsamiq](https://balsamiq.com/ "Balsamiq Homepage")
 - [GitHub](https://github.com "GitHub Homepage")
+- [Google Chrome Inspect Mode](https://developer.chrome.com/docs/devtools/inspect-mode "Google Chrome Inspect Mode")
+- [JSHint](https://jshint.com/ "JSHint Homepage")
+- [Open Trivia Database](https://opentdb.com/ "Open Trivia Database Homepage")
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode "Prettier - Code Formatter")
 - [VS Code](https://code.visualstudio.com/ "VS Code Homepage")
+- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_input "W3C CSS Validation Service Homepage")
+- [W3C HTML Validation Service](https://validator.w3.org/#validate_by_uri "W3C HTML Validation Service Homepage")
 
 [Back to contents](#contents)
 
@@ -231,9 +237,11 @@ Other required colours:
 
 ### HTML
 
-I have used [W3C HTML Validation Service](https://validator.w3.org/#validate_by_input "W3C HTML Validation Service") to validate the HTML used for the website, no errors were returned.
+I have used [W3C HTML Validation Service](https://validator.w3.org/#validate_by_uri "W3C HTML Validation Service") to validate the HTML used for the website, no errors were returned.
 
-![HTML Validation Results](docs/html-validation.png "HTML Validation Results")
+![index.html Validation Results](docs/index.html-validation.png "index.html Validation Results")
+![success.html Validation Results](docs/success.html-validation.png "success.html Validation Results")
+![404.html Validation Results](docs/404.html-validation.png "404.html Validation Results")
 
 ### CSS
 
@@ -256,6 +264,25 @@ I have used [W3C HTML Validation Service](https://validator.w3.org/#validate_by_
 
 ## Lighthouse Testing
 
+The Science and Nature Quiz website has been tested in [Google Chrome Dev Tools](https://developer.chrome.com/docs/devtools/inspect-mode "Google Chrome Dev Tools") using the Lighthouse Testing tool to check:
+
+* Performance - this measures the efficiency of the page loading and running.
+* Accessibility - this assesses the usability of the page for all people, especially those with disabilities.
+* Best Practices - this checks how the page compares to a set of established web development practices.
+
+The website scored highly on the Lighthouse testing with the lowest score being 94 which is still an acceptable score.
+
+[Lighthouse - desktop main page test](docs/lighthouse-desktop-test.pdf "Lighthouse | Desktop Main Page Test")
+
+[Lighthouse - desktop success page test](docs/lighthouse-desktop-test-success.pdf "Lighthouse | Desktop Success Page Test")
+
+[Lighthouse - desktop 404 error page test](docs/lighthouse-desktop-test-404.pdf "Lighthouse | Desktop 404 Error Page Test")
+
+[Lighthouse - mobile main page test](docs/lighthouse-mobile-test.pdf "Lighthouse | Mobile Main Page Test")
+
+[Lighthouse - mobile success page test](docs/lighthouse-mobile-test-success.pdf "Lighthouse | Mobile Success Page Test")
+
+[Lighthouse - mobile 404 error page test](docs/lighthouse-mobile-test-404.pdf "Lighthouse | Mobile 404 Error Page Test")
 
 ## Browser Testing
 
