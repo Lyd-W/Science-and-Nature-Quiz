@@ -390,8 +390,8 @@ nav {
     grid-template-columns: repeat(2, 13rem);
   }
 }
-  
-  @media (hover: hover) and (pointer: fine) {
+
+@media (hover: hover) and (pointer: fine) {
   .custom-button-outline:hover,
   .btn-outline-secondary:hover,
   .btn-difficulty:hover,
@@ -410,4 +410,4 @@ nav {
     border-width: 2px;
     color: var(--text-light);
   }
-  }
+}
