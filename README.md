@@ -245,6 +245,9 @@ I have used [W3C HTML Validation Service](https://validator.w3.org/#validate_by_
 
 ### CSS
 
+I have used [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ "W3C CSS Validation Service") to validate the CSS, no errors were returned.
+
+![CSS Validation Results](docs/css-validation.png "CSS Validation Results")
 
 ### JavaScript
 
