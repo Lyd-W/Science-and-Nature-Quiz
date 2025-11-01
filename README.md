@@ -120,11 +120,11 @@ The wireframes were designed using templates from [Balsamiq](https://balsamiq.co
 
 ### Typography
 
-The font family that has been chosen for the Science and Nature Quiz is [Lato](https://fonts.google.com/specimen/Lato "Google Fonts | Lato") due to its readability through it's clean letter design and professional yet friendly appearance which gives better legibility. Given that the quiz will have questions to read, legibility of the font is an important factor to increase the user experience.
+The font family that has been chosen for the Science and Nature Quiz is [Lato](https://fonts.google.com/specimen/Lato "Google Fonts | Lato") due to its readability through its clean letter design and professional yet friendly appearance which gives better legibility. Given that the quiz will have questions to read, legibility of the font is an important factor to increase the user experience.
 
 ### Colour Scheme
 
-For the website background, I created some science and nature styled icons using [ChatGPT](https://chatgpt.com/ "ChatGPT Homepage") and placed them over a neutral background using [Adobe Photoshop](https://www.adobe.com/uk/products/photoshop.html "Adobe | Photoshop") which created some of the the base colours for the website. I then included greens to help create a calm atmosphere while linking to science and nature. I used [Coolors Scheme](https://coolors.co/ "Coolors Scheme Homepage") to finalise the chosen colours and visualise them next to each other.
+For the website background, I created some science and nature styled icons using [ChatGPT](https://chatgpt.com/ "ChatGPT Homepage") and placed them over a neutral background using [Adobe Photoshop](https://www.adobe.com/uk/products/photoshop.html "Adobe | Photoshop") which created some of the base colours for the website. I then included greens to help create a calm atmosphere while linking to science and nature. I used [Coolors Scheme](https://coolors.co/ "Coolors Scheme Homepage") to finalise the chosen colours and visualise them next to each other.
 
 ![Coolors Scheme](docs/coolors.png)
 
@@ -161,7 +161,7 @@ The website is responsive to different screen sizes with the breakpoints taken f
 
 # Features
 
-An interactive, multiple choice quiz website with a topic focus of science and nature and different difficulty levels, that is responsive over a range of devices. The user can easily find the instructions on how the quiz works at the top of the page, as well as the contact form to provide any feedback or comments regarding the website. After completing the quiz, a persistent leadboard of upto 5 highscores is displayed to encourage light hearted competition between friends and family or to encourage self improvement. The user then has the option to start a 'New Game' where a new username can be asigned for the player, to 'Retry' to better their current scores or to view the current highscores.
+An interactive, multiple choice quiz website with a topic focus of science and nature and different difficulty levels, that is responsive over a range of devices. The user can easily find the instructions on how the quiz works at the top of the page, as well as the contact form to provide any feedback or comments regarding the website. After completing the quiz, a persistent scoreboard of up to 5 highscores is displayed to encourage light hearted competition between friends and family or to encourage self-improvement. The user then has the option to start a 'New Game' where a new username can be assigned for the player, to 'Retry' to better their current scores or to view the current highscores.
 
 ## Existing Features
 
@@ -221,7 +221,7 @@ The home view features the quiz's name and logo in the header of the webpage, al
 
 ### Instructions Section
 
-The instructions to the quiz can be found using the dropdown menu at the top of the screen. On tablets and larger screens it shows in the top right corner, for mobile devices it fills the screen more to ensure easier readability.
+The instructions to the quiz can be found using the dropdown menu at the top of the screen. On tablets and larger screens, it shows in the top right corner, for mobile devices it fills the screen more to ensure easier readability.
 
 ![Instructions section](docs/instructions-section.png "Instructions Section")
 
@@ -251,13 +251,13 @@ The website includes a Success page to give the user feedback regarding the stat
 
 ### Quiz Section
 
-While loading the questions, there is a cicular loading animation that pops up with 'Loading questions...' to keep the user informed so there is no confusion over whether the website is working correctly or not.
+While loading the questions, there is a circular loading animation that pops up with 'Loading questions...' to keep the user informed so there is no confusion over whether the website is working correctly or not.
 
-The quiz section lists the question number at the top of the quiz container, stating which question out of 10 the user is on. I displayed how many correct and incorrect answers the user has so far, the time remianing counting down from 20 seconds and the question with 4 possible answers.
+The quiz section lists the question number at the top of the quiz container, stating which question out of 10 the user is on. I displayed how many correct and incorrect answers the user has so far, the time remaining counting down from 20 seconds and the question with 4 possible answers.
 
-When using a mouse or tabbing over the questions, a highlight effect is used to help the user see where they're selecting. If they select the correct answer, the answer turned green, however, if they select an incorrect answer, the chosen answer turns red and the correct ansers turns green. If the user runs out of time before selecting an answer, the correct answer turns green
+When using a mouse or tabbing over the questions, a highlight effect is used to help the user see where they're selecting. If they select the correct answer, the answer turned green, however, if they select an incorrect answer, the chosen answer turns red and the correct answers turns green. If the user runs out of time before selecting an answer, the correct answer turns green
 
-Once an answer has been selected or the timer has ran out, there is a short delay before moving onto the next question and finally, at the end of the quiz, to the results section.
+Once an answer has been selected or the timer has run out, there is a short delay before moving onto the next question and finally, at the end of the quiz, to the results section.
 
 ![Quiz section](docs/quiz-section.png "Quiz Section")
 
@@ -343,10 +343,11 @@ The footer follows a consistent style across all devices, using the same backgro
 - [JSHint](https://jshint.com/ "JSHint Homepage")
 - [Open Trivia Database](https://opentdb.com/ "Open Trivia Database Homepage")
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode "Prettier - Code Formatter")
+- [Responsive Design Checker](https://responsivedesignchecker.com/ "Responsive Design Checker | Homepage")
 - [VS Code](https://code.visualstudio.com/ "VS Code Homepage")
 - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_input "W3C CSS Validation Service Homepage")
 - [W3C HTML Validation Service](https://validator.w3.org/#validate_by_uri "W3C HTML Validation Service Homepage")
-- [WAVE](https://wave.webaim.org/report#/https://lyd-w.github.io/Science-and-Nature-Quiz/ "WAVE | Science and Nauture Quiz Report")
+- [WAVE](https://wave.webaim.org/report#/https://lyd-w.github.io/Science-and-Nature-Quiz/ "WAVE | Science and Nature Quiz Report")
 
 [Back to contents](#contents)
 
@@ -357,17 +358,17 @@ The footer follows a consistent style across all devices, using the same backgro
 
 |   Bug Description                         | Resolved |    Resolution Description                               |
 |-------------------------------------------|----------|---------------------------------------------------------|
-| When the instructions were opened, the container flashed blue breifly as if highlighting the text. | Yes | To resolve this, I changed the anchor tag to a div and removed the dropdown-item class. |
-| The contact form would close when 'Send' was selected if all of the form boxes were not completed. | Yes | This was rresolved by adding an event listener to the script.js to stop propagation when a click is registered inside the contact form. |
-| The required fields message failed to show on the contact form. | Yes | To resolve this I added an event listener for 'submit' in the script.js which prevents the default behavious, checks the form boxes are filled and displays the correct error message highlighting what information is missing. |
+| When the instructions were opened, the container flashed blue briefly as if highlighting the text. | Yes | To resolve this, I changed the anchor tag to a div and removed the dropdown-item class. |
+| The contact form would close when 'Send' was selected if all of the form boxes were not completed. | Yes | This was resolved by adding an event listener to the script.js to stop propagation when a click is registered inside the contact form. |
+| The required fields message failed to show on the contact form. | Yes | To resolve this I added an event listener for 'submit' in the script.js which prevents the default behaviours, checks the form boxes are filled and displays the correct error message highlighting what information is missing. |
 | When the 'tab' key was used to navigate the website, the button highlight style was not applied causing visual difficulties. | Yes | To prevent this issue from happening, I added the focus pseudo class to the buttons. |
-| The above solution created a bug on touch screen devices where the last selected answer, reamined highlighted on the new answer list. | Yes | This was resolved by moving the focus pseudo class to large+ screen sizes in media queries. |
+| The above solution created a bug on touch screen devices where the last selected answer, remained highlighted on the new answer list. | Yes | This was resolved by moving the focus pseudo class to large+ screen sizes in media queries. |
 | When the user started a new game through 'New Game' or 'Retry', the question count continued to increase past 10. | Yes | I created a reset display function in script.js which cleared the data ready for the next game. |
 | Some of the questions have unexpected symbols in them. | No | As the questions are pulled from an API, further decoding of the questions would be required to resolve this issue. | 
 
 ## Responsiveness Tests
 
-I deployed the website early on in the project to allow for checking the websites responsiveness. I used [Am I Responsive?](https://ui.dev/amiresponsive?url=https://lyd-w.github.io/Science-and-Nature-Quiz "Am I Responsive? | Science and Nature Quiz") to test how responsive the website was on different screen sizes. I found the website was responsive on all screen sizes.
+I deployed the website early on in the project to allow for checking the websites responsiveness. I used [Am I Responsive?](https://ui.dev/amiresponsive?url=https://lyd-w.github.io/Science-and-Nature-Quiz "Am I Responsive? | Science and Nature Quiz") and [Responsive Design Checker](https://responsivedesignchecker.com/checker.php?url=https%3A%2F%2Flyd-w.github.io%2FScience-and-Nature-Quiz%2F&width=1400&height=700 "Responsive Design Checker | Science and Nature Quiz") to test how responsive the website was on different screen sizes. I found the website was responsive on all screen sizes.
 
 To check the responsiveness of the website, I thoroughly tested it in Chrome Inspect Mode for Mobile S - 320px, Tablet - 768px, Laptop 1024px and Laptop L - 1440px, on a MacBook Pro in Chrome and Safari as well as on an iPhone 12 Pro Max on Edge and Safari.
 
@@ -389,7 +390,7 @@ I have used [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ "W
 
 ### JavaScript
 
-I have used JSHint to validate the JavaScipt code, it found no errors.
+I have used JSHint to validate the JavaScript code, it found no errors.
 
 ![JSHint Validation Results](docs/jshint.png "JSHint Validation Results")
 
@@ -397,11 +398,11 @@ I have used JSHint to validate the JavaScipt code, it found no errors.
 
 |User Story                               | Result                                      |Pass| Evidence             |
 |-----------------------------------------|---------------------------------------------|----|----------------------|
-|As a user, I want my knowledge on science and nature to be tested in a fun way. | The quiz topic focuses on a mix on science and nature questions delivered in a fun, educational manner and encourages lighthearted competition through the use of the scoreboard. | Yes | [Question sample](docs/question.png "Question Sample") [Scorebaord](docs/desktop-results-section.png "Scorebaord") |
+|As a user, I want my knowledge on science and nature to be tested in a fun way. | The quiz topic focuses on a mix on science and nature questions delivered in a fun, educational manner and encourages light-hearted competition through the use of the scoreboard. | Yes | [Question sample](docs/question.png "Question Sample") [Scoreboard](docs/desktop-results-section.png "Scoreboard") |
 |As a user, I want to contact the website for feedback, issues or general enquiries. | There is a contact form displayed on the main pages of the quiz with a dropdown menu of topics. | Yes | [Contact form](docs/contact-section.png "Contact Form") [Contact form dropdown](docs/desktop-header-contact.png "Contact Form Dropdown") |
-| As a user, I want to be able to access the quiz on a range of devices. | The quiz has been designed to be used across a rage of devices where it is consistently resposnive. | Yes | [Range of devices](docs/science-and-nature-quiz-responsive-display.png "Range of Devices") |
+| As a user, I want to be able to access the quiz on a range of devices. | The quiz has been designed to be used across a range of devices where it is consistently responsive. | Yes | [Range of devices](docs/science-and-nature-quiz-responsive-display.png "Range of Devices") |
 | As a user, I want different levels of difficulty of the quiz. | The quiz has three difficulty levels of questions, easy, medium and hard that the user can choose between. | Yes | [Setup section](docs/setup-section.png "Setup Section") |
-| As a user, I want an up to date score. | The related score updates each time the user gets an answer correct or incorrect with the results section displaying the users final score. | Yes | [Score](docs/score.png "Score") [Results section](docs/desktop-results-section.png "Results Section") | 
+| As a user, I want an up to date score. | The related score updates each time the user gets an answer correct or incorrect with the results section displaying the user's final score. | Yes | [Score](docs/score.png "Score") [Results section](docs/desktop-results-section.png "Results Section") | 
 | As a user, I want to be able to find clear instructions easily. | The instructions can be found at the top of the page on all main pages, they're clearly written for easy understanding by the user. | Yes | [Instructions](docs/instructions-section.png "Instructions") |
 | As a user, I want multiple choice questions. | The questions each have the option of four answers, one correct answer and three incorrect answers. | Yes | [Quiz section](docs/quiz-section.png "Quiz Section") |
 
@@ -409,7 +410,7 @@ I have used JSHint to validate the JavaScipt code, it found no errors.
 
 ## Feature Testing
 
-To check the features of the website, I thoroughly tested them in Chrome Inspect Mode for Mobile S - 320px, Tablet - 768px, Laptop 1024px and Laptop L - 1440px, on a MacBook Pro in Chrome and Safari as well as on an iPhone 12 Pro Max on Edge and Safari. The features of the website were fully functional on all devices. I also asked family and friends to explore the website and report any issues or bugs they found, only one bug was found which was logged and resolved..
+To check the features of the website, I thoroughly tested them in Chrome Inspect Mode for Mobile S - 320px, Tablet - 768px, Laptop 1024px and Laptop L - 1440px, on a MacBook Pro in Chrome and Safari as well as on an iPhone 12 Pro Max on Edge and Safari. The features of the website were fully functional on all devices. I also asked family and friends to explore the website and report any issues or bugs they found, only one bug was found which was logged and resolved.
 
 ## Accessibility Testing
 
