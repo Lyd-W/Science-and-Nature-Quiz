@@ -380,6 +380,9 @@ I have used [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ "W
 
 ### JavaScript
 
+I have used JSHint to validate the JavaScipt code, it found no errors.
+
+![JSHint Validation Results](docs/jshint.png "JSHint Validation Results")
 
 ## User Story Testing
 

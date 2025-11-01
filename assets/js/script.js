@@ -1,3 +1,5 @@
+/** jshint esversion: 6 */
+
 const playerSectionRef = document.querySelector("#setup-section");
 const contactFormRef = document.querySelector("#contact-dropdown");
 const sendButtonRef = document.querySelector("#send-button");
