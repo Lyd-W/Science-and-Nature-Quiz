@@ -187,7 +187,7 @@ nav {
 /* Instructions section */
 #instructions-dropdown {
   position: absolute !important;
-  left: 50% !important;
+  left: 54% !important;
   right: auto !important;
   transform: translate(-33%, 0) !important;
 }
@@ -199,7 +199,7 @@ nav {
 
 #contact-dropdown {
   position: absolute !important;
-  left: 50% !important;
+  left: 43% !important;
   right: auto !important;
   transform: translate(-72%, 0) !important;
 }
