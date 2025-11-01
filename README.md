@@ -120,7 +120,7 @@ The wireframes were designed using templates from [Balsamiq](https://balsamiq.co
 
 ### Typography
 
-The font family that has been chosen for the Science and Nature Quiz is [Red Hat Display](https://fonts.google.com/specimen/Red+Hat+Display "Google Fonts | Red Hat Display") due to its low contrast and tighly spaced design which gives better legibility. Given that the quiz will have questions to read, legibility of the font is an important factor to increase the user experience.
+The font family that has been chosen for the Science and Nature Quiz is [Lato](https://fonts.google.com/specimen/Lato "Google Fonts | Lato") due to its readability through it's clean letter design and professional yet friendly appearance which gives better legibility. Given that the quiz will have questions to read, legibility of the font is an important factor to increase the user experience.
 
 ### Colour Scheme
 

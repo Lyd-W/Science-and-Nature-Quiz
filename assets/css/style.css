@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 /* CSS variables */
 :root {
@@ -10,6 +10,8 @@
 
   --correct: #2e6f40;
   --incorrect: #c20303;
+
+  --font: "Lato", sans-serif;
 }
 
 /* Global styles */
@@ -17,11 +19,12 @@ body {
   background-color: var(--primary);
   background-image: url("../images/background.jpg");
   background-size: cover;
+  font-family: var(--font);
 }
 
 h2 {
   margin-top: 1.3rem;
-  font-size: large;
+  font-size: 1.3rem;
   padding: 0.3rem;
 }
 
@@ -49,7 +52,7 @@ nav {
 
 .navbar-brand {
   color: var(--text-dark);
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: bold;
 }
 
@@ -118,6 +121,7 @@ nav {
   border-width: 2px;
   background-color: var(--secondary);
   color: var(--text-dark);
+  font-size: 1.2rem;
 }
 
 .btn-outline-secondary,
@@ -213,6 +217,7 @@ nav {
   border: 2px solid var(--highlight) !important;
   display: flex;
   flex-direction: column;
+  padding: 3px;
   background-color: var(--secondary);
   border-radius: 1.9rem;
   margin: 22vh 5vw;
@@ -228,8 +233,16 @@ nav {
 #player-name,
 #username,
 #select-difficulty,
-#success-paragraph {
-  font-size: large;
+#success-paragraph,
+#question,
+#highscores-list {
+  font-size: 1.2rem;
+}
+
+#current-score,
+#timer,
+.btn {
+  font-size: 1.1rem;
 }
 
 #select-difficulty {
@@ -247,7 +260,7 @@ nav {
   border-radius: 1.9rem;
   margin: 20vh 20vw;
   height: 18.75rem;
-  font-size: large;
+  font-size: 1.2rem;
 }
 
 #loader-circle {
@@ -273,6 +286,7 @@ nav {
 #results-section {
   display: flex;
   flex-direction: column;
+  padding: 3px;
   border: 2px solid var(--highlight) !important;
   background-color: var(--secondary);
   border-radius: 1.9rem;
@@ -282,17 +296,17 @@ nav {
 
 #question-number {
   margin-top: 1.25rem;
-  font-size: large;
+  font-size: 1.2rem;
 }
 
 .fa-solid.fa-check {
   color: var(--correct);
-  font-size: large;
+  font-size: 1.2rem;
 }
 
 .fa-solid.fa-xmark {
   color: var(--incorrect);
-  font-size: large;
+  font-size: 1.2rem;
   margin-left: 0.3rem;
 }
 
@@ -307,7 +321,7 @@ nav {
 
 /* Results section */
 #final-result {
-  font-size: large;
+  font-size: 1.2rem;
   margin-top: 1.6rem;
 }
 
