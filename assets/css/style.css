@@ -322,6 +322,7 @@ nav {
 #question,
 #timer {
   margin-top: 0.6rem;
+  padding: 0 0.5rem;
 }
 
 /* Results section */
