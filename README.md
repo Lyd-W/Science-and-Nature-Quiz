@@ -357,9 +357,16 @@ The footer follows a consistent style across all devices, using the same backgro
 
 |   Bug Description                         | Resolved |    Resolution Description                               |
 |-------------------------------------------|----------|---------------------------------------------------------|
-
+| When the instructions were opened, the container flashed blue breifly as if highlighting the text. | Yes | To resolve this, I changed the anchor tag to a div and removed the dropdown-item class. |
+| The contact form would close when 'Send' was selected if all of the form boxes were not completed. | Yes | This was rresolved by adding an event listener to the script.js to stop propagation when a click is registered inside the contact form. |
+| The required fields message failed to show on the contact form. | Yes | To resolve this I added an event listener for 'submit' in the script.js which prevents the default behavious, checks the form boxes are filled and displays the correct error message highlighting what information is missing. |
+| When the 'tab' key was used to navigate the website, the button highlight style was not applied causing visual difficulties. | Yes | To prevent this issue from happening, I added the focus pseudo class to the buttons. |
+| The above solution created a bug on touch screen devices where the last selected answer, reamined highlighted on the new answer list. | Yes | This was resolved by moving the focus pseudo class to large+ screen sizes in media queries. |
+| When the user started a new game through 'New Game' or 'Retry', the question count continued to increase past 10. | Yes | I created a reset display function in script.js which cleared the data ready for the next game. |
+| Some of the questions have unexpected symbols in them. | No | As the questions are pulled from an API, further decoding of the questions would be required to resolve this issue. | 
 
 ## Responsiveness Tests
+
 
 
 ## Code Validation
