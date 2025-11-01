@@ -329,7 +329,7 @@ nav {
 }
 
 #final-score {
-  font-size: 3rem;
+  font-size: 3rem!important;
 }
 
 #highscores-list {
