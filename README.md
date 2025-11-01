@@ -479,9 +479,6 @@ Changes can still be made to the website through VS Code, they become live once 
 - [Stack Overflow](https://stackoverflow.com/ "Stack Overflow")
 - [W3 Schools](https://www.w3schools.com/ "W3 Schools")
 
-#### Information References
-
-
 #### Images:
 
 - [Adobe Photoshop](https://www.adobe.com/uk/products/photoshop.html "Adobe | Photoshop")
