@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 
 /* CSS variables */
 :root {
@@ -23,7 +23,7 @@ body {
 }
 
 h1 {
-  font-size: 1.6rem!important;
+  font-size: 1.6rem !important;
 }
 
 h2 {
@@ -329,7 +329,7 @@ nav {
 }
 
 #final-score {
-  font-size: 3rem!important;
+  font-size: 3rem !important;
 }
 
 #highscores-list {
@@ -383,7 +383,6 @@ nav {
 
 /* Medium devices (tablets, 768px and up) */
 @media screen and (min-width: 768px) {
-
   #success-logo {
     margin-left: 0.4rem;
   }
@@ -415,13 +414,13 @@ nav {
 
 /* Large devices (laptops, 992px and up) */
 @media screen and (min-width: 992px) {
-h1 {
-  font-size: 2.2rem!important;
-}
+  h1 {
+    font-size: 2.2rem !important;
+  }
 
-#navbar .logo {
-  width: 2.9rem;
-}
+  #navbar .logo {
+    width: 2.9rem;
+  }
 }
 
 @media (hover: hover) and (pointer: fine) {
