@@ -19,6 +19,8 @@ body {
   background-color: var(--primary);
   background-image: url("../images/background.jpg");
   background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
   font-family: var(--font);
 }
 
