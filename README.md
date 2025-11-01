@@ -76,6 +76,9 @@ The Science and Nature Quiz is a great way for science and nature enthusiasts to
 
 ## User Feedback
 
+During the later development stages of the Science and Nature Quiz website, I asked friends and family to test the website on as many different devices as possible to find potential improvements for the website as well as possible glitches.
+
+The quiz received positive feedback with a few minor tweaks being needed, such as an issue with the hover feature when played on mobile as listed in the bug section of testing.
 
 [Back to contents](#contents)
 
@@ -125,7 +128,7 @@ For the website background, I created some science and nature styled icons using
 
 ![Coolors Scheme](docs/coolors.png)
 
-I then used [Contrast Grid](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23A09A8A%0D%0A%23D0E5C8%0D%0A%23899F7F%0D%0A%23000000%0D%0A%23FFFFFF&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp "Contrast Grid") to determine the best colour combinations to ensure the website will be visually appealing whilst remaining easy for the user to read the quiz questions and answers.
+I then used [Contrast Grid](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23BCB7A4%0D%0A%23BEC7BC%0D%0A%2376896E%0D%0A%23000000%0D%0A%23FFFFFF&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp "Contrast Grid") to determine the best colour combinations to ensure the website will be visually appealing whilst remaining easy for the user to read the quiz questions and answers.
 
 ![Contrast Grid](docs/contrast-grid.png)
 
@@ -146,47 +149,170 @@ Other required colours:
 
 ### Images
 
+The logo design and icons for the background have been created by [ChatGPT](https://chatgpt.com/ "ChatGPT Homepage"), to remain related to the quiz topic I went for science and nature themed icons. I then used [Adobe Photoshop](https://www.adobe.com/uk/products/photoshop.html "Adobe | Photoshop") to style the icons onto the chosen background colour to keep it in style with the website whilst creating a more interesting and fun feature to the website's background without taking focus from the quiz. 
 
 ### Responsiveness
 
+The website is responsive to different screen sizes with the breakpoints taken from [Bootstrap](https://getbootstrap.com/docs/5.3/layout/breakpoints/#available-breakpoints "Bootstrap Breakpoints"). There are media queries added to the CSS to determine the correct media query for different viewpoints, establishing a consistent level of user experiences over different devices.
+
+![Breakpoints](docs/bootstrap-breakpoints.png "Bootstrap Breakpoints")
 
 [Back to contents](#contents)
 
 # Features
 
+An interactive, multiple choice quiz website with a topic focus of science and nature and different difficulty levels, that is responsive over a range of devices. The user can easily find the instructions on how the quiz works at the top of the page, as well as the contact form to provide any feedback or comments regarding the website. After completing the quiz, a persistent leadboard of upto 5 highscores is displayed to encourage light hearted competition between friends and family or to encourage self improvement. The user then has the option to start a 'New Game' where a new username can be asigned for the player, to 'Retry' to better their current scores or to view the current highscores.
 
 ## Existing Features
 
 ### Header
 
+The website has consistent headers on all devices, showing the quiz name in the header font along with the quiz logo. Buttons for the instructions and contact can also be found within the header, both of with have dropdown contents to provide further information or the contact form.
+
+<b>Mobile header</b>
+
+![Mobile header](docs/mobile-header.png "Mobile Header")
+
+<br>
+
+![Mobile header instructions](docs/mobile-header-instructions.png "Mobile Header | Instructions")
+
+<br>
+
+![Mobile header contact](docs/mobile-header-contact.png "Mobile Header | Contact")
+
+<br>
+
+<b>Tablet header</b>
+
+![Tablet header](docs/tablet-header.png "Tablet Header")
+
+<br>
+
+![Tablet header instructions](docs/tablet-header-instructions.png "Tablet Header | Instructions")
+
+<br>
+
+![Tablet header contact](docs/tablet-header-contact.png "Tablet Header | Contact")
+
+<br>
+
+<b>Desktop header</b>
+
+![Desktop header](docs/desktop-header.png "Desktop Header")
+
+<br>
+
+![Desktop header instructions](docs/desktop-header-instructions.png "Desktop Header | Instructions")
+
+<br>
+
+![Desktop header contact](docs/desktop-header-contact.png "Desktop Header | Contact")
+
+<br>
 
 ### Home Section
 
+The home view features the quiz's name and logo in the header of the webpage, along with the instructions and contact form. In the center of the screen, the user will find the setup section of the quiz ready for them to enter their username, select a difficult, easy, medium and hard, then they can start the quiz.
+
+![Home section](docs/science-and-nature-quiz-responsive-display.png "Home Section")
+
+<br>
 
 ### Instructions Section
 
+The instructions to the quiz can be found using the dropdown menu at the top of the screen. On tablets and larger screens it shows in the top right corner, for mobile devices it fills the screen more to ensure easier readability.
+
+![Instructions section](docs/instructions-section.png "Instructions Section")
+
+<br>
 
 ### Contact Section
 
+The contact form to the quiz can be found using the dropdown menu at the top of the screen. On tablets and larger screens it shows in the top right corner, for mobile devices it fills the screen more to ensure easier readability.
+
+![Contact section](docs/contact-section.png "Contact Section")
+
+<br>
+
+Each field has the prompt "Please fill in this field" that is required before submission of the form can go ahead, this ensures all required information is completed correctly by the user.
+
+![Contact section required](docs/contact-section-required.png "Contact Section | Required")
+
+<br>
 
 ### Success Page
 
+The website includes a Success page to give the user feedback regarding the status of their contact enquiry when the form has been filled in correctly.
+
+![Success page](docs/success-page.png "Success Page")
+
+<br>
 
 ### Quiz Section
 
+While loading the questions, there is a cicular loading animation that pops up with 'Loading questions...' to keep the user informed so there is no confusion over whether the website is working correctly or not.
+
+The quiz section lists the question number at the top of the quiz container, stating which question out of 10 the user is on. I displayed how many correct and incorrect answers the user has so far, the time remianing counting down from 20 seconds and the question with 4 possible answers.
+
+When using a mouse or tabbing over the questions, a highlight effect is used to help the user see where they're selecting. If they select the correct answer, the answer turned green, however, if they select an incorrect answer, the chosen answer turns red and the correct ansers turns green. If the user runs out of time before selecting an answer, the correct answer turns green
+
+Once an answer has been selected or the timer has ran out, there is a short delay before moving onto the next question and finally, at the end of the quiz, to the results section.
+
+![Quiz section](docs/quiz-section.png "Quiz Section")
+
+<br>
 
 ### Results Section
 
+The results section displays the user's final score in large text along with the options of 'New Game' where they can begin a new game from scratch, including choosing a new username and difficulty, 'Retry' where they can keep their username and difficulty level the same but go onto 10 new questions or they can select 'High scores' where up to 5 high scores are displayed along with the username of who achieved each score.
 
-### 404 Error Section
+![Results section](docs/results-section.png "Results Section")
 
+<br>
+
+![Desktop results section](docs/desktop-results-section.png "Desktop Results Section")
+
+<br>
+
+### 404 Error Page
+
+If the user happens to go to an incorrect URL of the website, a 404 error page has been set up to inform the user of the situation and automatically redirect them back to the home page, or they have the option to use the 'Home page' button for a quicker return to the quiz.
+
+![404 error page](docs/404-error-page.png "404 Error Page")
+
+<br>
 
 ### Footer
 
+The footer follows a consistent style across all devices, using the same background colour as the navbar with black icons. The footer contains social media links for GitHub, LinkedIn and X that can be linked to the quiz creator's social media channel with each link opening in a new window.
+
+<b>Mobile footer view</b>
+
+![Mobile footer view](docs/mobile-footer.png "Mobile Footer View")
+
+<br>
+
+<b>Tablet footer view</b>
+
+![Tablet footer view](docs/tablet-footer.png "Tablet Footer View")
+
+<br>
+
+<b>Desktop footer view</b>
+
+![Desktop footer view](docs/desktop-footer.png "Desktop Footer View")
+
+<br> 
 
 ## Future Enhancements
 
-* 
+* Additional questions
+* Additional topics
+* Multi-player 
+* Adjustable timer
+* Player forum
+* Include overall time on high scores
 
 [Back to contents](#contents)
 
@@ -210,6 +336,8 @@ Other required colours:
 - [Adobe Photoshop](https://www.adobe.com/uk/products/photoshop.html "Adobe | Photoshop")
 - [Am I Responsive?](https://ui.dev/amiresponsive?url=https://lyd-w.github.io/beckminster-crest/index.html "Am I Responsive? | Beckminster Crest")
 - [Balsamiq](https://balsamiq.com/ "Balsamiq Homepage")
+- [Contrast Grid](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23BCB7A4%0D%0A%23BEC7BC%0D%0A%2376896E%0D%0A%23000000%0D%0A%23FFFFFF&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp "Contrast Grid")
+- [Coolors](http://https://coolors.co/ "Coolors")
 - [GitHub](https://github.com "GitHub Homepage")
 - [Google Chrome Inspect Mode](https://developer.chrome.com/docs/devtools/inspect-mode "Google Chrome Inspect Mode")
 - [JSHint](https://jshint.com/ "JSHint Homepage")
@@ -336,7 +464,7 @@ Changes can still be made to the website through VS Code, they become live once 
 
 #### Visual Content:
 
-- [Contrast Grid](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23A09A8A%0D%0A%23D0E5C8%0D%0A%23899F7F%0D%0A%23000000%0D%0A%23FFFFFF&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp "Contrast Grid")
+- [Contrast Grid](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23BCB7A4%0D%0A%23BEC7BC%0D%0A%2376896E%0D%0A%23000000%0D%0A%23FFFFFF&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp "Contrast Grid")
 - [Coolors Scheme](https://coolors.co/ "Coolors Scheme Homepage")
 
 [Back to contents](#contents)
