@@ -167,7 +167,7 @@ An interactive, multiple choice quiz website with a topic focus of science and n
 
 ### Header
 
-The website has consistent headers on all devices, showing the quiz name in the header font along with the quiz logo. Buttons for the instructions and contact can also be found within the header, both of with have dropdown contents to provide further information or the contact form.
+The website has consistent headers on all devices, showing the quiz name in the header font along with the quiz logo. Buttons for the instructions and contact can also be found within the header, both of which have dropdown contents to provide further information or access to the contact form.
 
 <b>Mobile header</b>
 
@@ -213,7 +213,7 @@ The website has consistent headers on all devices, showing the quiz name in the 
 
 ### Home Section
 
-The home view features the quiz's name and logo in the header of the webpage, along with the instructions and contact form. In the center of the screen, the user will find the setup section of the quiz ready for them to enter their username, select a difficult, easy, medium and hard, then they can start the quiz.
+The home view features the quiz's name and logo in the header of the webpage, along with the instructions and contact form. In the center of the screen, the user will find the setup section of the quiz ready for them to enter their username, select a difficulty, easy, medium and hard, then they can start the quiz.
 
 ![Home section](docs/science-and-nature-quiz-responsive-display.png "Home Section")
 
@@ -255,9 +255,9 @@ While loading the questions, there is a circular loading animation that pops up 
 
 The quiz section lists the question number at the top of the quiz container, stating which question out of 10 the user is on. I displayed how many correct and incorrect answers the user has so far, the time remaining counting down from 20 seconds and the question with 4 possible answers.
 
-When using a mouse or tabbing over the questions, a highlight effect is used to help the user see where they're selecting. If they select the correct answer, the answer turned green, however, if they select an incorrect answer, the chosen answer turns red and the correct answers turns green. If the user runs out of time before selecting an answer, the correct answer turns green
+When using a mouse or tabbing over the questions, a highlight effect is used to help the user see where they're selecting. If they select the correct answer, the answer turns green, however, if they select an incorrect answer, the chosen answer turns red and the correct answer turns green. If the user runs out of time before selecting an answer, the correct answer turns green.
 
-Once an answer has been selected or the timer has run out, there is a short delay before moving onto the next question and finally, at the end of the quiz, to the results section.
+Once an answer has been selected or the timer has run out, there is a short delay before moving onto the next question or, at the end of the quiz, to the results section.
 
 ![Quiz section](docs/quiz-section.png "Quiz Section")
 
@@ -361,8 +361,8 @@ The footer follows a consistent style across all devices, using the same backgro
 | When the instructions were opened, the container flashed blue briefly as if highlighting the text. | Yes | To resolve this, I changed the anchor tag to a div and removed the dropdown-item class. |
 | The contact form would close when 'Send' was selected if all of the form boxes were not completed. | Yes | This was resolved by adding an event listener to the script.js to stop propagation when a click is registered inside the contact form. |
 | The required fields message failed to show on the contact form. | Yes | To resolve this I added an event listener for 'submit' in the script.js which prevents the default behaviours, checks the form boxes are filled and displays the correct error message highlighting what information is missing. |
-| When the 'tab' key was used to navigate the website, the button highlight style was not applied causing visual difficulties. | Yes | To prevent this issue from happening, I added the focus pseudo class to the buttons. |
-| The above solution created a bug on touch screen devices where the last selected answer, remained highlighted on the new answer list. | Yes | This was resolved by moving the focus pseudo class to large+ screen sizes in media queries. |
+| When the 'tab' key was used to navigate the website, the button highlight style was not applied causing visual difficulties. | Yes | To prevent this issue from happening, I added the focus pseudo class to the buttons and applied the same styling as the hover effect. |
+| The above solution created a bug on touch screen devices where the last selected answer, remained highlighted on the new answer list. | Yes | This was resolved by moving the hover pseudo class to only apply to devices with hover enabled and a fine pointer through media queries. |
 | When the user started a new game through 'New Game' or 'Retry', the question count continued to increase past 10. | Yes | I created a reset display function in script.js which cleared the data ready for the next game. |
 | Some of the questions have unexpected symbols in them. | No | As the questions are pulled from an API, further decoding of the questions would be required to resolve this issue. | 
 
