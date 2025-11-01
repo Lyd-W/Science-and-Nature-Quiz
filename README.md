@@ -346,6 +346,7 @@ The footer follows a consistent style across all devices, using the same backgro
 - [VS Code](https://code.visualstudio.com/ "VS Code Homepage")
 - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_input "W3C CSS Validation Service Homepage")
 - [W3C HTML Validation Service](https://validator.w3.org/#validate_by_uri "W3C HTML Validation Service Homepage")
+- [WAVE](https://wave.webaim.org/report#/https://lyd-w.github.io/Science-and-Nature-Quiz/ "WAVE | Science and Nauture Quiz Report")
 
 [Back to contents](#contents)
 
