@@ -367,7 +367,9 @@ The footer follows a consistent style across all devices, using the same backgro
 
 ## Responsiveness Tests
 
+I deployed the website early on in the project to allow for checking the websites responsiveness. I used [Am I Responsive?](https://ui.dev/amiresponsive?url=https://lyd-w.github.io/Science-and-Nature-Quiz "Am I Responsive? | Science and Nature Quiz") to test how responsive the website was on different screen sizes. I found the website was responsive on all screen sizes.
 
+To check the responsiveness of the website, I thoroughly tested it in Chrome Inspect Mode for Mobile S - 320px, Tablet - 768px, Laptop 1024px and Laptop L - 1440px, on a MacBook Pro in Chrome and Safari as well as on an iPhone 12 Pro Max on Edge and Safari.
 
 ## Code Validation
 
@@ -395,6 +397,13 @@ I have used JSHint to validate the JavaScipt code, it found no errors.
 
 |User Story                               | Result                                      |Pass| Evidence             |
 |-----------------------------------------|---------------------------------------------|----|----------------------|
+|As a user, I want my knowledge on science and nature to be tested in a fun way. | The quiz topic focuses on a mix on science and nature questions delivered in a fun, educational manner and encourages lighthearted competition through the use of the scoreboard. | Yes | [Question sample](docs/question.png "Question Sample") [Scorebaord](docs/desktop-results-section.png "Scorebaord") |
+|As a user, I want to contact the website for feedback, issues or general enquiries. | There is a contact form displayed on the main pages of the quiz with a dropdown menu of topics. | Yes | [Contact form](docs/contact-section.png "Contact Form") [Contact form dropdown](docs/desktop-header-contact.png "Contact Form Dropdown") |
+| As a user, I want to be able to access the quiz on a range of devices. | The quiz has been designed to be used across a rage of devices where it is consistently resposnive. | Yes | [Range of devices](docs/science-and-nature-quiz-responsive-display.png "Range of Devices") |
+| As a user, I want different levels of difficulty of the quiz. | The quiz has three difficulty levels of questions, easy, medium and hard that the user can choose between. | Yes | [Setup section](docs/setup-section.png "Setup Section") |
+| As a user, I want an up to date score. | The related score updates each time the user gets an answer correct or incorrect with the results section displaying the users final score. | Yes | [Score](docs/score.png "Score") [Results section](docs/desktop-results-section.png "Results Section") | 
+| As a user, I want to be able to find clear instructions easily. | The instructions can be found at the top of the page on all main pages, they're clearly written for easy understanding by the user. | Yes | [Instructions](docs/instructions-section.png "Instructions") |
+| As a user, I want multiple choice questions. | The questions each have the option of four answers, one correct answer and three incorrect answers. | Yes | [Quiz section](docs/quiz-section.png "Quiz Section") |
 
 [Back to contents](#contents)
 
