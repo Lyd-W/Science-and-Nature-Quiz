@@ -360,6 +360,11 @@ nav {
   height: auto;
 }
 
+#redirect-message,
+#success-paragraph {
+  padding: 0.5rem;
+}
+
 /* Footer */
 .footer-container {
   display: flex;
