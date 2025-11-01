@@ -328,6 +328,10 @@ nav {
   margin-top: 1.6rem;
 }
 
+#final-score {
+  font-size: 3rem;
+}
+
 #highscores-list {
   display: flex;
   justify-content: center;
