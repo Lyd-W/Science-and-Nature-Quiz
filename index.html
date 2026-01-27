@@ -27,7 +27,14 @@
       type="image/png"
       sizes="16x16"
       href="assets/favicon/favicon-16x16.png"
-    >
+     >
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet">
 
     <!-- Bootstrap v5.3 link -->
     <link
@@ -106,7 +113,7 @@
                 class="dropdown-menu dropdown-menu-end p-4"
                 id="contact-dropdown"
                 action="success.html"
-                method="GET"
+                method="POST"
               >
                 <div class="mb-3">
                   <p id="contact-paragraph">
@@ -197,6 +204,7 @@
               <!-- Button imported from Bootstrap-->
               <button
                 id="easy-btn"
+                type="button"
                 data-difficulty="easy"
                 class="btn btn-difficulty"
               >
@@ -204,6 +212,7 @@
               </button>
               <button
                 id="medium-btn"
+                type="button"
                 data-difficulty="medium"
                 class="btn btn-difficulty"
               >
@@ -211,6 +220,7 @@
               </button>
               <button
                 id="hard-btn"
+                type="button"
                 data-difficulty="hard"
                 class="btn btn-difficulty"
               >

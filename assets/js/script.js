@@ -69,21 +69,31 @@ difficultyButtonRef.forEach((button) => {
 });
 
 /**
+ * Helper function to decode HTML entities safely
+ */
+function decodeHTML(html) {
+const txt = document.createElement('textarea'); txt.innerHTML = html;
+return txt.value;
+}
+
+/**
  * Randomises answer order
  */
 function rearrangeAnswers(results) {
   return results.map((apiQuestion) => {
+    const decodedCorrectAnswer = decodeHTML(apiQuestion.correct_answer);
+
     const answers = [
-      ...apiQuestion.incorrect_answers,
-      apiQuestion.correct_answer,
+      ...apiQuestion.incorrect_answers.map(decodeHTML),
+      decodedCorrectAnswer,
     ];
     answers.sort(() => Math.random() - 0.5);
 
     return {
       difficultyRef: apiQuestion.difficultyRef,
-      question: apiQuestion.question,
+      question: decodeHTML(apiQuestion.question),
       answers: answers,
-      correct_answer: apiQuestion.correct_answer,
+      correct_answer: decodedCorrectAnswer,
     };
   });
 }
@@ -344,16 +354,15 @@ retryRef.addEventListener("click", (event) => {
  * Orders quiz functions
  */
 function startQuiz() {
-  try {
-    loader();
-    getQuestions().then((apiData) => {
+  loader();
+  getQuestions().then((apiData) => {
       rearranged = rearrangeAnswers(apiData.results);
       setQuizArea();
       showQuestion(rearranged[currentQuestionNumber]);
-    });
-  } catch (error) {
-    errorHandling(error.message);
-  }
+    })
+    .catch((error) => {
+      errorHandling(error.message);
+  });
 }
 
 /**
