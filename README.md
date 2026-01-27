@@ -364,7 +364,8 @@ The footer follows a consistent style across all devices, using the same backgro
 | When the 'tab' key was used to navigate the website, the button highlight style was not applied causing visual difficulties. | Yes | To prevent this issue from happening, I added the focus pseudo class to the buttons and applied the same styling as the hover effect. |
 | The above solution created a bug on touch screen devices where the last selected answer, remained highlighted on the new answer list. | Yes | This was resolved by moving the hover pseudo class to only apply to devices with hover enabled and a fine pointer through media queries. |
 | When the user started a new game through 'New Game' or 'Retry', the question count continued to increase past 10. | Yes | I created a reset display function in script.js which cleared the data ready for the next game. |
-| Some of the questions have unexpected symbols in them. | Yes | Helper function created to decode HTML pulled from the API before displaying the questions and answers. | 
+| Some of the questions have unexpected symbols in them. | Yes | Helper function created to decode HTML pulled from the API before displaying the questions and answers. |
+| Some answers containing parentheses cause the quiz to freeze. | No | Fixing the previous bug created a new issue where certain answers that contain parentheses cause the quiz to freeze if the wrong answer is selected. Use of the decodeHTML helper function did not resolve the issue. | 
 
 ## Responsiveness Tests
 

@@ -93,7 +93,7 @@ function rearrangeAnswers(results) {
       difficultyRef: apiQuestion.difficultyRef,
       question: decodeHTML(apiQuestion.question),
       answers: answers,
-      correct_answer: decodedCorrectAnswer,
+      correct_answer: decodeHTML(apiQuestion.correct_answer)
     };
   });
 }
@@ -146,6 +146,7 @@ function showQuestion(currentQuestion) {
   answerButtonsRef.forEach((button, index) => {
     button.style.backgroundColor = "";
     button.innerText = currentQuestion.answers[index];
+    button.dataset.answer = decodeHTML(currentQuestion.answers[index]);
     button.blur();
   });
   startTimer();
@@ -174,7 +175,7 @@ function startTimer() {
 function answerClickHandling(event) {
   clearInterval(timer);
   answerButtonsRef.forEach((button) => (button.disabled = true));
-  let selectedAnswer = event.target.innerText;
+  let selectedAnswer = event.target.dataset.answer;
   const correctAnswer = rearranged[currentQuestionNumber].correct_answer;
   const correctButton = answerButtonsRef.find(
     (button) => button.innerText === correctAnswer
