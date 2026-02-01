@@ -178,7 +178,7 @@ function answerClickHandling(event) {
   let selectedAnswer = event.target.dataset.answer;
   const correctAnswer = rearranged[currentQuestionNumber].correct_answer;
   const correctButton = answerButtonsRef.find(
-    (button) => button.innerText === correctAnswer
+    (button) => button.dataset.answer === correctAnswer
   );
 
   /**
@@ -206,7 +206,7 @@ function noAnswer() {
   answerButtonsRef.forEach((button) => (button.disabled = true));
   const correctAnswer = rearranged[currentQuestionNumber].correct_answer;
   const correctButton = answerButtonsRef.find(
-    (button) => button.innerText === correctAnswer
+    (button) => button.dataset.answer === correctAnswer
   );
   correctButton.style.backgroundColor = "green";
   incorrectScore++;
